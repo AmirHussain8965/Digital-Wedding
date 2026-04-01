@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternally - Sign In</title>
+    <link rel="shortcut icon" href="https://via.placeholder.com/32" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/accounts.css">
+</head>
+<body>
+
+    <header class="top_nav">
+        <a href="/index.html" class="nav_link">
+            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-suit-heart-fill"></i>
+            <span class="logo_text">Eternally</span>
+        </a>
+    </header>
+
+    <main class="container auth_wrapper">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-8 col-lg-5 col-xl-5">
+                <div class="auth_card" data-aos="fade-up">
+                    <div class="icon_circle">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+                    
+                    <h1 class="auth_title">Welcome Back</h1>
+                    <p class="auth_subtitle">Sign in to manage your invitations</p>
+
+                    <form action="#">
+                        <div class="form_group">
+                            <label class="form_label" for="email">Email</label>
+                            <input type="email" id="email" class="form_input" placeholder="you@example.com" required>
+                        </div>
+                        
+                        <div class="form_group">
+                            <label class="form_label" for="password">Password</label>
+                            <input type="password" id="password" class="form_input" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="form_options">
+                            <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" style="accent-color: #5d1a24;"> Remember me
+                            </label>
+                            <a href="reset.html" class="custom_link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="primary_btn">Sign In</button>
+                    </form>
+
+                    <div class="auth_footer">
+                        Don't have an account? <a href="signup.html" class="custom_link">Sign up</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/accounts.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
