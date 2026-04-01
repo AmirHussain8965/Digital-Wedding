@@ -112,17 +112,17 @@ body {
 /* Brand */
 .brand_logo {
     font-family: "Cormorant Garamond", serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
-    color: var(--cream) !important;
+    color: #F5D5D5;
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
     gap: 7px;
 }
 .brand_heart {
-    color: var(--gold);
-    font-size: 14px;
+    color: #F5D5D5;
+    font-size: 16px;
 }
 
 /* Nav right group */
@@ -241,14 +241,15 @@ body {
 .section_heading {
     font-family: "Cormorant Garamond", serif;
     font-size: 46px;
-    font-weight: 500;
-    color: var(--text_dark);
+    font-weight: 400;
+    color: #4B0F14;
     line-height: 1.18;
     margin-bottom: 18px;
 }
 .section_heading em {
     font-style: italic;
     color: var(--burgundy_dark);
+    font-weight: 600;
 }
 .section_subtext {
     font-size: 15px;
@@ -430,7 +431,7 @@ body {
 /* Large Feature Cards */
 .feature_card_large {
     background: var(--white);
-    border: 1px solid rgba(75,15,20,0.08);
+    border: 1px solid #E8D5D0;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: var(--card_shadow);
@@ -459,13 +460,14 @@ body {
     left: 16px;
     width: 38px;
     height: 38px;
-    background: var(--white);
-    border-radius: 8px;
+    background: #FFFFFF33;
+    border-top: 1px solid #FFFFFF4D;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
-    color: var(--burgundy_dark);
+    font-size: 16px;
+    color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 .feature_card_body {
@@ -514,17 +516,17 @@ body {
 .feature_card_small:hover .feature_small_img img { transform: scale(1.06); }
 .feature_card_icon_sm {
     position: absolute;
-    bottom: 10px;
-    left: 12px;
-    width: 32px;
-    height: 32px;
-    background: var(--white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    color: var(--burgundy_dark);
+    font-size: 28px;
+    color: var(--white);
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .feature_small_body {
@@ -567,19 +569,19 @@ body {
     height: 2px;
     background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
 }
-
 .how_works_header { margin-bottom: 64px; }
 .how_works_heading {
     font-family: "Cormorant Garamond", serif;
     font-size: 52px;
     font-weight: 400;
-    color: var(--text_dark);
+    color: #4B0F14;
     line-height: 1.15;
     margin-bottom: 18px;
 }
 .how_works_heading em {
     font-style: italic;
     color: var(--burgundy_dark);
+    font-weight: 600;
 }
 .how_works_subtext {
     font-size: 15px;
@@ -590,9 +592,9 @@ body {
 /* Steps Row */
 .how_works_steps_row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 0;
+    gap: 20px;
     position: relative;
 }
 
@@ -601,7 +603,7 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    max-width: 280px;
+    max-width: 320px;
     position: relative;
 }
 
@@ -638,21 +640,21 @@ body {
     left: calc(50% + 40px);
     width: calc(100% - 40px);
     height: 1px;
-    background: linear-gradient(90deg, rgba(75,15,20,0.25), rgba(75,15,20,0.1));
+    background: linear-gradient(90deg, rgba(106, 26, 31, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
 }
 
 .step_content { padding: 0 20px; }
 .step_content h4 {
     font-family: "Cormorant Garamond", serif;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 600;
-    color: var(--text_dark);
+    color: #4B0F14;
     margin-bottom: 12px;
 }
 .step_content p {
-    font-size: 14px;
-    color: var(--text_muted);
+    font-size: 15px;
+    color: #7D5F5A;
     line-height: 1.75;
     margin: 0;
 }
@@ -684,17 +686,21 @@ body {
 .light_heading {
     color: var(--cream) !important;
 }
-.light_heading em { color: var(--cream) !important; }
+.light_heading em {
+    color: var(--cream) !important;
+    font-weight: 600; 
+}
 .light_subtext { color: rgba(245,240,232,0.65) !important; }
 
 /* Template Cards */
 .template_card {
-    background: var(--white);
+    background: #FFFFFF0D;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
+    border: 1px solid #FFFFFF1A;
 }
 .template_card:hover {
     transform: translateY(-8px);
@@ -703,12 +709,11 @@ body {
 
 .template_card_img_wrap {
     position: relative;
-    height: 260px;
     overflow: hidden;
 }
 .template_card_img_wrap img {
     width: 100%;
-    height: 100%;
+    height: 350px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -763,11 +768,29 @@ body {
     padding: 18px 18px 20px;
     text-align: left;
 }
+.template_card_body .template_demo_btn{
+    margin-top: 20px;
+    background: #FFFFFF99;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    width: 100%;
+}
+.template_card_body .template_demo_btn:hover {
+    background: #FFFFFF0D;
+    transform: scale(1.04);
+}
+
 .template_card_body h5 {
     font-family: "Cormorant Garamond", serif;
     font-size: 20px;
     font-weight: 600;
-    color: var(--text_dark);
+    color: var(--white);
     margin-bottom: 4px;
 }
 .template_card_body > p {
@@ -826,7 +849,7 @@ body {
 
 /* ==================== FOOTER ==================== */
 .footer_section {
-    background: #0D0508;
+    background: linear-gradient(180deg, #2A0508 0%, #1A0305 100%);
     padding: 70px 0 0;
     border-top: 1px solid rgba(201,168,76,0.12);
 }
@@ -840,7 +863,7 @@ body {
     gap: 8px;
     margin-bottom: 16px;
 }
-.footer_brand_logo i { color: var(--gold); font-size: 14px; }
+.footer_brand_logo i { color: var(--white); font-size: 18px; }
 .footer_brand_col > p {
     font-size: 14px;
     color: rgba(245,240,232,0.4);
@@ -879,16 +902,17 @@ body {
     gap: 10px;
 }
 .footer_links_div h5 {
+    font-family: "Cormorant Garamond", serif;
     font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    letter-spacing: 0.2px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--white);
     margin-bottom: 12px;
 }
 .footer_links_div a {
     font-size: 14px;
-    color: rgba(245,240,232,0.4);
+    color: #FFFFFFB2;
     text-decoration: none;
     transition: color 0.3s;
     max-width: max-content;
@@ -902,17 +926,17 @@ body {
     text-align: center;
     padding: 20px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
 }
 .footer_last_txt p {
-    font-size: 13px;
-    color: rgba(245,240,232,0.3);
+    font-size: 15px;
+    color: #FFFFFF80;
     margin-bottom: 0;
 }
-.footer_last_txt span { color: rgba(201,168,76,0.2); }
+.footer_last_txt i { color: #F5D5D5; }
 
 
 /* ==================== SCROLL PROGRESS ==================== */
@@ -927,31 +951,6 @@ body {
     pointer-events: none;
 }
 
-
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 991px) {
-    .hero_heading { font-size: 40px; }
-    .how_works_heading { font-size: 40px; }
-    .section_heading { font-size: 36px; }
-    .how_works_steps_row { flex-direction: column; align-items: center; gap: 40px; }
-    .step_connector { display: none; }
-    .hero_phone_wrap { margin-top: 40px; }
-    .nav_right_group { margin-top: 16px; flex-wrap: wrap; justify-content: flex-start; }
-}
-@media (max-width: 768px) {
-    .hero_heading { font-size: 34px; }
-    .how_works_heading { font-size: 34px; }
-    .section_heading { font-size: 30px; }
-    .hero_btns { flex-direction: column; align-items: flex-start; }
-    .phone_frame { width: 200px; }
-    .invite_names { font-size: 30px; }
-    .hero_section { padding-top: 110px; }
-    .template_card_img_wrap { height: 200px; }
-}
-@media (max-width: 480px) {
-    .hero_badges { flex-direction: column; gap: 10px; }
-    .templates_cta_btn { font-size: 13px; padding: 12px 24px; }
-}
 
 
 /* ==================== WHY DIGITAL SECTION ==================== */
@@ -988,8 +987,16 @@ body {
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
-.compare_paper .compare_title { color: var(--text_mid); border-color: rgba(0,0,0,0.08); }
-.compare_digital .compare_title { color: var(--cream); border-color: rgba(255,255,255,0.12); }
+.compare_paper .compare_title { 
+    color: var(--text_mid); 
+    border-color: rgba(0,0,0,0.08);
+    text-align: center;
+}
+.compare_digital .compare_title { 
+    color: var(--cream);
+    border-color: rgba(255,255,255,0.12); 
+    text-align: center;
+}
 
 .compare_row {
     display: flex;
@@ -1007,8 +1014,11 @@ body {
 }
 .compare_label.light_label { color: rgba(245,240,232,0.6); }
 .compare_val { font-size: 13.5px; font-weight: 500; }
-.paper_val { color: var(--text_muted); }
-.digital_val { color: var(--cream); font-weight: 700; }
+.paper_val { 
+    color: var(--text_muted); 
+    text-decoration: line-through;
+}
+.digital_val { color: var(--cream); font-weight: 500; }
 
 /* Benefit Cards */
 .benefit_card {
@@ -1040,26 +1050,28 @@ body {
 .benefit_tag {
     display: inline-block;
     background: var(--cream);
-    color: var(--text_muted);
+    color: #4B0F14;
     font-size: 11px;
     font-weight: 600;
     padding: 4px 12px;
     border-radius: 20px;
     margin-bottom: 14px;
     letter-spacing: 0.3px;
+    width: 100%;
 }
 .benefit_card h4 {
     font-family: "Cormorant Garamond", serif;
     font-size: 20px;
     font-weight: 600;
-    color: var(--text_dark);
+    color: #4B0F14;
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 .benefit_card p {
-    font-size: 13.5px;
-    color: var(--text_muted);
+    font-size: 14px;
+    color: #7D5F5A;
     line-height: 1.7;
-    margin: 0;
+    margin: 20px 0px 0px 0px;
 }
 
 
@@ -1118,7 +1130,7 @@ body {
     width: 46px;
     height: 46px;
     min-width: 46px;
-    background: var(--cream);
+    background: #4B0F14;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -1263,6 +1275,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    position: relative;
 }
 .testimonial_card:hover {
     transform: translateY(-5px);
@@ -1273,6 +1286,17 @@ body {
     justify-content: space-between;
     align-items: flex-start;
 }
+.testimonial_card::before{
+    content: url(../../assets/imgs/quote.svg);
+    position: absolute;
+    top: 14px; 
+    right: 50px;
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    z-index: 1;
+
+}
 .testi_stars { display: flex; gap: 3px; }
 .testi_stars i { color: var(--gold); font-size: 13px; }
 .testi_big_quote {
@@ -1281,25 +1305,28 @@ body {
     color: rgba(75,15,20,0.1);
     line-height: 0.6;
     font-style: italic;
+    display: none;
 }
 .testi_text {
     font-size: 13.5px;
     color: var(--text_mid);
     line-height: 1.75;
     margin: 0;
+    margin-top: 30px;
     flex: 1;
 }
 .testi_plan_badge {
     display: inline-block;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 400;
     padding: 5px 13px;
     border-radius: 20px;
     letter-spacing: 0.2px;
     max-width: max-content;
+    margin-top: 15px;
 }
 .premium_badge {
-    background: var(--burgundy_dark);
+    background: linear-gradient(180deg, #4B0F14 0%, #6A1A1F 100%);
     color: var(--cream);
 }
 .standard_badge {
@@ -1313,6 +1340,7 @@ body {
     gap: 12px;
     padding-top: 10px;
     border-top: 1px solid rgba(75,15,20,0.06);
+    margin-top: 15px;
 }
 .testi_author img {
     width: 44px;
@@ -1342,7 +1370,6 @@ body {
     gap: 0;
     margin-top: 60px;
     padding: 40px 20px;
-    background: var(--cream);
     border-radius: 16px;
     border: 1px solid rgba(75,15,20,0.07);
 }
@@ -1377,7 +1404,7 @@ body {
 
 /* ==================== PREVIEW SECTION ==================== */
 .preview_section {
-    background: var(--cream);
+    background: var(--white);
     padding: 90px 0;
     position: relative;
     overflow: hidden;
@@ -1398,7 +1425,7 @@ body {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--text_muted);
+    color: #4B0F14;
     text-transform: uppercase;
     margin-bottom: 16px;
 }
@@ -1413,13 +1440,14 @@ body {
     font-family: "Cormorant Garamond", serif;
     font-size: 46px;
     font-weight: 500;
-    color: var(--text_dark);
+    color: #4B0F14;
     line-height: 1.15;
     margin-bottom: 20px;
 }
 .preview_heading em {
     font-style: italic;
     color: var(--burgundy_dark);
+    font-weight: 600;
 }
 .preview_desc {
     font-size: 15px;
@@ -1473,11 +1501,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #FFFFFF00;
+    /* border: 1px solid #E8D5D0;
+    box-shadow: 0px 25px 50px -12px #00000040; */
+    max-width: 460px;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 20px;
+    padding: 30px 12px;
 }
 .preview_envelope {
     position: absolute;
     bottom: -20px;
-    left: 5%;
+    left: 0px;
     font-size: 80px;
     color: #F4A3A3;
     animation: floatEnvelope 4s ease-in-out infinite;
@@ -1486,8 +1522,8 @@ body {
 }
 .preview_plane {
     position: absolute;
-    top: 10%;
-    right: 5%;
+    top: 20px;
+    right: 0;
     font-size: 60px;
     color: #F4A3A3;
     transform: rotate(-30deg);
@@ -1505,11 +1541,7 @@ body {
 }
 
 .preview_phone_frame {
-    width: 260px;
-    background: #111;
-    border-radius: 40px;
-    border: 8px solid #1a1a1a;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.06);
+    width: 100%;
     overflow: hidden;
     position: relative;
     z-index: 2;
@@ -1589,7 +1621,7 @@ body {
 
 /* ==================== CTA SECTION ==================== */
 .cta_section {
-    background: linear-gradient(160deg, #4B0F14 0%, #5A1418 45%, #7A1E25 100%);
+    background: linear-gradient(180deg, #4B0F14 0%, #5A1418 50%, #6A1A1F 100%);
     padding: 100px 0;
     text-align: center;
     position: relative;
@@ -1629,6 +1661,7 @@ body {
     font-style: italic;
     color: var(--cream);
     display: block;
+    font-weight: 600;
 }
 .cta_subtext {
     font-size: 15px;
@@ -1690,14 +1723,21 @@ body {
 }
 
 
-/* ==================== RESPONSIVE ADDITIONS ==================== */
-@media (max-width: 991px) {
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
     .pricing_card_featured { transform: translateY(0); }
     .pricing_card_featured:hover { transform: translateY(-6px); }
     .testi_stat_divider { display: none; }
     .testi_stats_row { gap: 20px; }
     .preview_heading { font-size: 36px; }
     .cta_heading { font-size: 38px; }
+    .hero_heading { font-size: 40px; }
+    .how_works_heading { font-size: 40px; }
+    .section_heading { font-size: 36px; }
+    .how_works_steps_row { flex-direction: column; align-items: center; gap: 40px; }
+    .step_connector { display: none; }
+    .hero_phone_wrap { margin-top: 40px; }
+    .nav_right_group { margin-top: 16px; flex-wrap: wrap; justify-content: flex-start; }
 }
 @media (max-width: 768px) {
     .compare_card { padding: 24px 20px; }
@@ -1708,4 +1748,17 @@ body {
     .preview_plane { font-size: 44px; }
     .testi_stats_row { flex-direction: column; }
     .cta_btns { flex-direction: column; align-items: center; }
+    .hero_heading { font-size: 34px; }
+    .how_works_heading { font-size: 34px; }
+    .section_heading { font-size: 30px; }
+    .hero_btns { flex-direction: column; align-items: flex-start; }
+    .phone_frame { width: 200px; }
+    .invite_names { font-size: 30px; }
+    .hero_section { padding-top: 110px; }
+    .template_card_img_wrap { height: 200px; }
 }
+@media (max-width: 480px) {
+    .hero_badges { flex-direction: column; gap: 10px; }
+    .templates_cta_btn { font-size: 13px; padding: 12px 24px; }
+}
+
