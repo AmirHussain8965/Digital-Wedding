@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternally - Your Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+<body>
+
+    <header class="dashboard_header">
+        <div class="header_left">
+            <button id="menu_toggle" class="menu_toggle"><i class="bi bi-list"></i></button>
+            <a href="dashboard.html" class="logo_link"><i class="bi bi-suit-heart-fill"></i><span class="logo_text">Eternally</span></a>
+        </div>
+        <div class="header_actions">
+            <button class="btn_outline"><i class="bi bi-box-arrow-right"></i><span>Logout</span></button>
+        </div>
+    </header>
+
+    <div class="dashboard_wrapper">
+        <aside id="side_bar" class="side_bar">
+            <div class="user_info">
+                <div class="user_label">Logged in as</div>
+                <div class="user_name">amir</div>
+            </div>
+            <ul class="nav_menu">
+                <li class="nav_item"><a href="dashboard2.html" class="nav_link active"><i class="bi bi-grid-1x2"></i> Overview</a></li>
+                <li class="nav_item"><a href="invitation-screen.html" class="nav_link"><i class="bi bi-file-earmark-text"></i> Edit Invitation</a></li>
+                <li class="nav_item"><a href="guestpage.html" class="nav_link"><i class="bi bi-people"></i> Guests</a></li>
+                <li class="nav_item"><a href="settings.html" class="nav_link"><i class="bi bi-gear"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <main class="main_content">
+            <canvas id="animation_canvas"></canvas>
+            
+            <div class="content_inner" style="max-width: 900px; margin: 0 auto; text-align: left;" data-aos="fade-in">
+                
+                <div class="events_header_row">
+                    <div>
+                        <h1 class="welcome_title" style="margin-bottom: 4px; font-size: 2.5rem;">Your Events</h1>
+                        <p class="welcome_subtitle" style="margin: 0;">Manage all your wedding invitations in one place</p>
+                    </div>
+                    <button class="btn_primary_large" style="margin: 0; padding: 10px 20px;">
+                        <i class="bi bi-plus-lg"></i> Create New Event
+                    </button>
+                </div>
+
+                <div class="event_card_main">
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <span class="event_badge_active">Active</span>
+                            <div style="color: var(--text_muted); font-size: 0.95rem; margin-bottom: 8px;">
+                                <i class="bi bi-calendar3"></i> Thursday, February 26, 2026 at 21:00
+                            </div>
+                            <div style="color: var(--text_muted); font-size: 0.95rem;">
+                                The Garden Hall
+                            </div>
+                        </div>
+                        <div class="col-md-5 d-flex justify-content-end">
+                            <div class="event_stats_container">
+                                <div class="stat_col">
+                                    <div class="stat_num">0</div>
+                                    <div class="stat_label">Total</div>
+                                </div>
+                                <div class="stat_col">
+                                    <div class="stat_num"><span class="stat_dot dot_accepted"></span> 0</div>
+                                    <div class="stat_label">Accepted</div>
+                                </div>
+                                <div class="stat_col">
+                                    <div class="stat_num"><span class="stat_dot dot_pending"></span> 0</div>
+                                    <div class="stat_label">Pending</div>
+                                </div>
+                                <div class="stat_col">
+                                    <div class="stat_num"><span class="stat_dot dot_declined"></span> 0</div>
+                                    <div class="stat_label">Declined</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event_actions_row">
+                        <a href="dash2_preview.html" class="btn_action_sm"><i class="bi bi-box-arrow-up-right"></i> Preview</a>
+                        <button class="btn_action_sm"><i class="bi bi-file-earmark-text"></i> Edit Details</button>
+                        <button class="btn_action_sm"><i class="bi bi-people"></i> Manage Guests</button>
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--text_dark); margin-bottom: 20px;">Recent Responses</h3>
+                <div class="empty_responses_card">
+                    No responses yet. Share your invitation to start receiving RSVPs!
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

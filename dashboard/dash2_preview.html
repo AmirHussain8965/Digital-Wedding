@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Preview</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+<body class="preview_body">
+
+    <canvas id="animation_canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.6;"></canvas>
+
+    <div style="position: relative; z-index: 1;">
+        <nav class="preview_nav">
+            <a href="dashboard2.html" class="preview_back_btn">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+        </nav>
+
+        <section class="preview_hero">
+            <i class="bi bi-suit-heart" style="font-size: 1.5rem; margin-bottom: 10px;"></i>
+            <div class="preview_names">
+                Sarah<br>&<br>Asad
+            </div>
+            <div class="preview_seal_placeholder"></div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 10px;">Counting Down</div>
+            
+            <div class="countdown_wrapper">
+                <div class="countdown_box">
+                    <div class="cd_num">19</div>
+                    <div class="cd_label">Days</div>
+                </div>
+                <div class="countdown_box">
+                    <div class="cd_num">05</div>
+                    <div class="cd_label">Hours</div>
+                </div>
+                <div class="countdown_box">
+                    <div class="cd_num">58</div>
+                    <div class="cd_label">Minutes</div>
+                </div>
+                <div class="countdown_box">
+                    <div class="cd_num">20</div>
+                    <div class="cd_label">Seconds</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview_section" data-aos="fade-up">
+            <p class="preview_msg">
+                Together with our families, we joyfully invite you to celebrate our wedding day.
+            </p>
+            <div class="preview_divider"><i class="bi bi-suit-heart" style="font-size: 0.8rem;"></i></div>
+        </section>
+
+        <section class="preview_section" data-aos="fade-up">
+            <h2 class="preview_title">When & Where</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="preview_info_card">
+                        <i class="bi bi-calendar3 preview_icon"></i>
+                        <h3 class="preview_info_title">Date & Time</h3>
+                        <p class="preview_info_text">Thursday, February 26, 2026</p>
+                        <p class="preview_info_text">21:00</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="preview_info_card">
+                        <i class="bi bi-geo-alt preview_icon"></i>
+                        <h3 class="preview_info_title">Venue</h3>
+                        <p class="preview_info_text">The Garden Hall</p>
+                        <p class="preview_info_text">123 The Garden Hall Street London</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="preview_title" style="margin-top: 80px;">Location</h2>
+            <div class="preview_map_box">
+                <i class="bi bi-geo-alt preview_icon"></i>
+                <p class="preview_info_text mb-1" style="color: #2c3e50; font-weight: 500;">The Garden Hall</p>
+                <p class="preview_info_text">123 The Garden Hall Street London</p>
+                <a href="#" class="btn_dark_map">Open in Google Maps</a>
+            </div>
+
+            <div class="preview_divider"><i class="bi bi-suit-heart" style="font-size: 0.8rem;"></i></div>
+        </section>
+
+        <section class="preview_section pt-0" data-aos="fade-up">
+            <i class="bi bi-music-note-beamed preview_icon"></i>
+            <h2 class="preview_title mb-2">Our Song</h2>
+            <h3 class="preview_info_title" style="font-size: 1.8rem; margin-bottom: 8px;">Perfect</h3>
+            <p class="preview_info_text">Ed Shareen</p>
+        </section>
+
+        <footer class="preview_section pt-0 pb-5" style="border-top: 1px solid #e9ecef; margin-top: 40px; padding-top: 40px !important;">
+            <i class="bi bi-suit-heart" style="font-size: 1.2rem; color: #2c3e50;"></i>
+            <p class="footer_date">Thursday, February 26, 2026</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

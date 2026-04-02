@@ -150,3 +150,75 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     animate();
 });
+
+
+// --- Create Invitation Modal Logic ---
+    const uploadZone = document.getElementById('upload_zone');
+    const imageInput = document.getElementById('cover_image_input');
+    const previewWrapper = document.getElementById('image_preview_wrapper');
+    const previewImg = document.getElementById('preview_img');
+    const btnRemoveImg = document.getElementById('btn_remove_img');
+    const createForm = document.getElementById('create_invitation_form');
+    const btnCopyUrl = document.getElementById('btn_copy_url');
+    const inviteUrlInput = document.getElementById('invite_url');
+
+    // Trigger file input when clicking the upload zone
+    if (uploadZone && imageInput) {
+        uploadZone.addEventListener('click', () => {
+            imageInput.click();
+        });
+
+        // Handle file selection
+        imageInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    uploadZone.style.display = 'none';
+                    previewWrapper.style.display = 'block';
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    }
+
+    // Handle Remove Image button
+    if (btnRemoveImg) {
+        btnRemoveImg.addEventListener('click', () => {
+            imageInput.value = ''; // Clear the input
+            previewImg.src = '';
+            previewWrapper.style.display = 'none';
+            uploadZone.style.display = 'block';
+        });
+    }
+
+    // Handle Form Submission -> Show Success Modal
+    if (createForm) {
+        createForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent page reload
+            
+            // Hide Create Modal
+            const createModalEl = document.getElementById('create_invitation_modal');
+            const createModal = bootstrap.Modal.getInstance(createModalEl);
+            createModal.hide();
+
+            // Show Success Modal
+            const successModal = new bootstrap.Modal(document.getElementById('success_modal'));
+            successModal.show();
+        });
+    }
+
+    // Copy URL functionality
+    if (btnCopyUrl && inviteUrlInput) {
+        btnCopyUrl.addEventListener('click', () => {
+            inviteUrlInput.select();
+            document.execCommand('copy');
+            
+            // Quick visual feedback
+            const originalIcon = btnCopyUrl.innerHTML;
+            btnCopyUrl.innerHTML = '<i class="bi bi-check-lg text-success"></i>';
+            setTimeout(() => {
+                btnCopyUrl.innerHTML = originalIcon;
+            }, 2000);
+        });
+    }
