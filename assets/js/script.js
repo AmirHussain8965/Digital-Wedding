@@ -37,6 +37,8 @@ function showToast(msg) {
     }, 3500);
 }
 
+window.showToast = showToast;
+
 
 /* ==================== SCROLL PROGRESS BAR ==================== */
 const progressBar = document.createElement("div");
@@ -59,8 +61,6 @@ window.addEventListener("scroll", function () {
 const langToggleBtn = document.getElementById("lang_toggle_btn");
 const langDropdown  = document.getElementById("lang_dropdown");
 const langArrow     = langToggleBtn ? langToggleBtn.querySelector(".lang_arrow") : null;
-const langOptions   = document.querySelectorAll(".lang_option");
-
 if (langToggleBtn) {
     langToggleBtn.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -77,26 +77,7 @@ document.addEventListener("click", function () {
     }
 });
 
-/* Language option select */
-langOptions.forEach(function (option) {
-    option.addEventListener("click", function (e) {
-        e.preventDefault();
-        /* Remove active from all */
-        langOptions.forEach(function (o) { o.classList.remove("active"); });
-        this.classList.add("active");
-
-        /* Update button text */
-        const selectedLang = this.getAttribute("data-lang");
-        const btnSpan = langToggleBtn ? langToggleBtn.querySelector("span") : null;
-        if (btnSpan) btnSpan.textContent = selectedLang;
-
-        /* Close dropdown */
-        langDropdown.classList.remove("open");
-        if (langArrow) langArrow.classList.remove("open");
-
-        showToast("Language changed to " + this.textContent.trim());
-    });
-});
+/* Language option select: handled in assets/js/languages.js (localStorage + i18n) */
 
 
 /* ==================== ACTIVE NAV LINK ON SCROLL ==================== */
@@ -127,7 +108,11 @@ const templateDemoBtns = document.querySelectorAll(".template_demo_btn");
 
 templateDemoBtns.forEach(function (btn) {
     btn.addEventListener("click", function () {
-        showToast("Demo opening soon!");
+        var msg =
+            window.EternallyI18n && typeof window.EternallyI18n.toastDemoOpening === "function"
+                ? window.EternallyI18n.toastDemoOpening()
+                : "Demo opening soon!";
+        showToast(msg);
     });
 });
 
@@ -214,3 +199,136 @@ pricingCards.forEach(function (card) {
         pricingCards.forEach(function (c) { c.style.opacity = "1"; });
     });
 });
+
+
+/* ==================== ELEGANT WEDDING CANVAS ANIMATION ==================== */
+(function () {
+    const canvas = document.getElementById("animation_canvas");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let backgroundHearts = [];
+    let interactiveHearts = [];
+
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const headerColor = '#5d1a24';
+
+    /* --- Interaction Listeners --- */
+    if (!isTouchDevice) {
+        window.addEventListener("mousemove", function (event) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+            if (Math.random() > 0.4) {
+                interactiveHearts.push(new InteractiveHeart(mouseX, mouseY));
+            }
+        });
+    } else {
+        window.addEventListener("touchstart", function (event) {
+            const rect = canvas.getBoundingClientRect();
+            const touch = event.touches[0];
+            const touchX = touch.clientX - rect.left;
+            const touchY = touch.clientY - rect.top;
+            const burstCount = Math.floor(Math.random() * 3) + 4;
+            for (let i = 0; i < burstCount; i++) {
+                interactiveHearts.push(new InteractiveHeart(touchX, touchY));
+            }
+        });
+    }
+
+    /* --- Canvas Sizing --- */
+    function resizeCanvas() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    }
+    window.addEventListener("resize", resizeCanvas);
+    setTimeout(resizeCanvas, 100);
+
+    /* --- Heart Drawing Helper --- */
+    function drawHeart(ctx, x, y, width, height, color, opacity) {
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, opacity);
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        const topCurveHeight = height * 0.3;
+        ctx.moveTo(x, y + topCurveHeight);
+        ctx.bezierCurveTo(x, y, x - width / 2, y, x - width / 2, y + topCurveHeight);
+        ctx.bezierCurveTo(x - width / 2, y + (height + topCurveHeight) / 2, x, y + (height + topCurveHeight) / 2, x, y + height);
+        ctx.bezierCurveTo(x, y + (height + topCurveHeight) / 2, x + width / 2, y + (height + topCurveHeight) / 2, x + width / 2, y + topCurveHeight);
+        ctx.bezierCurveTo(x + width / 2, y, x, y, x, y + topCurveHeight);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+    }
+
+    /* --- Background Hearts --- */
+    function BackgroundHeart() {
+        this.x       = Math.random() * canvas.width;
+        this.y       = Math.random() * canvas.height;
+        this.size    = Math.random() * 12 + 8;
+        this.speedX  = Math.random() * 0.4 - 0.2;
+        this.speedY  = Math.random() * -0.4 - 0.2;
+        this.color   = headerColor;
+        this.opacity = Math.random() * 0.2 + 0.05;
+    }
+    BackgroundHeart.prototype.update = function () {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.y < -this.size)                this.y = canvas.height + this.size;
+        if (this.x > canvas.width + this.size)  this.x = -this.size;
+        if (this.x < -this.size)                this.x = canvas.width + this.size;
+    };
+    BackgroundHeart.prototype.draw = function () {
+        drawHeart(ctx, this.x, this.y, this.size, this.size, this.color, this.opacity);
+    };
+
+    /* --- Interactive Hearts --- */
+    function InteractiveHeart(x, y) {
+        this.x      = x;
+        this.y      = y;
+        this.size   = Math.random() * 8 + 6;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1.5;
+        this.color  = headerColor;
+        this.opacity = 0.6;
+        this.life   = 1;
+        this.decay  = Math.random() * 0.02 + 0.015;
+    }
+    InteractiveHeart.prototype.update = function () {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life    -= this.decay;
+        this.opacity  = Math.max(0, this.life * 0.6);
+    };
+    InteractiveHeart.prototype.draw = function () {
+        drawHeart(ctx, this.x, this.y, this.size, this.size, this.color, this.opacity);
+    };
+
+    /* --- Init & Animate --- */
+    function initParticles() {
+        backgroundHearts = [];
+        const count = Math.floor(canvas.width * 0.08);
+        for (let i = 0; i < count; i++) {
+            backgroundHearts.push(new BackgroundHeart());
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < backgroundHearts.length; i++) {
+            backgroundHearts[i].update();
+            backgroundHearts[i].draw();
+        }
+        for (let i = 0; i < interactiveHearts.length; i++) {
+            interactiveHearts[i].update();
+            interactiveHearts[i].draw();
+            if (interactiveHearts[i].life <= 0) {
+                interactiveHearts.splice(i, 1);
+                i--;
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
+}());

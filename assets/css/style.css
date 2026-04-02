@@ -31,7 +31,24 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-
+#animation_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+#animation_canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
 /* ==================== BACK TO TOP ==================== */
 #backToTop {
     position: fixed;
@@ -413,7 +430,6 @@ body {
 
 /* ==================== FEATURES SECTION ==================== */
 .features_section {
-    background: var(--white);
     padding: 90px 0;
     text-align: center;
 }
@@ -1404,7 +1420,6 @@ body {
 
 /* ==================== PREVIEW SECTION ==================== */
 .preview_section {
-    background: var(--white);
     padding: 90px 0;
     position: relative;
     overflow: hidden;

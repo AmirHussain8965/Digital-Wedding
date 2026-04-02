@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ==================== BASE & VARIABLES ==================== */
+:root {
+    --primary_dark: #5d1a24;
+    --primary_light: #f5ecee;
+    --bg_light: #fafafa;
+    --text_dark: #333;
+    --text_muted: #777;
+    --header_height: 72px;
+    --sidebar_width: 260px;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg_light);
+    color: var(--text_dark);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* ==================== CUSTOM SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary_dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a151c;
+}
+
+/* ==================== HEADER ==================== */
+.dashboard_header {
+    background-color: var(--primary_dark);
+    padding: 0 30px;
+    height: var(--header_height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu_toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.logo_link {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+}
+
+.logo_text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.header_actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn_light {
+    background-color: white;
+    color: var(--primary_dark);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn_light:hover {
+    background-color: #f0f0f0;
+}
+
+.btn_outline {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn_outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* ==================== LAYOUT & SIDEBAR ==================== */
+.dashboard_wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.side_bar {
+    width: var(--sidebar_width);
+    background-color: white;
+    border-right: 1px solid #eaeaea;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--header_height);
+    left: 0;
+    height: calc(100vh - var(--header_height));
+    overflow-y: auto;
+    z-index: 900;
+    transition: transform 0.3s ease;
+}
+
+.user_info {
+    padding: 0 16px 20px 16px;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 20px;
+}
+
+.user_label {
+    font-size: 0.8rem;
+    color: var(--text_muted);
+    margin-bottom: 4px;
+}
+
+.user_name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+    color: var(--primary_dark);
+    font-weight: 600;
+}
+
+.nav_menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav_item {
+    margin-bottom: 8px;
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--text_muted);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nav_link:hover {
+    background-color: var(--primary_light);
+    color: var(--primary_dark);
+}
+
+.nav_link.active {
+    background-color: var(--primary_dark);
+    color: white;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main_content {
+    margin-top: var(--header_height);
+    margin-left: var(--sidebar_width);
+    padding: 40px;
+    flex: 1;
+    position: relative;
+    min-height: calc(100vh - var(--header_height));
+    overflow-y: auto;
+}
+
+/* Canvas Background - Absolute to Main Content */
+#animation_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.content_inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome_icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--primary_light);
+    color: var(--primary_dark);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+}
+
+.welcome_title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3rem;
+    color: var(--text_dark);
+    margin-bottom: 16px;
+}
+
+.welcome_subtitle {
+    color: var(--text_muted);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.btn_primary_large {
+    background-color: var(--primary_dark);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 60px;
+}
+
+.btn_primary_large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(93, 26, 36, 0.2);
+    color: white;
+}
+
+/* ==================== FEATURE CARDS ==================== */
+.feature_card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 24px;
+    text-align: left;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card_icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg_light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--text_dark);
+    margin-bottom: 20px;
+}
+
+.card_title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--text_dark);
+}
+
+.card_text {
+    font-size: 0.9rem;
+    color: var(--text_muted);
+    line-height: 1.5;
+}
+
+/* ==================== SETTINGS PAGE ==================== */
+.settings_container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+.settings_header {
+    margin-bottom: 30px;
+}
+
+.settings_title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    color: var(--text_dark);
+    margin-bottom: 8px;
+}
+
+.settings_subtitle {
+    color: var(--text_muted);
+    font-size: 1rem;
+}
+
+.settings_card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.card_header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card_header .icon_circle {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg_light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--text_dark);
+}
+
+.card_header h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    margin: 0 0 4px 0;
+    color: var(--text_dark);
+}
+
+.card_header p {
+    font-size: 0.9rem;
+    color: var(--text_muted);
+    margin: 0;
+}
+
+.settings_form_group {
+    margin-bottom: 20px;
+}
+
+.settings_label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text_dark);
+    margin-bottom: 8px;
+}
+
+.settings_label i {
+    color: var(--text_muted);
+    font-size: 1rem;
+}
+
+.input_wrapper {
+    position: relative;
+}
+
+.settings_input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: "Inter", sans-serif;
+    transition: border-color 0.2s;
+    background-color: #fff;
+}
+
+.settings_input:focus {
+    outline: none;
+    border-color: var(--primary_dark);
+}
+
+.toggle_password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text_muted);
+    font-size: 1.1rem;
+}
+
+.toggle_password:hover {
+    color: var(--primary_dark);
+}
+
+.password_req {
+    background-color: #fff9e6;
+    border: 1px solid #ffecb3;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #b27b00;
+    margin-bottom: 20px;
+}
+
+.password_req strong {
+    font-weight: 600;
+}
+
+.btn_save {
+    background-color: var(--primary_dark);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn_save:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+.info_row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info_row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info_label {
+    color: var(--text_muted);
+    font-size: 0.95rem;
+}
+
+.info_value {
+    font-weight: 500;
+    color: var(--text_dark);
+    font-size: 0.95rem;
+}
+
+.text_success {
+    color: #198754;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .menu_toggle {
+        display: block;
+    }
+
+    .side_bar {
+        transform: translateX(-100%);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .side_bar.show {
+        transform: translateX(0);
+    }
+
+    .main_content {
+        margin-left: 0;
+        padding: 30px 16px;
+    }
+
+    .welcome_title {
+        font-size: 2.2rem;
+    }
+
+    .header_actions .btn_outline span {
+        display: none;
+    }
+}
