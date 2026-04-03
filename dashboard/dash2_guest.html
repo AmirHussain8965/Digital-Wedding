@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternally - Premium Guest Management</title>
+    <link rel="shortcut icon" href="https://via.placeholder.com/32" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="dashboard_header">
+        <div class="header_left">
+            <button id="menu_toggle" class="menu_toggle"><i class="bi bi-list"></i></button>
+            <a href="dashboard.html" class="logo_link"><i class="bi bi-suit-heart-fill"></i><span
+                    class="logo_text">Eternally</span></a>
+        </div>
+        <div class="header_actions">
+            <button class="btn_outline"><i class="bi bi-box-arrow-right"></i><span>Logout</span></button>
+        </div>
+    </header>
+
+    <div class="dashboard_wrapper">
+        <aside id="side_bar" class="side_bar">
+            <div class="user_info">
+                <div class="user_label">Logged in as</div>
+                <div class="user_name">amir</div>
+            </div>
+            <ul class="nav_menu">
+                <li class="nav_item"><a href="dashboard2.html" class="nav_link"><i class="bi bi-grid-1x2"></i>
+                        Overview</a></li>
+                <li class="nav_item"><a href="edit_invitation.html" class="nav_link"><i
+                            class="bi bi-file-earmark-text"></i> Edit Invitation</a></li>
+                <li class="nav_item"><a href="dash2_guest.html" class="nav_link active"><i class="bi bi-people"></i>
+                        Guests</a></li>
+                <li class="nav_item"><a href="settings.html" class="nav_link"><i class="bi bi-gear"></i> Settings</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main_content">
+            <canvas id="animation_canvas"></canvas>
+
+            <div class="content_inner" style="max-width: 1000px; margin: 0 auto; text-align: left;" data-aos="fade-in">
+
+                <h1 class="welcome_title" style="margin-bottom: 4px; font-size: 2.2rem;">Guest Management</h1>
+                <p class="welcome_subtitle mb-5">Select an event to manage guests and share invitations</p>
+
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 16px;">Select
+                    Event</h3>
+
+                <div class="event_select_card">
+                    <div class="event_select_header">
+                        <span style="color: var(--text_muted);"><i class="bi bi-calendar3"></i> Feb 26, 2026</span>
+                        <span class="badge_selected">Selected</span>
+                    </div>
+                    <hr style="border-color: #eaeaea; margin: 16px 0;">
+                    <div class="event_stats_container" style="justify-content: space-between;">
+                        <div class="stat_col">
+                            <div class="stat_num" style="font-size: 0.9rem;" id="header_stat_total">0</div>
+                            <div class="stat_label" style="font-size: 0.7rem;">Total</div>
+                        </div>
+                        <div class="stat_col">
+                            <div class="stat_num" style="font-size: 0.9rem;"><span class="stat_dot dot_accepted"></span>
+                                <span id="header_stat_acc">0</span>
+                            </div>
+                            <div class="stat_label" style="font-size: 0.7rem;">Accepted</div>
+                        </div>
+                        <div class="stat_col">
+                            <div class="stat_num" style="font-size: 0.9rem;"><span class="stat_dot dot_pending"></span>
+                                <span id="header_stat_pen">0</span>
+                            </div>
+                            <div class="stat_label" style="font-size: 0.7rem;">Pending</div>
+                        </div>
+                        <div class="stat_col">
+                            <div class="stat_num" style="font-size: 0.9rem;"><span class="stat_dot dot_declined"></span>
+                                0</div>
+                            <div class="stat_label" style="font-size: 0.7rem;">Declined</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 4px;">-
+                            Guest List</h3>
+                        <p class="welcome_subtitle" style="margin: 0;">Manage guests and share private invitation links
+                        </p>
+                    </div>
+                    <button class="btn_primary_large m-0 py-2 px-3" data-bs-toggle="modal"
+                        data-bs-target="#add_guest_modal">
+                        <i class="bi bi-plus-lg"></i> Add Guest
+                    </button>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="guest_stat_card">
+                            <div class="guest_stat_label">Total Guests</div>
+                            <h4 class="guest_stat_number" id="main_stat_total">0</h4>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="guest_stat_card">
+                            <div class="guest_stat_label">Accepted</div>
+                            <h4 class="guest_stat_number" id="main_stat_acc">0</h4>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="guest_stat_card">
+                            <div class="guest_stat_label">Pending</div>
+                            <h4 class="guest_stat_number" id="main_stat_pen">0</h4>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="guest_stat_card">
+                            <div class="guest_stat_label">Declined</div>
+                            <h4 class="guest_stat_number">0</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="empty_state_wrapper" class="empty_responses_card py-5">
+                    <div class="welcome_icon mx-auto mb-3"
+                        style="background: transparent; color: var(--text_muted); border: 1px dashed #ccc; width: 72px; height: 72px;">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h2 class="modal_title mb-2" style="font-size: 1.8rem;">No Guests Yet</h2>
+                    <p class="modal_subtitle mb-4">Start building your guest list for the wedding</p>
+                    <button class="btn_primary_large mx-auto m-0" data-bs-toggle="modal"
+                        data-bs-target="#add_guest_modal">
+                        <i class="bi bi-plus-lg"></i> Add Your First Guest
+                    </button>
+                </div>
+
+                <div id="populated_state_wrapper" class="guest_table_wrapper d-none">
+                    <div class="table-responsive">
+                        <table class="guest_table">
+                            <thead>
+                                <tr>
+                                    <th>Guest Details</th>
+                                    <th>RSVP Status</th>
+                                    <th>Attendees</th>
+                                    <th>Message</th>
+                                    <th>Private Link</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 500;">Ricky</td>
+                                    <td><span class="status_badge status_pending"><i class="bi bi-clock"></i>
+                                            Pending</span></td>
+                                    <td>-</td>
+                                    <td style="color: var(--text_muted); font-style: italic; font-size: 0.85rem;">No
+                                        message</td>
+                                    <td>
+                                        <div class="d-flex gap-2">
+                                            <span class="btn_private_link"><i class="bi bi-shield-check"></i> Private
+                                                Link</span>
+                                            <a href="#" class="btn_view_link" data-bs-toggle="modal"
+                                                data-bs-target="#share_link_modal">
+                                                <i class="bi bi-box-arrow-up-right"></i> View Link
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn_icon_action"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn_icon_action btn_icon_delete"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 500;">Jack</td>
+                                    <td><span class="status_badge status_going"><i class="bi bi-check-circle-fill"></i>
+                                            Going</span></td>
+                                    <td>-</td>
+                                    <td style="color: var(--text_muted); font-style: italic; font-size: 0.85rem;">No
+                                        message</td>
+                                    <td>
+                                        <div class="d-flex gap-2">
+                                            <span class="btn_private_link"><i class="bi bi-shield-check"></i> Private
+                                                Link</span>
+                                            <a href="#" class="btn_view_link" data-bs-toggle="modal"
+                                                data-bs-target="#share_link_modal">
+                                                <i class="bi bi-box-arrow-up-right"></i> View Link
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn_icon_action"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn_icon_action btn_icon_delete"><i
+                                                    class="bi bi-trash3"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="modal fade" id="add_guest_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom_modal_content">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <h2 class="modal_title mb-2">Add New Guest</h2>
+                    <p class="modal_subtitle mb-4">Add a guest to the wedding invitation.</p>
+
+                    <form id="add_guest_form">
+                        <div class="form_group mb-3">
+                            <label class="modal_label">Guest Name</label>
+                            <input type="text" class="modal_input" placeholder="John Doe" required id="new_guest_name">
+                        </div>
+                        <div class="form_group mb-4">
+                            <label class="modal_label">Email <span
+                                    style="color: var(--text_muted); font-weight: 400;">(Optional)</span></label>
+                            <input type="email" class="modal_input" placeholder="john@example.com">
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn_primary_large m-0 px-4 py-2">Add Guest</button>
+                            <button type="button" class="btn_outline m-0 px-4 py-2"
+                                style="color: var(--text_dark); border-color: #ddd;"
+                                data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="share_link_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom_modal_content">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <h2 class="modal_title mb-2">Share Invitation Link</h2>
+                    <p class="modal_subtitle mb-4">Share <span id="share_name_display">Ricky</span>'s private invitation
+                        link</p>
+
+                    <div class="share_alert_box">
+                        <i class="bi bi-shield-check"></i>
+                        <div class="share_alert_text">
+                            <h6>Private & Secure Link</h6>
+                            <p>This unique link is exclusively for <span id="share_name_display_2">Ricky</span>. They
+                                can RSVP using this personalized invitation.</p>
+                        </div>
+                    </div>
+
+                    <div class="form_group mb-4">
+                        <label class="modal_label">Invitation Link</label>
+                        <div class="copy_input_wrapper">
+                            <input type="text" class="modal_input bg-light" id="private_invite_url"
+                                value="https://eternally.site/invitation/ricky-xyz123" readonly>
+                            <button type="button" class="btn_copy" id="btn_copy_private_url"
+                                style="border: 1px solid #ccc; background: #fff; padding: 6px 10px; border-radius: 6px; right: 5px;"><i
+                                    class="bi bi-files"></i></button>
+                        </div>
+                    </div>
+
+                    <label class="modal_label mb-3">Share via</label>
+                    <div class="social_btn_grid">
+                        <button class="btn_social_share"><i class="bi bi-whatsapp"></i> WhatsApp</button>
+                        <button class="btn_social_share"><i class="bi bi-envelope"></i> Email</button>
+                        <button class="btn_social_share"><i class="bi bi-facebook"></i> Facebook</button>
+                        <button class="btn_social_share"><i class="bi bi-twitter-x"></i> Twitter</button>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn_outline m-0 px-4 py-2"
+                            style="color: var(--text_dark); border-color: #ddd;" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // --- Application Flow Logic ---
+        const addGuestForm = document.getElementById('add_guest_form');
+        const emptyState = document.getElementById('empty_state_wrapper');
+        const populatedState = document.getElementById('populated_state_wrapper');
+        const guestNameInput = document.getElementById('new_guest_name');
+
+        // Modals
+        const addGuestModalEl = document.getElementById('add_guest_modal');
+        const shareLinkModalEl = document.getElementById('share_link_modal');
+
+        addGuestForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Stop normal form submission
+
+            // 1. Get the name the user typed
+            const guestName = guestNameInput.value || 'Ricky';
+
+            // 2. Update the Share modal text with the new name
+            document.getElementById('share_name_display').innerText = guestName;
+            document.getElementById('share_name_display_2').innerText = guestName;
+
+            // 3. Hide the "Add Guest" modal
+            const addModal = bootstrap.Modal.getInstance(addGuestModalEl);
+            addModal.hide();
+
+            // 4. Show the "Share Link" modal
+            const shareModal = new bootstrap.Modal(shareLinkModalEl);
+            shareModal.show();
+
+            // 5. Simulate updating the dashboard data behind the scenes
+            setTimeout(() => {
+                // Hide empty state, show table
+                emptyState.classList.add('d-none');
+                populatedState.classList.remove('d-none');
+                populatedState.classList.add('animate__animated', 'animate__fadeIn'); // Optional smooth fade
+
+                // Update the stats to match the screenshot numbers exactly
+                const statUpdates = {
+                    'header_stat_total': '2', 'header_stat_acc': '0', 'header_stat_pen': '2',
+                    'main_stat_total': '2', 'main_stat_acc': '0', 'main_stat_pen': '2'
+                };
+
+                for (const [id, value] of Object.entries(statUpdates)) {
+                    document.getElementById(id).innerText = value;
+                }
+
+            }, 400); // Slight delay makes it feel like it's loading data
+        });
+
+        // Copy Private Link logic
+        const btnCopyPrivateUrl = document.getElementById('btn_copy_private_url');
+        if (btnCopyPrivateUrl) {
+            btnCopyPrivateUrl.addEventListener('click', () => {
+                const urlInput = document.getElementById('private_invite_url');
+                urlInput.select();
+                document.execCommand('copy');
+
+                const originalIcon = btnCopyPrivateUrl.innerHTML;
+                btnCopyPrivateUrl.innerHTML = '<i class="bi bi-check-lg text-success"></i>';
+                setTimeout(() => { btnCopyPrivateUrl.innerHTML = originalIcon; }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

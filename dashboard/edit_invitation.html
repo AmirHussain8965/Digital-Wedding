@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternally - Edit Invitation</title>
+    <link rel="shortcut icon" href="https://via.placeholder.com/32" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+<body>
+
+    <header class="dashboard_header">
+        <div class="header_left">
+            <button id="menu_toggle" class="menu_toggle"><i class="bi bi-list"></i></button>
+            <a href="dashboard.html" class="logo_link"><i class="bi bi-suit-heart-fill"></i><span class="logo_text">Eternally</span></a>
+        </div>
+        <div class="header_actions">
+            <button class="btn_outline"><i class="bi bi-box-arrow-right"></i><span>Logout</span></button>
+        </div>
+    </header>
+
+    <div class="dashboard_wrapper">
+        <aside id="side_bar" class="side_bar">
+            <div class="user_info">
+                <div class="user_label">Logged in as</div>
+                <div class="user_name">amir</div>
+            </div>
+            <ul class="nav_menu">
+                <li class="nav_item"><a href="dashboard2.html" class="nav_link"><i class="bi bi-grid-1x2"></i> Overview</a></li>
+                <li class="nav_item"><a href="edit_invitation.html" class="nav_link active"><i class="bi bi-file-earmark-text"></i> Edit Invitation</a></li>
+                <li class="nav_item"><a href="dash2_guest.html" class="nav_link"><i class="bi bi-people"></i> Guests</a></li>
+                <li class="nav_item"><a href="settings.html" class="nav_link"><i class="bi bi-gear"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <main class="main_content">
+            <canvas id="animation_canvas"></canvas>
+            
+            <div class="content_inner" style="max-width: 800px; margin: 0 auto; text-align: left;" data-aos="fade-in">
+                
+                <div class="edit_page_header">
+                    <div>
+                        <h1 class="edit_page_title">Edit Your Invitation</h1>
+                        <p class="edit_page_subtitle">Customize your wedding invitation details</p>
+                    </div>
+                    <button class="btn_primary_large" style="margin: 0; padding: 10px 20px;">
+                        <i class="bi bi-plus-lg"></i> New Invitation
+                    </button>
+                </div>
+
+                <form id="edit_invitation_form">
+                    
+                    <div class="edit_form_section">
+                        <label class="edit_label"><i class="bi bi-upload"></i> Cover Image</label>
+                        
+                        <div class="cover_img_wrapper">
+                            <img src="/assets/imgs/invitation.jpg" alt="Cover Image">
+                            
+                            <div class="cover_img_overlay">
+                                <button type="button" class="btn_overlay">Edit</button>
+                                <button type="button" class="btn_overlay">Preview</button>
+                                <button type="button" class="btn_overlay btn_overlay_danger">Delete Image</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edit_form_section">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="edit_form_group">
+                                    <label class="edit_label">Bride's Name</label>
+                                    <input type="text" class="edit_input" value="Sarah">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edit_form_group">
+                                    <label class="edit_label">Groom's Name</label>
+                                    <input type="text" class="edit_input" value="Asad">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit_form_group">
+                            <label class="edit_label">Display Name</label>
+                            <input type="text" class="edit_input" placeholder="e.g., Sarah & Michael">
+                            <span class="edit_helper">This is how your names will appear on the invitation</span>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="edit_form_group">
+                                    <label class="edit_label">Wedding Date</label>
+                                    <input type="date" class="edit_input">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edit_form_group">
+                                    <label class="edit_label">Time</label>
+                                    <input type="time" class="edit_input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit_form_group">
+                            <label class="edit_label">Venue Name</label>
+                            <input type="text" class="edit_input" value="The Garden Hall">
+                        </div>
+
+                        <div class="edit_form_group">
+                            <label class="edit_label">Venue Address</label>
+                            <input type="text" class="edit_input">
+                            <span class="edit_helper">This address will be used for the map location</span>
+                        </div>
+
+                        <div class="edit_form_group">
+                            <label class="edit_label">Invitation Message</label>
+                            <textarea class="edit_input" rows="3"></textarea>
+                            <span class="edit_helper">A warm message to your guests</span>
+                        </div>
+                    </div>
+
+                    <div class="edit_form_section">
+                        <h2 class="edit_form_section_title">Optional Enhancements</h2>
+                        
+                        <div class="row g-3">
+                            <div class="col-12"><label class="edit_label mb-0"><i class="bi bi-music-note-beamed"></i> Our Song</label></div>
+                            <div class="col-md-6 mt-1">
+                                <div class="edit_form_group">
+                                    <label class="edit_label" style="font-size: 0.75rem;">Song Title</label>
+                                    <input type="text" class="edit_input" value="Perfect">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <div class="edit_form_group">
+                                    <label class="edit_label" style="font-size: 0.75rem;">Artist</label>
+                                    <input type="text" class="edit_input" value="Ed Shareen">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-0">
+                                <span class="edit_helper" style="margin-top: -10px; margin-bottom: 10px;">Share the special song that means the most to you both</span>
+                            </div>
+                        </div>
+
+                        <div class="edit_form_group">
+                            <label class="edit_label"><i class="bi bi-palette"></i> Theme Color</label>
+                            <select class="edit_input">
+                                <option value="dusty_blue" selected>Dusty Blue (Modern)</option>
+                                <option value="ivory">Ivory</option>
+                                <option value="blush">Blush Pink</option>
+                                <option value="sage">Sage Green</option>
+                            </select>
+                            <span class="edit_helper">Choose a color theme for your invitation</span>
+                        </div>
+
+                        <div class="edit_form_group">
+                            <label class="edit_label">Cover Image URL (Optional)</label>
+                            <input type="text" class="edit_input bg-light" value="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." readonly>
+                            <span class="edit_helper">Add a beautiful cover image for your invitation</span>
+                        </div>
+                    </div>
+
+                    <div class="edit_actions pb-5">
+                        <button type="submit" class="btn_primary_large" style="margin: 0; padding: 10px 24px;">Save Changes</button>
+                        <button type="button" class="btn_outline" style="margin: 0; color: var(--text_dark); border-color: #ddd; padding: 10px 24px;">Reset</button>
+                        <button type="button" class="btn_danger_outline" style="margin: 0;">Delete Invitation</button>
+                    </div>
+
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal fade full_image_modal" id="saved_preview_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content position-relative">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <img src="/assets/imgs/invitation.jpg" alt="Emerald Theme Preview" class="full_image_preview">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Trigger Success Modal on Save Changes
+        document.getElementById('edit_invitation_form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page reload
+            const previewModal = new bootstrap.Modal(document.getElementById('saved_preview_modal'));
+            previewModal.show();
+        });
+    </script>
+</body>
+</html>

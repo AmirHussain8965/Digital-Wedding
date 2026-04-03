@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+/* ==================== BASE & VARIABLES ==================== */
+:root {
+    --bg-dark: #16130f; /* Deepest brown/black */
+    --bg-card: #241d16; /* Slightly lighter for cards */
+    --gold: #cca660;    /* Muted luxury gold */
+    --gold-dim: rgba(204, 166, 96, 0.3);
+    --text-main: #e2d9c8;
+    --text-muted: #8b8070;
+    --border-color: #382d22;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+.serif {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+}
+
+/* ==================== DEMO BANNER ==================== */
+.demo_banner {
+    background: rgba(0,0,0,0.6);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+}
+
+/* ==================== 1. HERO SECTION ==================== */
+.t_hero {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero_bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1600&auto=format&fit=crop') center/cover;
+    z-index: 1;
+}
+
+.hero_overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(22, 19, 15, 0.3), rgba(22, 19, 15, 1) 95%);
+    z-index: 2;
+}
+
+#premium_canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero_content_wrapper {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+}
+
+.hero_icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(204, 166, 96, 0.15);
+    border: 1px solid var(--gold-dim);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+}
+
+.hero_names {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.hero_subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Hero Countdown */
+.cd_box {
+    background: rgba(36, 29, 22, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 75px;
+    height: 85px;
+    backdrop-filter: blur(5px);
+}
+
+.cd_num {
+    font-size: 2rem;
+    color: var(--gold);
+    line-height: 1.1;
+}
+
+.cd_label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+/* ==================== GLOBAL TYPOGRAPHY & DIVIDERS ==================== */
+.section_title {
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: var(--border-color);
+}
+
+.divider i {
+    color: var(--border-color);
+    font-size: 0.8rem;
+}
+
+/* ==================== CARDS & SCHEDULE ==================== */
+.card_elegant {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px 20px;
+    transition: border-color 0.3s;
+    height: 100%;
+}
+
+.card_elegant:hover { border-color: var(--gold-dim); }
+
+.schedule_item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 25px;
+}
+
+.schedule_icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(204, 166, 96, 0.05);
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+/* ==================== BUTTONS & FORMS (Bootstrap Overrides) ==================== */
+.btn_gold {
+    background: var(--gold);
+    color: var(--bg-dark);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.btn_gold:hover { opacity: 0.9; color: var(--bg-dark); }
+
+.btn_outline_gold {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--border-color);
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: border-color 0.3s;
+}
+
+.btn_outline_gold:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Override Bootstrap Form Controls for Dark Theme */
+.form-label {
+    color: var(--gold);
+    font-size: 0.85rem;
+}
+
+.form-control {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 15px;
+}
+
+.form-control:focus {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    border-color: var(--gold-dim);
+    box-shadow: 0 0 0 0.25rem rgba(204, 166, 96, 0.1);
+}
+
+.form-control::placeholder {
+    color: #554d42;
+}

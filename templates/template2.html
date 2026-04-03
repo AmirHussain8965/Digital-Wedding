@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam & Sofia - Wedding Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/template2.css">
+</head>
+<body>
+
+    <div class="demo_banner py-2 text-center">
+        <strong>Demo Mode</strong> — This is a preview. Create your own invitation!
+    </div>
+
+    <section class="t_hero d-flex flex-column">
+        <div class="hero_bg"></div>
+        <div class="hero_overlay"></div>
+        
+        <canvas id="rose_canvas"></canvas>
+        
+        <div class="hero_content_wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="hero_icon mb-3"><i class="bi bi-suit-heart-fill"></i></div>
+            <h1 class="hero_names serif text-center px-3">Sam & Sofia</h1>
+            <p class="hero_subtitle serif">Together with their families</p>
+        </div>
+
+        <div class="pb-5 z-index-4 position-relative text-center" data-aos="fade-up" data-aos-delay="500">
+            <h2 class="serif" style="color: var(--accent); font-size: 2rem;">Counting Down...</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;" class="mb-4">Friday, October 10, 2026</p>
+            
+            <div class="d-flex justify-content-center gap-3">
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_days">00</span><span class="cd_label">Days</span></div>
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_hours">00</span><span class="cd_label">Hours</span></div>
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_minutes">00</span><span class="cd_label">Mins</span></div>
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_seconds">00</span><span class="cd_label">Secs</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 mt-5 text-center" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h2 class="serif mb-4" style="font-size: 1.8rem; color: var(--text-main);">
+                    Dear <span style="color: var(--text-muted);">Dear Beloved Guest,</span>
+                </h2>
+                <p style="color: var(--text-muted); line-height: 1.8;">
+                    With hearts full of passion, we invite you to share in our dramatic love story. An unforgettable evening awaits — where crimson roses meet candlelight and two souls become one under the Tuscan stars.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+
+    <section class="container py-4 text-center" data-aos="fade-up">
+        <h2 class="section_title serif mb-5">When & Where</h2>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-5 col-lg-4">
+                <div class="card_elegant">
+                    <i class="bi bi-calendar3 fs-2 mb-3 d-block" style="color: var(--accent);"></i>
+                    <h3 class="serif mb-3" style="color: var(--accent); font-size: 1.5rem;">Date & Time</h3>
+                    <p class="mb-2" style="color: var(--text-muted); font-size: 0.9rem;">Friday, October 10, 2026</p>
+                    <p class="mb-0 fw-medium" style="color: var(--text-main);">6:00 PM</p>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <div class="card_elegant">
+                    <i class="bi bi-geo-alt fs-2 mb-3 d-block" style="color: var(--accent);"></i>
+                    <h3 class="serif mb-3" style="color: var(--accent); font-size: 1.5rem;">Venue</h3>
+                    <p class="mb-2 fw-medium" style="color: var(--text-main);">Teatro della Rosa</p>
+                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">15 Via Roma, Florence, Italy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+
+    <section class="container py-4 text-center" data-aos="fade-up">
+        <h2 class="section_title serif mb-5">Schedule of Events</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 d-flex flex-column gap-3">
+                
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="100">
+                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-clock"></i></div>
+                    <div class="flex-grow-1">
+                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">Doors Open</h4>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Prosecco welcome in the Theatre Lobby</p>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">5:30 PM</div>
+                </div>
+
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="200">
+                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-suit-heart"></i></div>
+                    <div class="flex-grow-1">
+                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">The Ceremony</h4>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Vows on the grand stage</p>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">6:00 PM</div>
+                </div>
+
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="300">
+                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-stars"></i></div>
+                    <div class="flex-grow-1">
+                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">Aperitivo Hour</h4>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Italian aperitifs & antipasti</p>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">7:00 PM</div>
+                </div>
+
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="400">
+                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-music-note-beamed"></i></div>
+                    <div class="flex-grow-1">
+                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">La Festa</h4>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Dinner, toasts & live band</p>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">8:00 PM</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+
+    <section class="container py-4 text-center" data-aos="fade-up">
+        <h2 class="section_title serif mb-4">Location</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card_elegant py-5">
+                    <i class="bi bi-geo-alt d-block mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
+                    <h3 class="serif mb-2" style="font-size: 1.8rem; color: var(--accent);">Teatro della Rosa</h3>
+                    <p class="mb-4" style="color: var(--text-muted);">15 Via Roma, Florence, Italy</p>
+                    <a href="#" class="btn_accent">Open in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+
+    <section class="container text-center py-4" data-aos="fade-up">
+        <i class="bi bi-gift fs-2 d-block mb-3" style="color: var(--accent);"></i>
+        <h2 class="section_title serif mb-3">Gift Registry</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <p style="color: var(--text-muted); margin-bottom: 30px;">
+                    Your presence completes our celebration. If you wish to bless us with a gift, please consider:
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn_accent">Amazon Registry</button>
+                    <button class="btn_accent">Pottery Barn</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+
+    <section class="container text-center py-4" data-aos="fade-up">
+        <i class="bi bi-music-note-beamed fs-2 d-block mb-3" style="color: var(--accent);"></i>
+        <h2 class="section_title serif mb-2">Our Song</h2>
+        <p class="serif fst-italic mb-1" style="font-size: 1.4rem; color: var(--text-main);">Con Te Partirò</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Andrea Bocelli</p>
+    </section>
+
+    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+
+    <section class="container py-5 text-center mb-5" data-aos="fade-up">
+        <h2 class="section_title serif mb-5">RSVP</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-5">
+                <div class="card_elegant text-start p-4 p-md-5">
+                    <div class="d-flex gap-3 mb-4">
+                        <button class="btn_accent flex-fill py-3">Joyfully Accept</button>
+                        <button class="btn_outline_accent flex-fill py-3">Regretfully Decline</button>
+                    </div>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label class="form-label">Number of guests attending</label>
+                            <input type="number" class="form-control" value="1" min="1" max="10">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Message (optional)</label>
+                            <textarea class="form-control" rows="4" placeholder="Write a message to the couple..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn_accent w-100 py-3 mt-2">Submit RSVP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 border-top" style="border-color: var(--border-color) !important;">
+        <h3 class="serif mb-2" style="color: var(--accent); font-size: 1.8rem;">Sam & Sofia</h3>
+        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Friday, October 10, 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/template2.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

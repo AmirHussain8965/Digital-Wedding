@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+/* ==================== BASE & VARIABLES (Template 2) ==================== */
+:root {
+    --bg-dark: #260808;     /* Deep crimson/burgundy background */
+    --bg-card: #3a0d0d;     /* Lighter crimson for cards */
+    --accent: #d9534f;      /* Soft coral/red for accents and text */
+    --accent-dim: rgba(217, 83, 79, 0.15);
+    --text-main: #f5e6e6;   /* Soft off-white */
+    --text-muted: #bda2a2;  /* Muted pinkish-gray */
+    --border-color: #541616;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+.serif {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+}
+
+/* ==================== DEMO BANNER ==================== */
+.demo_banner {
+    background: rgba(0,0,0,0.6);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ==================== 1. HERO SECTION ==================== */
+.t_hero {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero_bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Beach & Red Roses Background */
+    background: url('https://images.unsplash.com/photo-1583524505974-6facd53f4597?q=80&w=1600&auto=format&fit=crop') center/cover;
+    z-index: 1;
+}
+
+.hero_overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Dark gradient blending into the burgundy background */
+    background: linear-gradient(to bottom, rgba(38, 8, 8, 0.5), rgba(38, 8, 8, 1) 95%);
+    z-index: 2;
+}
+
+#rose_canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero_content_wrapper {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    padding-top: 15vh;
+}
+
+.hero_icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    border: 1px solid rgba(217, 83, 79, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+}
+
+.hero_names {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.hero_subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Countdown */
+.cd_box {
+    background: rgba(58, 13, 13, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 75px;
+    height: 85px;
+    backdrop-filter: blur(5px);
+}
+
+.cd_num {
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1.1;
+}
+
+.cd_label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+/* ==================== GLOBAL TYPOGRAPHY & DIVIDERS ==================== */
+.section_title {
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 60px auto;
+    max-width: 300px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: var(--border-color);
+}
+
+.divider i {
+    color: var(--border-color);
+    font-size: 0.8rem;
+}
+
+/* ==================== CARDS & SCHEDULE ==================== */
+.card_elegant {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px 20px;
+    transition: border-color 0.3s ease;
+    height: 100%;
+}
+
+.card_elegant:hover { border-color: rgba(217, 83, 79, 0.4); }
+
+.schedule_item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.schedule_item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(217, 83, 79, 0.4);
+}
+
+.schedule_icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    border: 1px solid rgba(217, 83, 79, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* ==================== BUTTONS & FORMS ==================== */
+.btn_accent {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn_accent:hover { background: #c9302c; color: #fff; }
+
+.btn_outline_accent {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn_outline_accent:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Override Bootstrap Form Controls */
+.form-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 14px 15px;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: #886d6d;
+}
