@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+/* ==================== BASE & VARIABLES (Template 3) ==================== */
+:root {
+    --bg-main: #fcf9f5;      /* Soft cream/off-white background */
+    --bg-card: #ffffff;      /* Pure white for cards */
+    --accent: #b56a7f;       /* Dusty rose / mauve pink */
+    --accent-light: #faeaed; /* Very pale pink for countdown boxes */
+    --text-dark: #4a3b42;    /* Deep brownish-purple for high contrast */
+    --text-muted: #7a6f72;   /* Soft grayish-pink for descriptions */
+    --border-color: #f0e6e8; /* Very faint pinkish-gray border */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+.serif {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+}
+
+/* ==================== DEMO BANNER ==================== */
+.demo_banner {
+    background: #ffffff;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.demo_banner strong {
+    color: var(--text-dark);
+}
+
+/* ==================== 1. HERO SECTION ==================== */
+.t_hero {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg-main);
+}
+
+.hero_bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Floral arch background */
+    background: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1600&auto=format&fit=crop') center/cover;
+    z-index: 1;
+}
+
+.hero_overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Light gradient fading into the cream background */
+    background: linear-gradient(to bottom, rgba(252, 249, 245, 0.3) 0%, rgba(252, 249, 245, 0.8) 70%, rgba(252, 249, 245, 1) 100%);
+    z-index: 2;
+}
+
+#white_flower_canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero_content_wrapper {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    padding-top: 15vh;
+}
+
+.hero_icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.hero_names {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+.hero_subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Countdown */
+.cd_box {
+    background: var(--accent-light);
+    border: 1px solid rgba(181, 106, 127, 0.15);
+    border-radius: 8px;
+    width: 75px;
+    height: 85px;
+}
+
+.cd_num {
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1.1;
+}
+
+.cd_label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+/* ==================== GLOBAL TYPOGRAPHY & DIVIDERS ==================== */
+.section_title {
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 60px auto;
+    max-width: 300px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: var(--border-color);
+}
+
+.divider i {
+    color: rgba(181, 106, 127, 0.4);
+    font-size: 0.8rem;
+}
+
+/* ==================== CARDS & SCHEDULE ==================== */
+.card_elegant {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card_elegant:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+}
+
+.schedule_item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease;
+}
+
+.schedule_item:hover {
+    transform: translateX(5px);
+}
+
+.schedule_icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* ==================== BUTTONS & FORMS ==================== */
+.btn_accent {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn_accent:hover { background: #9c5565; color: #fff; }
+
+.btn_outline_accent {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: border-color 0.3s;
+}
+
+.btn_outline_accent:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Override Bootstrap Form Controls */
+.form-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: #fffcf8; /* Very pale cream input */
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    padding: 14px 15px;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.25rem rgba(181, 106, 127, 0.1);
+}
+
+.form-control::placeholder {
+    color: #b5aab0;
+}
