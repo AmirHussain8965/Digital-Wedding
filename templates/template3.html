@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,132 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/template3.css">
+    <link rel="stylesheet" href="../assets/css/template3.css">
 </head>
+
 <body>
+
+    <!-- ╔══════════════════════════════════════╗ -->
+    <!-- ║  STAGE 1 — ENVELOPE OPENING INTRO  ║ -->
+    <!-- ╚══════════════════════════════════════╝ -->
+    <div class="stage_envelope" id="stage_envelope">
+
+        <!-- ambient gold dust -->
+        <div class="env_dust" id="env_dust"></div>
+
+        <!-- radial light rays behind envelope -->
+        <div class="env_rays">
+            <div class="env_ray r1"></div>
+            <div class="env_ray r2"></div>
+            <div class="env_ray r3"></div>
+            <div class="env_ray r4"></div>
+            <div class="env_ray r5"></div>
+            <div class="env_ray r6"></div>
+        </div>
+
+        <!-- floral bouquet floats above the envelope -->
+        <div class="env_bouquet" id="env_bouquet">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=360&q=90&auto=format&fit=crop"
+                alt="Bridal Bouquet" class="env_bouquet_img" />
+        </div>
+
+        <!-- ENVELOPE ASSEMBLY -->
+        <div class="envelope_scene" id="envelope_scene">
+
+            <!-- dark back panel -->
+            <div class="env_back"></div>
+
+            <!-- fixed side & bottom flaps that form the envelope body -->
+            <div class="env_flap_left"></div>
+            <div class="env_flap_right"></div>
+            <div class="env_flap_bottom"></div>
+
+            <!-- TOP FLAP — 3-D fold open -->
+            <div class="env_flap_top" id="env_flap_top">
+                <div class="env_flap_top_face"></div>
+            </div>
+
+            <!-- INVITATION CARD slides up out of envelope -->
+            <div class="env_card" id="env_card">
+                <div class="env_card_shimmer"></div>
+                <div class="env_card_body">
+                    <div class="env_card_ornament">✦ ❋ ✦</div>
+                    <p class="env_card_invite serif">~ You are Cordially Invited ~</p>
+                    <h2 class="env_card_names serif">Lily<br /><span class="env_and serif">and</span><br />James</h2>
+                    <div class="env_card_rule"></div>
+                    <p class="env_card_date serif">Sunday · April 19 · 2026</p>
+                    <p class="env_card_venue">Rosewood Botanical Garden</p>
+                </div>
+            </div>
+
+            <!-- WAX SEAL -->
+            <div class="env_seal" id="env_seal">
+                <div class="env_seal_glow"></div>
+                <div class="env_seal_disc"></div>
+                <div class="env_seal_text serif">L&amp;J</div>
+            </div>
+
+        </div><!-- /envelope_scene -->
+
+    </div><!-- /stage_envelope -->
+
+
+    <!-- ╔══════════════════════════════════════╗ -->
+    <!-- ║   STAGE 2 — PREMIUM CAR DRIVE-BY   ║ -->
+    <!-- ╚══════════════════════════════════════╝ -->
+    <div class="stage_car" id="stage_car">
+
+        <!-- blush pink background -->
+        <div class="car_bg"></div>
+
+        <!-- falling petal canvas -->
+        <canvas class="car_petals_canvas" id="car_petals_canvas"></canvas>
+
+        <!-- left floral arch column -->
+        <div class="car_arch_col car_arch_left">
+            <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc45?w=180&q=80&auto=format&fit=crop"
+                alt="" class="car_arch_img" />
+        </div>
+
+        <!-- right floral arch column -->
+        <div class="car_arch_col car_arch_right">
+            <img src=""
+                alt="" class="car_arch_img flip_x" />
+        </div>
+
+        <!-- CAR UNIT — animates from bottom to top and exits -->
+        <div class="car_unit" id="car_unit">
+
+            <!-- real photo of a vintage/luxury white car -->
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&q=90&auto=format&fit=crop"
+                alt="Wedding Car" class="car_photo" />
+
+            <!-- floral drape over the boot area -->
+            <div class="car_drape">
+                <img src="https://images.unsplash.com/photo-1487530811015-780c67b32bd3?w=240&q=80&auto=format&fit=crop"
+                    alt="" class="car_drape_img" />
+            </div>
+
+            <!-- flowing ribbon tails -->
+            <div class="car_ribbons">
+                <div class="car_rib car_rib_l"></div>
+                <div class="car_rib car_rib_r"></div>
+            </div>
+
+            <!-- "Just Married" plate -->
+            <div class="car_plate serif">Just Married ♥</div>
+
+            <!-- soft ground shadow -->
+            <div class="car_shadow"></div>
+
+        </div><!-- /car_unit -->
+
+    </div><!-- /stage_car -->
+
+
+    <!-- ╔════════════════════════════╗ -->
+    <!-- ║    MAIN PAGE CONTENT      ║ -->
+    <!-- ╚════════════════════════════╝ -->
 
     <div class="demo_banner py-2 text-center">
         <strong>Demo Mode</strong> — This is a preview. Create your own invitation!
@@ -18,36 +142,52 @@
     <section class="t_hero d-flex flex-column">
         <div class="hero_bg"></div>
         <div class="hero_overlay"></div>
-        
         <canvas id="white_flower_canvas"></canvas>
-        
-        <div class="hero_content_wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1" data-aos="zoom-in" data-aos-duration="2000">
-            <div class="hero_icon mb-2"><i class="bi bi-suit-heart-fill"></i></div>
-            <h1 class="hero_names serif text-center px-3">Lily & James</h1>
-            <p class="hero_subtitle serif">Are getting married!</p>
+        <div class="floating_hearts_layer" id="floating_hearts"></div>
+        <div class="stars_layer" id="stars_layer"></div>
+
+        <div class="hero_content_wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1">
+            <div class="hero_icon mb-2 hero_icon_anim">
+                <i class="bi bi-suit-heart-fill"></i>
+            </div>
+            <h1 class="hero_names serif text-center px-3 hero_name_anim">Lily & James</h1>
+            <p class="hero_subtitle serif hero_subtitle_anim">Are getting married!</p>
+            <div class="hero_divider_line hero_line_anim"></div>
         </div>
 
-        <div class="pb-5 z-index-4 position-relative text-center" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="serif mb-3" style="color: var(--accent); font-size: 2.2rem;">Counting Down...</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem;" class="mb-4">Sunday, April 19, 2026</p>
-            
-            <div class="d-flex justify-content-center gap-3">
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_days">00</span><span class="cd_label">Days</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_hours">00</span><span class="cd_label">Hours</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_minutes">00</span><span class="cd_label">Mins</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_seconds">00</span><span class="cd_label">Secs</span></div>
+        <div class="hero_countdown_wrapper text-center hero_cd_anim">
+            <h2 class="serif hero_cd_title">Counting Down...</h2>
+            <p class="hero_cd_date">Sunday, April 19, 2026</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim"
+                    style="--cd-delay:0s">
+                    <span class="cd_num serif" id="cd_days">00</span><span class="cd_label">Days</span>
+                </div>
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim"
+                    style="--cd-delay:0.1s">
+                    <span class="cd_num serif" id="cd_hours">00</span><span class="cd_label">Hours</span>
+                </div>
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim"
+                    style="--cd-delay:0.2s">
+                    <span class="cd_num serif" id="cd_minutes">00</span><span class="cd_label">Mins</span>
+                </div>
+                <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim"
+                    style="--cd-delay:0.3s">
+                    <span class="cd_num serif" id="cd_seconds">00</span><span class="cd_label">Secs</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container py-5 mt-4 text-center" data-aos="fade-up">
+    <section class="container section_invite py-5 mt-4 text-center" data-aos="fade-up">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <h2 class="serif mb-4" style="font-size: 1.8rem; color: var(--text-dark);">
-                    Dear <span style="color: var(--text-muted);">Dearest Friend,</span>
+                <h2 class="serif invite_greeting mb-4">
+                    Dear <span class="invite_name_span">Dearest Friend,</span>
                 </h2>
-                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">
-                    Love blooms in the most beautiful ways. We invite you to celebrate with us among wildflowers and whispering willows, as we promise forever in the garden where our love story first began.
+                <p class="invite_message">
+                    Love blooms in the most beautiful ways. We invite you to celebrate with us among wildflowers and
+                    whispering willows, as we promise forever in the garden where our love story first began.
                 </p>
             </div>
         </div>
@@ -55,23 +195,23 @@
 
     <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
 
-    <section class="container py-4 text-center" data-aos="fade-up">
+    <section class="container section_when py-4 text-center" data-aos="fade-up">
         <h2 class="section_title serif mb-5">When & Where</h2>
         <div class="row justify-content-center g-4">
-            <div class="col-md-5 col-lg-4">
+            <div class="col-md-5 col-lg-4" data-aos="flip-left" data-aos-delay="100">
                 <div class="card_elegant">
-                    <i class="bi bi-calendar3 fs-2 mb-3 d-block" style="color: var(--accent);"></i>
-                    <h3 class="serif mb-3" style="color: var(--accent); font-size: 1.6rem;">Date & Time</h3>
-                    <p class="mb-2" style="color: var(--text-muted); font-size: 0.95rem;">Sunday, April 19, 2026</p>
-                    <p class="mb-0 fw-medium" style="color: var(--text-dark); font-size: 1.1rem;">3:00 PM</p>
+                    <i class="bi bi-calendar3 card_icon d-block"></i>
+                    <h3 class="serif card_accent_title">Date & Time</h3>
+                    <p class="card_muted_text mb-2">Sunday, April 19, 2026</p>
+                    <p class="card_dark_text mb-0">3:00 PM</p>
                 </div>
             </div>
-            <div class="col-md-5 col-lg-4">
+            <div class="col-md-5 col-lg-4" data-aos="flip-right" data-aos-delay="200">
                 <div class="card_elegant">
-                    <i class="bi bi-geo-alt fs-2 mb-3 d-block" style="color: var(--accent);"></i>
-                    <h3 class="serif mb-3" style="color: var(--accent); font-size: 1.6rem;">Venue</h3>
-                    <p class="mb-2 fw-medium" style="color: var(--text-dark); font-size: 1.05rem;">Rosewood Botanical Garden</p>
-                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">88 Blossom Lane, Cotswolds, England</p>
+                    <i class="bi bi-geo-alt card_icon d-block"></i>
+                    <h3 class="serif card_accent_title">Venue</h3>
+                    <p class="card_dark_text mb-2">Rosewood Botanical Garden</p>
+                    <p class="card_small_muted mb-0">88 Blossom Lane, Cotswolds, England</p>
                 </div>
             </div>
         </div>
@@ -79,132 +219,140 @@
 
     <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
 
-    <section class="container py-4 text-center" data-aos="fade-up">
+    <section class="container section_schedule py-4 text-center" data-aos="fade-up">
         <h2 class="section_title serif mb-5">Schedule of Events</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 d-flex flex-column gap-3">
-                
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="100">
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right"
+                    data-aos-delay="100">
                     <div class="schedule_icon flex-shrink-0"><i class="bi bi-clock"></i></div>
                     <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.25rem;">Garden Welcome</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Lemonade & lawn games on the Green</p>
+                        <h4 class="serif schedule_event_title mb-1">Garden Welcome</h4>
+                        <p class="schedule_event_desc mb-0">Lemonade & lawn games on the Green</p>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">2:30 PM</div>
+                    <div class="schedule_time">2:30 PM</div>
                 </div>
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="200">
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right"
+                    data-aos-delay="200">
                     <div class="schedule_icon flex-shrink-0"><i class="bi bi-suit-heart"></i></div>
                     <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.25rem;">Ceremony</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Under the wisteria arch</p>
+                        <h4 class="serif schedule_event_title mb-1">Ceremony</h4>
+                        <p class="schedule_event_desc mb-0">Under the wisteria arch</p>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">3:00 PM</div>
+                    <div class="schedule_time">3:00 PM</div>
                 </div>
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="300">
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right"
+                    data-aos-delay="300">
                     <div class="schedule_icon flex-shrink-0"><i class="bi bi-stars"></i></div>
                     <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.25rem;">Afternoon Tea</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Scones, finger sandwiches & Pimm's</p>
+                        <h4 class="serif schedule_event_title mb-1">Afternoon Tea</h4>
+                        <p class="schedule_event_desc mb-0">Scones, finger sandwiches & Pimm's</p>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">4:00 PM</div>
+                    <div class="schedule_time">4:00 PM</div>
                 </div>
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="400">
+                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right"
+                    data-aos-delay="400">
                     <div class="schedule_icon flex-shrink-0"><i class="bi bi-music-note-beamed"></i></div>
                     <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.25rem;">Evening Celebration</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Dinner & first dance under the stars</p>
+                        <h4 class="serif schedule_event_title mb-1">Evening Celebration</h4>
+                        <p class="schedule_event_desc mb-0">Dinner & first dance under the stars</p>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">6:00 PM</div>
+                    <div class="schedule_time">6:00 PM</div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
 
-    <section class="container py-4 text-center" data-aos="fade-up">
+    <section class="container section_location py-4 text-center" data-aos="zoom-in">
         <h2 class="section_title serif mb-4">Location</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <div class="py-5 px-4" style="background-color: #f4f5f6; border-radius: 12px;">
-                    <i class="bi bi-geo-alt d-block mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
-                    <h3 class="serif mb-2" style="font-size: 1.6rem; color: var(--accent);">Rosewood Botanical Garden</h3>
-                    <p class="mb-4" style="color: var(--text-muted);">88 Blossom Lane, Cotswolds, England</p>
+                <div class="location_card">
+                    <i class="bi bi-geo-alt location_icon d-block mb-3"></i>
+                    <h3 class="serif location_title mb-2">Rosewood Botanical Garden</h3>
+                    <p class="location_address mb-4">88 Blossom Lane, Cotswolds, England</p>
                     <a href="#" class="btn_accent">Open in Google Maps</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div style="background-color: #ffffff; margin-top: 80px;" class="py-5">
+    <div class="gift_section_bg py-5">
         <section class="container text-center py-4" data-aos="fade-up">
-            <i class="bi bi-gift fs-2 d-block mb-3" style="color: var(--accent);"></i>
+            <i class="bi bi-gift gift_icon d-block mb-3"></i>
             <h2 class="section_title serif mb-3">Gift Registry</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem;">
+                    <p class="gift_message mb-4">
                         Your love and presence is all we ask. If you'd like to give a gift, we've registered at:
                     </p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <button class="btn_accent">John Lewis</button>
-                        <button class="btn_accent">The White Company</button>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <button class="btn_accent btn_gift">John Lewis</button>
+                        <button class="btn_accent btn_gift">The White Company</button>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <section class="container text-center py-5 mt-4" data-aos="fade-up">
+    <section class="container text-center py-5 mt-4 section_song" data-aos="fade-up">
         <div class="divider mt-0 mb-5"><i class="bi bi-suit-heart-fill"></i></div>
-        <i class="bi bi-music-note-beamed fs-2 d-block mb-3" style="color: var(--accent);"></i>
+        <i class="bi bi-music-note-beamed song_icon d-block mb-3"></i>
         <h2 class="section_title serif mb-2">Our Song</h2>
-        <p class="serif fst-italic mb-2" style="font-size: 1.6rem; color: var(--text-dark);">A Thousand Years</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">Christina Perri</p>
+        <p class="serif fst-italic song_title mb-2">A Thousand Years</p>
+        <p class="song_artist">Christina Perri</p>
+        <div class="song_vinyl">
+            <div class="vinyl_disc">
+                <div class="vinyl_center"></div>
+                <div class="vinyl_label serif">♥</div>
+            </div>
+        </div>
         <div class="divider mb-0 mt-5"><i class="bi bi-suit-heart-fill"></i></div>
     </section>
 
-    <section class="container py-5 text-center mb-5" data-aos="fade-up">
+    <section class="container section_rsvp py-5 text-center mb-5" data-aos="fade-up">
         <h2 class="section_title serif mb-4">RSVP</h2>
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-5">
-                <div class="card_elegant text-start p-4 p-md-5">
+                <div class="card_elegant rsvp_card text-start p-4 p-md-5">
                     <div class="d-flex gap-3 mb-4">
-                        <button class="btn_accent flex-fill py-3">Joyfully Accept</button>
-                        <button class="btn_outline_accent flex-fill py-3">Regretfully Decline</button>
+                        <button class="btn_accent rsvp_btn_accept flex-fill py-3" id="btn_accept">Joyfully
+                            Accept</button>
+                        <button class="btn_outline_accent flex-fill py-3" id="btn_decline">Regretfully Decline</button>
                     </div>
-                    
-                    <form>
+                    <canvas id="confetti_canvas"></canvas>
+                    <form id="rsvp_form">
                         <div class="mb-4">
                             <label class="form-label">Number of guests attending</label>
-                            <input type="number" class="form-control" value="1" min="1" max="10">
+                            <input type="number" class="form-control rsvp_input" value="1" min="1" max="10">
                         </div>
-                        
                         <div class="mb-4">
                             <label class="form-label">Message (optional)</label>
-                            <textarea class="form-control" rows="4" placeholder="Write a message to the couple..."></textarea>
+                            <textarea class="form-control rsvp_input" rows="4"
+                                placeholder="Write a message to the couple..."></textarea>
                         </div>
-                        
-                        <button type="submit" class="btn_accent w-100 py-3 mt-3 fs-6">Submit RSVP</button>
+                        <button type="submit" class="btn_accent rsvp_submit_btn w-100 py-3 mt-3">Submit RSVP</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-5 border-top" style="border-color: var(--border-color) !important;">
-        <h3 class="serif mb-2" style="color: var(--accent); font-size: 1.8rem;">Lily & James</h3>
-        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9rem;">Sunday, April 19, 2026</p>
+    <footer class="site_footer text-center py-5">
+        <div class="footer_hearts_wrap" id="footer_hearts"></div>
+        <h3 class="serif footer_names mb-2">Lily & James</h3>
+        <p class="footer_date mb-0">Sunday, April 19, 2026</p>
+        <div class="footer_rose_line mt-4">
+            <span>✦</span><span>❋</span><span>♥</span><span>❋</span><span>✦</span>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/assets/js/template3.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script src="../assets/js/template3.js"></script>
+    <script>AOS.init({ duration: 1000, once: true, offset: 80 });</script>
 </body>
+
 </html>
