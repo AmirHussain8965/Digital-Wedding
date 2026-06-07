@@ -1,0 +1,18 @@
+/* ==================== GOOGLE FONTS ==================== */
+/* We will import the fonts here based on the design */
+
+/* ==================== VARIABLES ==================== */
+:root {
+    /* Define variables here based on the Figma design */
+}
+
+/* ==================== BASE STYLES ==================== */
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: ...; */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Add custom styles below based on screenshots */

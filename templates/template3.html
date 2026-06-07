@@ -1,301 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lily & James - Wedding Invitation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title data-i18n="meta_title">Eternally - Template 3</title>
+    <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/template3.css">
+    <link rel="stylesheet" href="../assets/css/templates.css">
 </head>
-<body>
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║     ENVELOPE INTRO (click-to-open)      ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
-<div class="stage_envelope" id="stage_envelope">
+<body class="tpl1_body tpl3_theme">
 
-    <!-- soft floating particles -->
-    <div class="env_dust" id="env_dust"></div>
+    <div class="tpl1_mobile_wrapper">
 
-    <!-- subtle light rays -->
-    <div class="env_rays">
-        <div class="env_ray r1"></div>
-        <div class="env_ray r2"></div>
-        <div class="env_ray r3"></div>
-        <div class="env_ray r4"></div>
-        <div class="env_ray r5"></div>
-        <div class="env_ray r6"></div>
-    </div>
-
-    <!-- ENVELOPE — the whole thing is the clickable trigger -->
-    <div class="envelope_scene" id="envelope_scene" role="button" tabindex="0" aria-label="Click to open your invitation">
-
-        <!-- dark back panel -->
-        <div class="env_back"></div>
-
-        <!-- fixed side & bottom flaps -->
-        <div class="env_flap_left"></div>
-        <div class="env_flap_right"></div>
-        <div class="env_flap_bottom"></div>
-
-        <!-- TOP FLAP — opens on click -->
-        <div class="env_flap_top" id="env_flap_top">
-            <div class="env_flap_top_face"></div>
-        </div>
-
-        <!-- INVITATION CARD — rises on click -->
-        <div class="env_card" id="env_card">
-            <div class="env_card_shimmer"></div>
-            <div class="env_card_body">
-                <div class="env_card_ornament">✦  ❋  ✦</div>
-                <p class="env_card_invite serif">~ You are Cordially Invited ~</p>
-                <h2 class="env_card_names serif">Lily<br/><span class="env_and serif">and</span><br/>James</h2>
-                <div class="env_card_rule"></div>
-                <p class="env_card_date serif">Sunday · April 19 · 2026</p>
-                <p class="env_card_venue">Rosewood Botanical Garden</p>
+        <!-- ==================== SECTION 0: ENVELOPE (TPL3) ==================== -->
+        <div id="tpl3_envelope_container" class="tpl3_envelope_overlay">
+            <div class="tpl3_env_scaler">
+                <img src="../assets/imgs/temp3_LowerBody.svg" alt="Envelope Lower Body" class="tpl3_env_lower">
+                <img src="../assets/imgs/temp3_upperbody.svg" alt="Envelope Flap" class="tpl3_env_flap">
+                <p class="tpl1_serif tpl3_env_tap_text">Tap to open</p>
             </div>
         </div>
 
-        <!-- WAX SEAL -->
-        <div class="env_seal" id="env_seal">
-            <div class="env_seal_glow"></div>
-            <div class="env_seal_disc"></div>
-            <div class="env_seal_text serif">L&amp;J</div>
-        </div>
-
-    </div><!-- /envelope_scene -->
-
-    <!-- tap hint below envelope -->
-    <div class="env_tap_hint" id="env_tap_hint">
-        <span class="env_tap_icon">✦</span>
-        <span class="env_tap_text serif">Tap to open your invitation</span>
-        <span class="env_tap_icon">✦</span>
-    </div>
-
-</div><!-- /stage_envelope -->
-
-
-<!-- ╔════════════════════════════╗ -->
-<!-- ║    MAIN PAGE CONTENT      ║ -->
-<!-- ╚════════════════════════════╝ -->
-
-<div class="demo_banner py-2 text-center">
-    <strong>Demo Mode</strong> — This is a preview. Create your own invitation!
-</div>
-
-<section class="t_hero d-flex flex-column">
-    <div class="hero_bg"></div>
-    <div class="hero_overlay"></div>
-    <canvas id="white_flower_canvas"></canvas>
-    <div class="floating_hearts_layer" id="floating_hearts"></div>
-    <div class="stars_layer" id="stars_layer"></div>
-
-    <div class="hero_content_wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1">
-        <div class="hero_icon mb-2 hero_icon_anim">
-            <i class="bi bi-suit-heart-fill"></i>
-        </div>
-        <h1 class="hero_names serif text-center px-3 hero_name_anim">Lily & James</h1>
-        <p class="hero_subtitle serif hero_subtitle_anim">Are getting married!</p>
-        <div class="hero_divider_line hero_line_anim"></div>
-    </div>
-
-    <div class="hero_countdown_wrapper text-center hero_cd_anim">
-        <h2 class="serif hero_cd_title">Counting Down...</h2>
-        <p class="hero_cd_date">Sunday, April 19, 2026</p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim" style="--cd-delay:0s">
-                <span class="cd_num serif" id="cd_days">00</span><span class="cd_label">Days</span>
+        <!-- ==================== SECTION 1: HERO / INTRO ==================== -->
+        <section class="tpl1_hero" id="hero_section">
+            <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
+                <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
+                    <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
+                </video>
+                <div class="tpl1_video_overlay"></div>
             </div>
-            <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim" style="--cd-delay:0.1s">
-                <span class="cd_num serif" id="cd_hours">00</span><span class="cd_label">Hours</span>
-            </div>
-            <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim" style="--cd-delay:0.2s">
-                <span class="cd_num serif" id="cd_minutes">00</span><span class="cd_label">Mins</span>
-            </div>
-            <div class="cd_box d-flex flex-column justify-content-center align-items-center cd_box_anim" style="--cd-delay:0.3s">
-                <span class="cd_num serif" id="cd_seconds">00</span><span class="cd_label">Secs</span>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- INVITATION MESSAGE -->
-<section class="container section_invite py-5 mt-4 text-center" data-aos="fade-up">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-            <h2 class="serif invite_greeting mb-4">
-                Dear <span class="invite_name_span">Dearest Friend,</span>
-            </h2>
-            <p class="invite_message">
-                Love blooms in the most beautiful ways. We invite you to celebrate with us among wildflowers and
-                whispering willows, as we promise forever in the garden where our love story first began.
+            <div class="tpl1_hero_content">
+                <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
+                    <span class="tpl1_script monogram_letter">A</span>
+                    <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
+                </div>
+
+                <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
+                    <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
+                </div>
+
+                <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
+                    <a href="#countdown_section" class="tpl1_tap_btn">TAP TO REVEAL</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 2: COUNTDOWN ==================== -->
+        <section class="tpl3_hero_section text-center" id="countdown_section">
+            <div class="tpl3_hero_img_container" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://placehold.co/400x250/F2EFE9/4F6A7A?text=Table+Illustration" alt="Table Illustration" class="img-fluid">
+            </div>
+
+            <!-- Attendance Dropdown -->
+            <div class="tpl3_hero_dropdown mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <button class="tpl3_accordion_btn tpl1_serif text-center d-inline-block border-0 bg-transparent" id="tpl3_btn_attendance" type="button" style="width:auto; padding:0;">
+                    <span style="color:#4F6A7A; font-size:15px;">Confirm your attendance <i class="fas fa-chevron-down ms-2"></i></span>
+                </button>
+                <div class="tpl3_accordion_content tpl1_serif" id="tpl3_content_attendance" style="background:transparent; border:none;">
+                    <p class="mt-3 mb-0" style="color:#4F6A7A; font-size:14px;">Please kindly confirm your attendance by September 1st, 2026.</p>
+                </div>
+            </div>
+
+            <!-- Countdown -->
+            <div class="tpl3_countdown_container mt-5" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="tpl1_script tpl3_title">Countdown</h2>
+                <p class="tpl1_serif tpl3_subtitle">For the most special day of our lives</p>
+
+                <div class="row g-3 mt-4 tpl3_countdown_grid justify-content-center">
+                    <div class="col-5">
+                        <div class="tpl3_countdown_box">
+                            <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_days">000</h3>
+                            <p class="tpl1_serif tpl3_countdown_label">Days</p>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="tpl3_countdown_box">
+                            <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_hours">00</h3>
+                            <p class="tpl1_serif tpl3_countdown_label">Hours</p>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="tpl3_countdown_box">
+                            <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_mins">00</h3>
+                            <p class="tpl1_serif tpl3_countdown_label">Minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="tpl3_countdown_box">
+                            <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_secs">00</h3>
+                            <p class="tpl1_serif tpl3_countdown_label">Seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Illustration -->
+            <div class="tpl3_cake_container mt-5" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="tpl1_script tpl3_title" style="line-height:1.2;">Come for our love<br>stay for the cake!</h2>
+                <img src="https://placehold.co/200x200/F2EFE9/4F6A7A?text=Cake+Illustration" alt="Cake Illustration" class="img-fluid mt-3">
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 2: DAY DETAILS ==================== -->
+        <section class="tpl3_day_details_section text-center">
+            <h2 class="tpl1_script tpl3_title" data-aos="fade-up" data-aos-duration="1000">Day Details</h2>
+            <p class="tpl1_serif tpl3_subtitle mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">All the information you need</p>
+
+            <div class="tpl3_location_icon" data-aos="zoom-in" data-aos-duration="1000">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            
+            <h3 class="tpl1_serif tpl3_location_title mt-3" data-aos="fade-up" data-aos-duration="1000">Location</h3>
+            <p class="tpl1_serif tpl3_location_text" data-aos="fade-up" data-aos-duration="1000">Finca González</p>
+            <p class="tpl1_serif tpl3_location_time" data-aos="fade-up" data-aos-duration="1000"><i class="far fa-clock me-1"></i> From 5:00 PM to 1:00 AM</p>
+
+            <div class="tpl3_images_container mt-4" data-aos="fade-up" data-aos-duration="1000">
+                <img src="https://placehold.co/400x250/F2EFE9/4F6A7A?text=Venue+Illustration" alt="Venue Illustration" class="img-fluid tpl3_rounded_img mb-3">
+                <img src="https://placehold.co/400x250/F2EFE9/4F6A7A?text=Map+Snippet" alt="Map Location" class="img-fluid tpl3_rounded_img mb-4">
+            </div>
+
+            <button type="button" class="btn tpl3_outline_btn tpl1_serif w-100" data-aos="fade-up" data-aos-duration="1000">
+                <i class="far fa-calendar me-2"></i> Add to Calendar
+            </button>
+        </section>
+
+        <!-- ==================== SECTION 3: PROGRAM DETAILS ==================== -->
+        <section class="tpl3_program_section text-center">
+            <h2 class="tpl1_script tpl3_title" data-aos="fade-up" data-aos-duration="1000">Program Details</h2>
+            <p class="tpl1_serif tpl3_subtitle mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">What we have prepared for you</p>
+
+            <div class="tpl3_timeline text-start">
+                <div class="tpl3_timeline_line"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">17:00</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">Guest Arrival</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">Reception and welcome at the venue</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">17:30</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">Welcome Drink</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">Welcome cocktail while we wait</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">18:00</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">Ceremony</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">The most special moment of the day</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">19:00</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">Cocktail</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">Appetizers and drinks in the gardens</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">21:00</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">Banquet</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">Dinner and celebration</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">00:00</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">Party</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">Dance until dawn!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 -->
+                <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="tpl3_timeline_icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <div class="tpl3_timeline_content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="tpl3_time_badge tpl1_serif">03:00</span>
+                            <h4 class="tpl1_serif tpl3_timeline_title mb-0 ms-3">End of Party</h4>
+                        </div>
+                        <p class="tpl1_serif tpl3_timeline_desc">Farewell and good memories</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 4: GIFTS ==================== -->
+        <section class="tpl3_gifts_section text-center">
+            <div class="tpl3_band_illustration mb-4" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="https://placehold.co/400x150/F2EFE9/4F6A7A?text=Band+Illustration" alt="Band Illustration" class="img-fluid">
+            </div>
+
+            <h2 class="tpl1_script tpl3_title mb-3" data-aos="fade-up" data-aos-duration="1000">Gifts</h2>
+            <p class="tpl1_serif tpl3_gifts_desc mb-4" data-aos="fade-up" data-aos-duration="1000">
+                Your presence is the most important thing to us. If you wish to give us a gift, you can do so in whatever way is most convenient for you.
             </p>
-        </div>
-    </div>
-</section>
 
-<div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-<!-- WHEN & WHERE -->
-<section class="container section_when py-4 text-center" data-aos="fade-up">
-    <h2 class="section_title serif mb-5">When & Where</h2>
-    <div class="row justify-content-center g-4">
-        <div class="col-md-5 col-lg-4" data-aos="flip-left" data-aos-delay="100">
-            <div class="card_elegant">
-                <i class="bi bi-calendar3 card_icon d-block"></i>
-                <h3 class="serif card_accent_title">Date & Time</h3>
-                <p class="card_muted_text mb-2">Sunday, April 19, 2026</p>
-                <p class="card_dark_text mb-0">3:00 PM</p>
-            </div>
-        </div>
-        <div class="col-md-5 col-lg-4" data-aos="flip-right" data-aos-delay="200">
-            <div class="card_elegant">
-                <i class="bi bi-geo-alt card_icon d-block"></i>
-                <h3 class="serif card_accent_title">Venue</h3>
-                <p class="card_dark_text mb-2">Rosewood Botanical Garden</p>
-                <p class="card_small_muted mb-0">88 Blossom Lane, Cotswolds, England</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-<!-- SCHEDULE -->
-<section class="container section_schedule py-4 text-center" data-aos="fade-up">
-    <h2 class="section_title serif mb-5">Schedule of Events</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6 d-flex flex-column gap-3">
-            <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right" data-aos-delay="100">
-                <div class="schedule_icon flex-shrink-0"><i class="bi bi-clock"></i></div>
-                <div class="flex-grow-1">
-                    <h4 class="serif schedule_event_title mb-1">Garden Welcome</h4>
-                    <p class="schedule_event_desc mb-0">Lemonade & lawn games on the Green</p>
-                </div>
-                <div class="schedule_time">2:30 PM</div>
-            </div>
-            <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right" data-aos-delay="200">
-                <div class="schedule_icon flex-shrink-0"><i class="bi bi-suit-heart"></i></div>
-                <div class="flex-grow-1">
-                    <h4 class="serif schedule_event_title mb-1">Ceremony</h4>
-                    <p class="schedule_event_desc mb-0">Under the wisteria arch</p>
-                </div>
-                <div class="schedule_time">3:00 PM</div>
-            </div>
-            <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right" data-aos-delay="300">
-                <div class="schedule_icon flex-shrink-0"><i class="bi bi-stars"></i></div>
-                <div class="flex-grow-1">
-                    <h4 class="serif schedule_event_title mb-1">Afternoon Tea</h4>
-                    <p class="schedule_event_desc mb-0">Scones, finger sandwiches & Pimm's</p>
-                </div>
-                <div class="schedule_time">4:00 PM</div>
-            </div>
-            <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-right" data-aos-delay="400">
-                <div class="schedule_icon flex-shrink-0"><i class="bi bi-music-note-beamed"></i></div>
-                <div class="flex-grow-1">
-                    <h4 class="serif schedule_event_title mb-1">Evening Celebration</h4>
-                    <p class="schedule_event_desc mb-0">Dinner & first dance under the stars</p>
-                </div>
-                <div class="schedule_time">6:00 PM</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-<!-- LOCATION -->
-<section class="container section_location py-4 text-center" data-aos="zoom-in">
-    <h2 class="section_title serif mb-4">Location</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="location_card">
-                <i class="bi bi-geo-alt location_icon d-block mb-3"></i>
-                <h3 class="serif location_title mb-2">Rosewood Botanical Garden</h3>
-                <p class="location_address mb-4">88 Blossom Lane, Cotswolds, England</p>
-                <a href="#" class="btn_accent">Open in Google Maps</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- GIFT REGISTRY -->
-<div class="gift_section_bg py-5">
-    <section class="container text-center py-4" data-aos="fade-up">
-        <i class="bi bi-gift gift_icon d-block mb-3"></i>
-        <h2 class="section_title serif mb-3">Gift Registry</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <p class="gift_message mb-4">
-                    Your love and presence is all we ask. If you'd like to give a gift, we've registered at:
-                </p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <button class="btn_accent btn_gift">John Lewis</button>
-                    <button class="btn_accent btn_gift">The White Company</button>
+            <div class="tpl3_accordion_container" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Dropdown: Contribution -->
+                <button class="tpl3_accordion_btn tpl1_serif text-start d-flex justify-content-between align-items-center" id="tpl3_btn_contribution" type="button">
+                    <span>Contribution</span>
+                    <i class="fas fa-chevron-down tpl3_accordion_icon"></i>
+                </button>
+                <div class="tpl3_accordion_content tpl1_serif text-start" id="tpl3_content_contribution">
+                    <p class="mt-3 mb-0">Bank Details:<br>Ahmed &amp; Alia<br>IBAN: XXXX XXXX XXXX XXXX</p>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+        <!-- ==================== SECTION 5: RSVP ==================== -->
+        <section class="tpl3_rsvp_section text-center" id="rsvp_section">
+            <h2 class="tpl1_script tpl3_title mb-3" data-aos="fade-up" data-aos-duration="1000">Confirm Your Presence</h2>
+            <p class="tpl1_serif tpl3_rsvp_desc mb-4" data-aos="fade-up" data-aos-duration="1000">
+                Your presence is the most important thing to us. If you wish to give us a gift, you can do so in whatever way is most convenient for you.
+            </p>
 
-<!-- OUR SONG -->
-<section class="container text-center py-5 mt-4 section_song" data-aos="fade-up">
-    <div class="divider mt-0 mb-5"><i class="bi bi-suit-heart-fill"></i></div>
-    <i class="bi bi-music-note-beamed song_icon d-block mb-3"></i>
-    <h2 class="section_title serif mb-2">Our Song</h2>
-    <p class="serif fst-italic song_title mb-2">A Thousand Years</p>
-    <p class="song_artist">Christina Perri</p>
-    <div class="song_vinyl">
-        <div class="vinyl_disc">
-            <div class="vinyl_center"></div>
-            <div class="vinyl_label serif">♥</div>
-        </div>
-    </div>
-    <div class="divider mb-0 mt-5"><i class="bi bi-suit-heart-fill"></i></div>
-</section>
-
-<!-- RSVP -->
-<section class="container section_rsvp py-5 text-center mb-5" data-aos="fade-up">
-    <h2 class="section_title serif mb-4">RSVP</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-5">
-            <div class="card_elegant rsvp_card text-start p-4 p-md-5">
-                <div class="d-flex gap-3 mb-4">
-                    <button class="btn_accent rsvp_btn_accept flex-fill py-3" id="btn_accept">Joyfully Accept</button>
-                    <button class="btn_outline_accent flex-fill py-3" id="btn_decline">Regretfully Decline</button>
-                </div>
-                <canvas id="confetti_canvas"></canvas>
-                <form id="rsvp_form">
-                    <div class="mb-4">
-                        <label class="form-label">Number of guests attending</label>
-                        <input type="number" class="form-control rsvp_input" value="1" min="1" max="10">
+            <div class="tpl3_rsvp_form_wrapper text-start tpl1_serif" data-aos="fade-up" data-aos-duration="1000">
+                <form id="tpl3_rsvp_form">
+                    <div class="mb-3">
+                        <label class="form-label tpl3_form_label">Full Name*</label>
+                        <input type="text" class="form-control tpl3_form_input" placeholder="Your Full Name" required>
                     </div>
-                    <div class="mb-4">
-                        <label class="form-label">Message (optional)</label>
-                        <textarea class="form-control rsvp_input" rows="4" placeholder="Write a message to the couple..."></textarea>
+
+                    <div class="mb-3">
+                        <label class="form-label tpl3_form_label">Email (optional)</label>
+                        <input type="email" class="form-control tpl3_form_input" placeholder="you@email.com">
                     </div>
-                    <button type="submit" class="btn_accent rsvp_submit_btn w-100 py-3 mt-3">Submit RSVP</button>
+
+                    <div class="mb-3">
+                        <label class="form-label tpl3_form_label d-block">Will you attend? *</label>
+                        <div class="form-check form-check-inline mt-1">
+                            <input class="form-check-input tpl3_form_radio" type="radio" name="tpl3_attendance" id="tpl3_attend_yes" value="yes" checked>
+                            <label class="form-check-label tpl3_radio_label" for="tpl3_attend_yes">Yes, I'll be there</label>
+                        </div>
+                        <div class="form-check form-check-inline mt-1">
+                            <input class="form-check-input tpl3_form_radio" type="radio" name="tpl3_attendance" id="tpl3_attend_no" value="no">
+                            <label class="form-check-label tpl3_radio_label" for="tpl3_attend_no">I won't be able to attend</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label tpl3_form_label">Number of guests (including yourself)</label>
+                        <input type="number" class="form-control tpl3_form_input tpl3_guest_input" value="3" min="1" max="10">
+                    </div>
+
+                    <div class="tpl3_allergies_section mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="tpl3_warning_icon me-2">⚠️</span>
+                            <label class="form-label tpl3_form_label mb-0">Food allergies and intolerances</label>
+                        </div>
+                        <p class="tpl3_allergies_desc mb-3">It is very important for us to know about any dietary restrictions. Select all that apply:</p>
+                        
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_gluten">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_gluten">Gluten-free / Celiac</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_lactose">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_lactose">Lactose-free</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_veg">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_veg">Vegetarian</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_vegan">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_vegan">Vegan</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_nut">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_nut">Nut allergy</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_shellfish">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_shellfish">Shellfish allergy</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="form-label tpl3_form_label">Other allergies or restrictions:</label>
+                        <input type="text" class="form-control tpl3_form_input" placeholder="e.g: egg allergy, fructose intolerance">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label tpl3_form_label">Message for the couple (optional)</label>
+                        <textarea class="form-control tpl3_form_input tpl3_textarea" rows="3" placeholder="Write us a few words..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn tpl3_submit_btn w-100">
+                        <i class="far fa-paper-plane me-2"></i> Send Confirmation
+                    </button>
                 </form>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- FOOTER -->
-<footer class="site_footer text-center py-5">
-    <div class="footer_hearts_wrap" id="footer_hearts"></div>
-    <h3 class="serif footer_names mb-2">Lily & James</h3>
-    <p class="footer_date mb-0">Sunday, April 19, 2026</p>
-    <div class="footer_rose_line mt-4">
-        <span>✦</span><span>❋</span><span>♥</span><span>❋</span><span>✦</span>
-    </div>
-</footer>
+        <!-- ==================== SECTION 6: FOOTER ==================== -->
+        <footer class="tpl3_footer text-center">
+            <i class="far fa-heart tpl3_footer_icon mb-3" data-aos="zoom-in" data-aos-duration="1000"></i>
+            <h2 class="tpl1_script tpl3_footer_names mb-2" data-aos="fade-up" data-aos-duration="1000">Andrew &amp; Amilio</h2>
+            <p class="tpl1_serif tpl3_footer_date mb-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">September 12, 2026</p>
+        </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="../assets/js/template3.js"></script>
-<script>AOS.init({ duration: 1000, once: true, offset: 80 });</script>
+    </div>
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/templates.js"></script>
 </body>
+
 </html>

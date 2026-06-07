@@ -4,228 +4,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander & Victoria - Wedding Invitation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title data-i18n="meta_title">Eternally - Template 1</title>
+    <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/template.css">
+    <link rel="stylesheet" href="../assets/css/templates.css">
 </head>
 
-<body>
+<body class="tpl1_body">
 
-    <div class="demo_banner py-2 text-center">
-        <strong>Demo Mode</strong> — This is a preview. Create your own invitation!
-    </div>
+    <!-- Mobile-First Container -->
+    <div class="tpl1_mobile_wrapper">
 
-    <section class="t_hero position-relative d-flex flex-column">
-        <div class="hero_bg"></div>
-        <div class="hero_overlay"></div>
-        <canvas id="premium_canvas"></canvas>
-
-        <div class="hero_content_wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1"
-            data-aos="zoom-in" data-aos-duration="2000">
-            <div class="hero_icon mb-3"><i class="bi bi-suit-heart-fill"></i></div>
-            <h1 class="hero_names serif">Alexander & Victoria</h1>
-            <p class="hero_subtitle serif">Request the honour of your presence</p>
-        </div>
-
-        <div class="pb-5 z-index-4 position-relative text-center" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="serif" style="color: var(--gold); font-size: 2rem;">Counting Down...</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;" class="mb-4">Saturday, June 14, 2026</p>
-
-            <div class="d-flex justify-content-center gap-3">
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span
-                        class="cd_num serif" id="cd_days">00</span><span class="cd_label">Days</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span
-                        class="cd_num serif" id="cd_hours">00</span><span class="cd_label">Hours</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span
-                        class="cd_num serif" id="cd_minutes">00</span><span class="cd_label">Mins</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span
-                        class="cd_num serif" id="cd_seconds">00</span><span class="cd_label">Secs</span></div>
+        <!-- ==================== SECTION 1: HERO / INTRO ==================== -->
+        <section class="tpl1_hero" id="hero_section">
+            <!-- Dummy video for chandelier -->
+            <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
+                <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
+                    <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
+                </video>
+                <div class="tpl1_video_overlay"></div>
             </div>
-        </div>
-    </section>
+            .tpl1_hero
+            <div class="tpl1_hero_content">
+                <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
+                    <span class="tpl1_script monogram_letter">A</span>
+                    <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
+                </div>
 
-    <section class="container py-5 mt-4 text-center" data-aos="fade-up">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <h2 class="serif mb-4" style="font-size: 1.8rem; color: var(--gold);">
-                    <span style="color: var(--text-main);">Dear</span> Dearest Guest,
-                </h2>
-                <p style="color: var(--gold); line-height: 1.8;">
-                    We joyfully invite you to witness and celebrate the union of our hearts. Join us for an evening of
-                    elegance, fine dining, and dancing beneath gilded chandeliers as we begin our forever together.
-                </p>
-            </div>
-        </div>
-    </section>
+                <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
+                    <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
+                </div>
 
-    <div class="divider my-4"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container py-5 text-center" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">When & Where</h2>
-        <div class="row justify-content-center g-4">
-            <div class="col-md-5">
-                <div class="card_elegant">
-                    <i class="bi bi-calendar3 fs-2 mb-3 d-block" style="color: var(--gold);"></i>
-                    <h3 class="serif mb-3" style="color: var(--gold); font-size: 1.5rem;">Date & Time</h3>
-                    <p class="mb-2" style="color: var(--text-muted); font-size: 0.9rem;">Saturday, June 14, 2026</p>
-                    <p class="mb-0 fw-medium" style="color: var(--text-main);">5:00 PM</p>
+                <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
+                    <a href="#countdown_section" class="tpl1_tap_btn">TAP TO REVEAL</a>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="card_elegant">
-                    <i class="bi bi-geo-alt fs-2 mb-3 d-block" style="color: var(--gold);"></i>
-                    <h3 class="serif mb-3" style="color: var(--gold); font-size: 1.5rem;">Venue</h3>
-                    <p class="mb-2 fw-medium" style="color: var(--text-main);">The Grand Château d'Or</p>
-                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">42 Avenue des Champs-Élysées,
-                        Paris, France</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="divider my-4"><i class="bi bi-suit-heart-fill"></i></div>
+        <!-- ==================== SECTION 2: COUNTDOWN ==================== -->
+        <section class="tpl1_countdown_section" id="countdown_section">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="tpl1_script tpl1_title">Countdown</h2>
+                <p class="tpl1_serif tpl1_subtitle">UNTIL 12 SEPTEMBER 2026</p>
 
-    <section class="container py-5 text-center" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">Schedule of Events</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-7 d-flex flex-column gap-3">
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-clock"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--gold); font-size: 1.2rem;">Welcome Reception</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Champagne & hors d'oeuvres
-                            in the Grand Foyer</p>
+                <div class="tpl1_timer_wrap">
+                    <div class="tpl1_timer_item">
+                        <span class="tpl1_script tpl1_timer_num" id="timer_days">135</span>
+                        <span class="tpl1_serif tpl1_timer_label">DAYS</span>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">4:30 PM</div>
-                </div>
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-suit-heart"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--gold); font-size: 1.2rem;">The Ceremony</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Exchange of vows in the
-                            Gold Ballroom</p>
+                    <div class="tpl1_timer_divider"></div>
+                    <div class="tpl1_timer_item">
+                        <span class="tpl1_script tpl1_timer_num" id="timer_hours">00</span>
+                        <span class="tpl1_serif tpl1_timer_label">HOURS</span>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">5:00 PM</div>
-                </div>
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up"
-                    data-aos-delay="300">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-stars"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--gold); font-size: 1.2rem;">Cocktail Soirée</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Artisan cocktails in the
-                            Rose Garden</p>
-                    </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">6:00 PM</div>
-                </div>
-
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up"
-                    data-aos-delay="400">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-music-note-beamed"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--gold); font-size: 1.2rem;">Grand Dinner & Ball</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Five-course dinner &
-                            dancing</p>
-                    </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">7:30 PM</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <div class="divider my-4"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container py-5 text-center" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">Location</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card_elegant py-5">
-                    <i class="bi bi-geo-alt d-block mb-3" style="font-size: 2.5rem; color: var(--gold);"></i>
-                    <h3 class="serif mb-2" style="font-size: 1.8rem; color: var(--gold);">The Grand Château d'Or</h3>
-                    <p class="mb-4" style="color: var(--text-muted);">42 Avenue des Champs-Élysées, Paris, France</p>
-                    <a href="#" class="btn_gold">Open in Google Maps</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div style="background: var(--bg-card);" class="py-5">
-        <section class="container text-center py-4" data-aos="fade-up">
-            <i class="bi bi-gift fs-2 d-block mb-3" style="color: var(--gold);"></i>
-            <h2 class="section_title serif mb-3">Gift Registry</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <p style="color: var(--gold); margin-bottom: 30px;">
-                        Your gracious presence is the greatest gift. Should you wish to honour us further, we have
-                        curated a registry at:
-                    </p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <button class="btn_gold">Harrods</button>
-                        <button class="btn_gold">Tiffany & Co.</button>
+                    <div class="tpl1_timer_divider"></div>
+                    <div class="tpl1_timer_item">
+                        <span class="tpl1_script tpl1_timer_num" id="timer_minutes">20</span>
+                        <span class="tpl1_serif tpl1_timer_label">MINUTES</span>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <div class="divider my-5"><i class="bi bi-suit-heart-fill"></i></div>
+        <!-- ==================== SECTION 3: WELCOME ==================== -->
+        <section class="tpl1_welcome_section">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="tpl1_script tpl1_title">Welcome!</h2>
+                <p class="tpl1_serif tpl1_welcome_text">
+                    We warmly invite you to celebrate our<br>
+                    wedding day with us in the beautiful town of<br>
+                    Ronda, Andalusia. We look forward to sharing<br>
+                    this unforgettable moment with our most<br>
+                    special people.
+                </p>
 
-    <section class="container text-center pb-5" data-aos="fade-up">
-        <i class="bi bi-music-note-beamed fs-2 d-block mb-3" style="color: var(--gold);"></i>
-        <h2 class="section_title serif mb-2">Our Song</h2>
-        <p class="serif fst-italic mb-1" style="font-size: 1.4rem; color: var(--text-main);">La Vie en Rose</p>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Édith Piaf</p>
-    </section>
-
-    <div class="divider my-5"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container py-5 text-center mb-5" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">RSVP</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card_elegant text-start">
-                    <div class="d-flex gap-3 mb-4">
-                        <button class="btn_gold flex-fill">Joyfully Accept</button>
-                        <button class="btn_outline_gold flex-fill">Regretfully Decline</button>
+                <div class="tpl1_interactive_gallery">
+                    <div class="tpl1_gallery_item expanded">
+                        <img src="../assets/imgs/welcome1.jpg" alt="Couple" class="img-fluid">
                     </div>
+                    <div class="tpl1_gallery_item collapsed">
+                        <img src="../assets/imgs/welcome2.jpg" alt="Beach" class="img-fluid">
+                    </div>
+                </div>
 
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Number of guests attending</label>
-                            <input type="number" class="form-control" value="1" min="1" max="10">
-                        </div>
+                <div class="tpl1_divider_gold mt-5"></div>
+            </div>
+        </section>
 
-                        <div class="mb-4">
-                            <label class="form-label">Message (optional)</label>
-                            <textarea class="form-control" rows="4"
-                                placeholder="Write a message to the couple..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn_gold w-100 py-3">Submit RSVP</button>
-                    </form>
+        <!-- ==================== SECTION 4: FLORAL DECOR ==================== -->
+        <section class="tpl1_floral_section">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="tpl1_floral_illustration">
+                    <!-- Dummy image for the floral urn drawing -->
+                    <img src="../assets/imgs/floral1.svg" alt="Floral Decoration" class="img-fluid">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="text-center py-5 border-top" style="border-color: var(--border-color) !important;">
-        <h3 class="serif mb-2" style="color: var(--gold); font-size: 1.8rem;">Alexander & Victoria</h3>
-        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Saturday, June 14, 2026</p>
-    </footer>
+        <!-- ==================== SECTION 5: THE VENUE ==================== -->
+        <section class="tpl1_venue_section">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="tpl1_script tpl1_title text-white">The Venue</h2>
+                <p class="tpl1_serif tpl1_subtitle text-white mb-5">Where we celeberate</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+                <div class="tpl1_venue_card">
+                    <div class="tpl1_venue_illustration">
+                        <img src="../assets/imgs/vanue1.jpg" alt="The Venue" class="img-fluid">
+                    </div>
+
+                    <h3 class="tpl1_script tpl1_venue_name">Finca El Olivar</h3>
+
+                    <div class="tpl1_venue_divider"></div>
+
+                    <div class="tpl1_venue_datetime">
+                        <span class="tpl1_serif tpl1_date">12 September 2026</span>
+                        <span class="tpl1_serif tpl1_time">14:00</span>
+                    </div>
+
+                    <div class="tpl1_venue_divider"></div>
+
+                    <div class="tpl1_venue_address">
+                        <p class="tpl1_serif">Camino de los Olivos s/n, Ronda<br>Málaga, 29400 - España</p>
+                    </div>
+
+                    <div class="tpl1_venue_map">
+                        <img src="../assets/imgs/map_google.jpg" alt="Map Location" class="img-fluid tpl1_map_img">
+                        <div class="tpl1_map_btn_wrap">
+                            <a href="#" class="tpl1_map_btn">
+                                <i class="bi bi-geo-alt"></i> OPEN IN MAPS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="tpl1_divider_gold mt-5 mb-5"></div>
+
+        <!-- ==================== SECTION 6: DAY PROGRAMME ==================== -->
+        <section class="tpl1_programme_section">
+            <div class="text-center">
+                <h2 class="tpl1_script tpl1_title">Day Programme</h2>
+                <p class="tpl1_serif tpl1_subtitle mb-5">12 September 2026</p>
+
+                <div class="tpl1_timeline_wrapper" id="tpl1_timeline">
+                    <!-- The vertical animated line -->
+                    <div class="tpl1_timeline_line"></div>
+
+                    <div class="tpl1_timeline_item right">
+                        <div class="tpl1_timeline_content">
+                            <h4 class="tpl1_serif tpl1_time">14:00</h4>
+                            <p class="tpl1_serif tpl1_desc">Arrival</p>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_timeline_item left">
+                        <div class="tpl1_timeline_content">
+                            <h4 class="tpl1_serif tpl1_time">14:30</h4>
+                            <p class="tpl1_serif tpl1_desc">Ceremony</p>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_timeline_item right">
+                        <div class="tpl1_timeline_content">
+                            <h4 class="tpl1_serif tpl1_time">16:00</h4>
+                            <p class="tpl1_serif tpl1_desc">Cocktails</p>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_timeline_item left">
+                        <div class="tpl1_timeline_content">
+                            <h4 class="tpl1_serif tpl1_time">18:00</h4>
+                            <p class="tpl1_serif tpl1_desc">Dinner</p>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_timeline_item right">
+                        <div class="tpl1_timeline_content">
+                            <h4 class="tpl1_serif tpl1_time">20:00</h4>
+                            <p class="tpl1_serif tpl1_desc">Cutting<br>The Cake</p>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_timeline_item left">
+                        <div class="tpl1_timeline_content">
+                            <h4 class="tpl1_serif tpl1_time">00:00</h4>
+                            <p class="tpl1_serif tpl1_desc">Finish</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 7: DRESS CODE ==================== -->
+        <section class="tpl1_dress_section text-center">
+            <div class="tpl1_dress_top_icon pb-5 pt-5">
+                <!-- Champagne tower dummy -->
+                <img src="../assets/imgs/champagne.svg" alt="Champagne Tower" class="img-fluid">
+            </div>
+
+            <div class="tpl1_dress_bg_wrap" data-aos="fade-in" data-aos-duration="1000">
+                <div class="tpl1_dress_card">
+                    <h2 class="tpl1_script tpl1_title">Dress Code</h2>
+
+                    <div class="tpl1_dress_block mt-4">
+                        <h3 class="tpl1_script tpl1_dress_gender">Women</h3>
+                        <p class="tpl1_serif tpl1_dress_desc">Cocktail or formal dress</p>
+                    </div>
+
+                    <div class="tpl1_venue_divider my-4" style="width: 50%;"></div>
+
+                    <div class="tpl1_dress_block">
+                        <h3 class="tpl1_script tpl1_dress_gender">Men</h3>
+                        <p class="tpl1_serif tpl1_dress_desc">Dark suit and tie</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tpl1_dress_bottom_icon text-center mt-5 mb-5">
+                <!-- Bow dummy -->
+                <img src="../assets/imgs/bow.svg" alt="Bow" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 8: PRE WEDDING EVENTS ==================== -->
+        <section class="tpl1_prewedding_section text-center">
+            <h4 class="tpl1_serif text-white tpl1_pre_title mb-2">PRE WEDDING EVENTS</h4>
+            <h2 class="tpl1_script text-white tpl1_title mb-3">Come Say Hello...</h2>
+            <p class="tpl1_serif text-white tpl1_pre_desc">These are informal gatherings, so feel free<br>to join us if
+                you're in the area.</p>
+
+            <div class="tpl1_event_cards mt-5" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Event 1 -->
+                <div class="tpl1_event_card mb-4">
+                    <img src="../assets/imgs/platefood.svg" alt="Welcome Drinks" class="tpl1_event_icon">
+                    <h3 class="tpl1_script tpl1_event_name mt-3">Welcome Drinks</h3>
+                    <div class="tpl1_venue_divider my-3" style="width: 50%;"></div>
+                    <p class="tpl1_serif tpl1_event_details">Friday, September 11th, 2026<br>8:00 PM<br>Bodega García
+                        Hidalgo, Ronda</p>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="tpl1_event_card">
+                    <img src="../assets/imgs/teacup.svg" alt="Farewell Brunch" class="tpl1_event_icon">
+                    <h3 class="tpl1_script tpl1_event_name mt-3">Farewell Brunch</h3>
+                    <div class="tpl1_venue_divider my-3" style="width: 50%;"></div>
+                    <p class="tpl1_serif tpl1_event_details">Sunday, September 13th, 2026<br>12:00 PM<br>Parador de
+                        Ronda (terrace)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 9: LOCATION & TRANSPORTATION ==================== -->
+        <section class="tpl1_location_section text-center">
+            <div class="tpl1_location_top_icon mb-4">
+                <img src="../assets/imgs/floral2.svg" alt="Rings" class="img-fluid">
+            </div>
+
+            <h2 class="tpl1_script tpl1_title mb-5">Location & Transportation</h2>
+
+            <div class="tpl1_event_card" data-aos="fade-up" data-aos-duration="1000">
+                <i class="bi bi-geo-alt tpl1_card_icon_lg mb-3"></i>
+                <p class="tpl1_serif tpl1_event_details" style="font-weight: 500;">Finca El Olivar, Camino de
+                    los<br>Olivos s/n, 29400 Ronda,<br>Málaga - Spain</p>
+                <a href="#" class="tpl1_map_link mt-2 d-inline-block">Google Maps</a>
+
+                <div class="tpl1_venue_divider my-4" style="width: 40%;"></div>
+
+                <i class="bi bi-truck-front tpl1_card_icon_lg mb-4"></i>
+                <p class="tpl1_serif tpl1_event_details">From Málaga: ~1h 30min via<br>A-357 and A-367</p>
+                <p class="tpl1_serif tpl1_event_details mt-3">From Seville: ~2h via A-376</p>
+            </div>
+
+            <div class="tpl1_location_bottom_icon mt-5 pt-3">
+                <img src="../assets/imgs/luggage.svg" alt="Luggage Cart" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 10: ACCOMMODATION ==================== -->
+        <section class="tpl1_accommodation_section text-center">
+            <h2 class="tpl1_script tpl1_title">Accommodation</h2>
+            <p class="tpl1_serif tpl1_subtitle tpl1_accom_desc mb-5">Finca El Olivar does not offer lodging. Here<br>are
+                some recommended options nearby.</p>
+
+            <div class="tpl1_event_card" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Hotel 1 -->
+                <div class="tpl1_hotel_block">
+                    <h4 class="tpl1_serif tpl1_hotel_title">PARADOR DE RONDA</h4>
+                    <p class="tpl1_serif tpl1_hotel_details">Ronda<br>2 km de la finca<br>+34 952 877 500<br><a
+                            href="mailto:ronda@parador.es" class="tpl1_hotel_link">ronda@parador.es</a><br><a href="#"
+                            class="tpl1_hotel_link underline">Visit Website</a></p>
+                </div>
+
+                <div class="tpl1_venue_divider my-4" style="width: 30%;"></div>
+
+                <!-- Hotel 2 -->
+                <div class="tpl1_hotel_block">
+                    <h4 class="tpl1_serif tpl1_hotel_title">HOTEL CATALONIA RONDA</h4>
+                    <p class="tpl1_serif tpl1_hotel_details">Ronda<br>1.5 km<br>+34 952 872 315<br><a
+                            href="mailto:ronda@hoteles-catalonia.es"
+                            class="tpl1_hotel_link">ronda@hoteles-catalonia.es</a><br><a href="#"
+                            class="tpl1_hotel_link underline">Visit Website</a><br>Promo Code: BODA2026</p>
+                </div>
+
+                <div class="tpl1_venue_divider my-4" style="width: 30%;"></div>
+
+                <!-- Hotel 3 -->
+                <div class="tpl1_hotel_block">
+                    <h4 class="tpl1_serif tpl1_hotel_title">HOTEL MONTELIRIO</h4>
+                    <p class="tpl1_serif tpl1_hotel_details">Ronda<br>Boutique | Sobre el Tajo<br>+34 952 873 855<br><a
+                            href="mailto:reservas@hotelmontelirio.com"
+                            class="tpl1_hotel_link">reservas@hotelmontelirio.com</a><br><a href="#"
+                            class="tpl1_hotel_link underline">Visit Website</a></p>
+                </div>
+            </div>
+
+            <p class="tpl1_serif tpl1_accom_footer_text mt-5 pt-4 px-3">For hotels without direct agreements, please
+                mention "Wedding at Finca El Olivar" to access preferential rates.</p>
+        </section>
+
+        <!-- ==================== SECTION 11: LOCKETS GALLERY ==================== -->
+        <section class="tpl1_gallery_section text-center">
+            <div class="tpl1_locket_icon mb-5" data-aos="fade-in" data-aos-duration="1000">
+                <img src="../assets/imgs/locket.svg" alt="Lockets" class="img-fluid">
+            </div>
+
+            <div class="tpl1_interactive_gallery" data-aos="fade-up" data-aos-duration="1000">
+                <div class="tpl1_gallery_item expanded">
+                    <img src="../assets/imgs/locket_bot1.jpg" alt="Wedding Rings" class="img-fluid">
+                </div>
+                <div class="tpl1_gallery_item collapsed">
+                    <img src="../assets/imgs/locket_bot2.jpg" alt="Landscape" class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 12: GIFTS ==================== -->
+        <section class="tpl1_gifts_section text-center">
+            <div class="tpl1_dress_bg_wrap" data-aos="fade-in" data-aos-duration="1000">
+                <div class="tpl1_dress_card">
+                    <h2 class="tpl1_script tpl1_title">Gifts</h2>
+                    <p class="tpl1_serif tpl1_welcome_text mb-4" style="color: var(--tpl1-text-gold);">
+                        Your presence is our greatest gift.<br>
+                        If you wish to give us something,<br>
+                        please find our bank account<br>
+                        information below:
+                    </p>
+
+                    <div class="tpl1_bank_card mb-3">
+                        <h4 class="tpl1_serif tpl1_bank_name">CAIXABANK &ndash;<br>ANDREA MORALES</h4>
+                        <p class="tpl1_serif tpl1_bank_details">
+                            IBAN: ES00 0000 0000 0000 0000 0000<br>
+                            BIC/SWIFT: XXXXXXXXXX
+                        </p>
+                    </div>
+
+                    <div class="tpl1_bank_card">
+                        <h4 class="tpl1_serif tpl1_bank_name">BANCO SANTANDER &ndash;<br>PEDRO FERN&Aacute;NDEZ</h4>
+                        <p class="tpl1_serif tpl1_bank_details">
+                            IBAN: ES00 0000 0000 0000 0000 0000<br>
+                            BIC/SWIFT: XXXXXXXXXX
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tpl1_swan_icon mt-5 pt-3 mb-5 text-center">
+                <img src="../assets/imgs/swan.svg" alt="Swans" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 13: RSVP ==================== -->
+        <section class="tpl1_rsvp_section">
+            <div class="text-center mb-5">
+                <h2 class="tpl1_script tpl1_title text-white">RSVP</h2>
+                <p class="tpl1_serif text-white" style="letter-spacing: 1px;">Let us know if you can make it</p>
+            </div>
+
+            <div class="tpl1_venue_card" data-aos="fade-up" data-aos-duration="1000">
+                <form class="tpl1_rsvp_form">
+
+                    <div class="mb-4">
+                        <label class="tpl1_serif tpl1_form_label mb-3">Will you be attending? *</label>
+                        <div class="tpl1_radio_wrap">
+                            <input type="radio" id="attending_yes" name="attending" value="yes" checked>
+                            <label for="attending_yes" class="tpl1_serif">Yes, I'll be there</label>
+                        </div>
+                        <div class="tpl1_radio_wrap mt-2">
+                            <input type="radio" id="attending_no" name="attending" value="no">
+                            <label for="attending_no" class="tpl1_serif">Unfortunately, I can't make it</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="tpl1_serif tpl1_form_label mb-3">How many guests?</label>
+                        <div class="tpl1_counter">
+                            <button type="button" class="tpl1_counter_btn tpl1_counter_minus">-</button>
+                            <input type="number" class="tpl1_serif tpl1_counter_val" value="1" min="1" max="10"
+                                readonly>
+                            <button type="button" class="tpl1_counter_btn tpl1_counter_plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_guest_details_block mb-4">
+                        <label class="tpl1_serif tpl1_form_label mb-2" style="font-size: 14px;">Person 1 (Main
+                            contact)</label>
+                        <input type="text" class="tpl1_form_input mb-3 tpl1_serif" placeholder="Full Name">
+                        <input type="email" class="tpl1_form_input mb-3 tpl1_serif" placeholder="Email Address">
+
+                        <label class="tpl1_serif tpl1_form_label mb-2" style="font-size: 14px;">Dietary
+                            Requirements</label>
+                        <input type="text" class="tpl1_form_input tpl1_serif"
+                            placeholder="e.g. vegetarian, allergies etc">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="tpl1_serif tpl1_form_label mb-3">Will any children be attending?</label>
+                        <div class="tpl1_radio_wrap">
+                            <input type="radio" id="children_yes" name="children" value="yes">
+                            <label for="children_yes" class="tpl1_serif">Yes</label>
+                        </div>
+                        <div class="tpl1_radio_wrap mt-2">
+                            <input type="radio" id="children_no" name="children" value="no" checked>
+                            <label for="children_no" class="tpl1_serif">No</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="tpl1_serif tpl1_form_label mb-2">Message for the Couple</label>
+                        <textarea class="tpl1_form_input tpl1_serif" rows="4"
+                            placeholder="Is there anything you'd like to tell us ?"></textarea>
+                    </div>
+
+                    <button type="submit" class="tpl1_submit_btn tpl1_serif">
+                        <i class="bi bi-send mr-2"></i> Send RSVP
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 14: FOOTER ==================== -->
+        <section class="tpl1_footer_section text-center">
+            <div class="tpl1_footer_top_icon mb-5">
+                <img src="../assets/imgs/last_ring.svg" alt="Rings" class="img-fluid">
+            </div>
+
+            <div class="tpl1_footer_names_wrap">
+                <h1 class="tpl1_script tpl1_footer_name">Andrea</h1>
+                <h1 class="tpl1_script tpl1_footer_amp">&amp;</h1>
+                <h1 class="tpl1_script tpl1_footer_name">Pedro</h1>
+            </div>
+
+            <p class="tpl1_serif tpl1_footer_date mt-5 pt-3">12 SEPTEMBER 2026</p>
+        </section>
+
+    </div><!-- End Mobile Wrapper -->
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/assets/js/template.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script src="../assets/js/templates.js"></script>
 </body>
 
 </html>

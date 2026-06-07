@@ -1,212 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam & Sofia - Wedding Invitation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title data-i18n="meta_title">Eternally - Template 2</title>
+    <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/template2.css">
+    <link rel="stylesheet" href="../assets/css/templates.css">
 </head>
-<body>
 
-    <div class="demo_banner py-2 text-center">
-        <strong>Demo Mode</strong> — This is a preview. Create your own invitation!
-    </div>
+<body class="tpl1_body">
 
-    <section class="t_hero d-flex flex-column">
-        <div class="hero_bg"></div>
-        <div class="hero_overlay"></div>
-        
-        <canvas id="rose_canvas"></canvas>
-        
-        <div class="hero_content_wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1" data-aos="zoom-in" data-aos-duration="2000">
-            <div class="hero_icon mb-3"><i class="bi bi-suit-heart-fill"></i></div>
-            <h1 class="hero_names serif text-center px-3">Sam & Sofia</h1>
-            <p class="hero_subtitle serif">Together with their families</p>
-        </div>
+    <!-- Mobile-First Container -->
+    <div class="tpl1_mobile_wrapper">
 
-        <div class="pb-5 z-index-4 position-relative text-center" data-aos="fade-up" data-aos-delay="500">
-            <h2 class="serif" style="color: var(--accent); font-size: 2rem;">Counting Down...</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;" class="mb-4">Friday, October 10, 2026</p>
-            
-            <div class="d-flex justify-content-center gap-3">
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_days">00</span><span class="cd_label">Days</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_hours">00</span><span class="cd_label">Hours</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_minutes">00</span><span class="cd_label">Mins</span></div>
-                <div class="cd_box d-flex flex-column justify-content-center align-items-center"><span class="cd_num serif" id="cd_seconds">00</span><span class="cd_label">Secs</span></div>
+        <!-- ==================== ENVELOPE ANIMATION ==================== -->
+        <div class="tpl2_envelope_overlay" id="tpl2_envelope">
+            <div class="tpl2_envelope_container" id="tpl2_envelope_container">
+                <div class="tpl2_env_images_wrap">
+                    <div class="tpl2_env_scaler">
+                        <img src="../assets/imgs/temp2_env_lower_body.png.png" class="tpl2_env_lower"
+                            alt="Envelope Body">
+                        <img src="../assets/imgs/temp2_env_upper_body.png" class="tpl2_env_upper" alt="Envelope Flap">
+                        <div class="tpl2_env_text tpl1_serif">Tap to Open</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="container py-5 mt-5 text-center" data-aos="fade-up">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <h2 class="serif mb-4" style="font-size: 1.8rem; color: var(--text-main);">
-                    Dear <span style="color: var(--text-muted);">Dear Beloved Guest,</span>
-                </h2>
-                <p style="color: var(--text-muted); line-height: 1.8;">
-                    With hearts full of passion, we invite you to share in our dramatic love story. An unforgettable evening awaits — where crimson roses meet candlelight and two souls become one under the Tuscan stars.
+        <!-- ==================== SECTION 1: HERO / INTRO ==================== -->
+        <section class="tpl1_hero" id="hero_section">
+            <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
+                <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
+                    <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
+                </video>
+                <div class="tpl1_video_overlay"></div>
+            </div>
+
+            <div class="tpl1_hero_content">
+                <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
+                    <span class="tpl1_script monogram_letter">A</span>
+                    <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
+                </div>
+
+                <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
+                    <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
+                </div>
+
+                <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
+                    <a href="#countdown_section" class="tpl1_tap_btn">TAP TO REVEAL</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 2: COUNTDOWN ==================== -->
+        <section class="tpl2_countdown_section" id="countdown_section">
+            <h2 class="tpl1_script tpl2_section_title text-center" data-aos="fade-up" data-aos-duration="1000">Countdown
+            </h2>
+
+            <div class="tpl2_timer_wrap mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="tpl2_timer_item">
+                    <span class="tpl2_timer_num tpl1_serif" id="tpl2_timer_days">501</span>
+                    <span class="tpl1_serif tpl2_timer_label">DAYS</span>
+                </div>
+                <div class="tpl2_timer_item">
+                    <span class="tpl2_timer_num tpl1_serif" id="tpl2_timer_hours">06</span>
+                    <span class="tpl1_serif tpl2_timer_label">HOURS</span>
+                </div>
+                <div class="tpl2_timer_item">
+                    <span class="tpl2_timer_num tpl1_serif" id="tpl2_timer_mins">49</span>
+                    <span class="tpl1_serif tpl2_timer_label">MINUTES</span>
+                </div>
+                <div class="tpl2_timer_item">
+                    <span class="tpl2_timer_num tpl1_serif" id="tpl2_timer_secs">31</span>
+                    <span class="tpl1_serif tpl2_timer_label">SECONDS</span>
+                </div>
+            </div>
+
+            <!-- Crochet lights decoration -->
+            <div class="tpl2_lights_decor mt-4" data-aos="fade-in" data-aos-duration="1200">
+                <img src="../assets/imgs/temp2_bulb.png" alt="Lights" class="img-fluid">
+                <!-- Placeholder until real asset -->
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 3: THE DETAILS ==================== -->
+        <section class="tpl2_details_section text-center">
+            <h2 class="tpl1_script tpl2_section_title" data-aos="fade-up" data-aos-duration="1000">The Details</h2>
+            <p class="tpl1_serif tpl2_subtitle mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                EVERYTHING YOU NEED TO KNOW</p>
+
+            <div class="tpl2_location_cutout mt-5" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="tpl2_cutout_inner">
+                    <h3 class="tpl1_script tpl2_cutout_title">Location</h3>
+                    <h4 class="tpl1_serif tpl2_cutout_venue">VILLA MONTALCINO</h4>
+                    <p class="tpl1_serif tpl2_cutout_time mt-3">
+                        <i class="bi bi-clock me-2"></i> FROM 17:00-02:00
+                    </p>
+                </div>
+            </div>
+
+            <div class="tpl2_buttons_wrap mt-4" data-aos="fade-up" data-aos-duration="1000">
+                <a href="#" class="tpl2_btn tpl1_serif"><i class="bi bi-geo-alt me-2"></i> Google Maps</a>
+                <a href="#" class="tpl2_btn tpl1_serif"><i class="bi bi-calendar me-2"></i> Calendar</a>
+            </div>
+
+            <div class="tpl2_gramophone_decor mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <img src="../assets/imgs/Gramophone.png" alt="Gramophone" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 4: ORDER OF THE DAY ==================== -->
+        <section class="tpl2_order_section text-center">
+            <h2 class="tpl1_script tpl2_section_title" data-aos="fade-up" data-aos-duration="1000">Order of the Day</h2>
+            <p class="tpl1_serif tpl2_subtitle mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                WHAT WE HAVE PLANNED FOR YOU</p>
+
+            <div class="tpl2_vertical_timeline mt-5" id="tpl2_timeline">
+
+                <div class="tpl2_timeline_item">
+                    <span class="tpl1_serif tpl2_timeline_time">17:00</span>
+                    <h4 class="tpl1_serif tpl2_timeline_event">ARRIVAL &amp; WELCOME DRINKS</h4>
+                    <p class="tpl1_serif tpl2_timeline_desc">Reception and welcome cocktails at the villa</p>
+                    <div class="tpl2_timeline_line"></div>
+                </div>
+
+                <div class="tpl2_timeline_item">
+                    <span class="tpl1_serif tpl2_timeline_time">18:00</span>
+                    <h4 class="tpl1_serif tpl2_timeline_event">NIKAH CEREMONY</h4>
+                    <p class="tpl1_serif tpl2_timeline_desc">The most special moment of the day</p>
+                    <div class="tpl2_timeline_line"></div>
+                </div>
+
+                <div class="tpl2_timeline_item">
+                    <span class="tpl1_serif tpl2_timeline_time">18:30</span>
+                    <h4 class="tpl1_serif tpl2_timeline_event">NIKAH FAVOURS</h4>
+                    <p class="tpl1_serif tpl2_timeline_desc">A sweet gesture and tradition to share the joy</p>
+                    <div class="tpl2_timeline_line"></div>
+                </div>
+
+                <div class="tpl2_timeline_item">
+                    <span class="tpl1_serif tpl2_timeline_time">19:00</span>
+                    <h4 class="tpl1_serif tpl2_timeline_event">COCKTAIL HOUR &amp; DINNER</h4>
+                    <p class="tpl1_serif tpl2_timeline_desc">Al fresco dining under the stars</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 5: DRESS CODE ==================== -->
+        <section class="tpl2_dress_section text-center">
+            <h2 class="tpl1_script tpl2_section_title" data-aos="fade-up" data-aos-duration="1000">Dress Code</h2>
+            <p class="tpl1_serif tpl2_subtitle mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">A
+                FEW GENTLE REMINDERS</p>
+
+            <div class="tpl2_dress_illustration mt-4" data-aos="fade-in" data-aos-duration="1000">
+                <img src="../assets/imgs/Illustration.png" alt="Dress Code Guests" class="img-fluid tpl2_dress_img">
+            </div>
+
+            <div class="tpl2_dress_card" data-aos="fade-up" data-aos-duration="1000">
+                <h3 class="tpl1_serif tpl2_dress_card_title mb-3">FORMAL ATTIRE</h3>
+                <p class="tpl1_serif tpl2_dress_card_desc mb-4">
+                    We kindly ask you to dress formally to join us<br>on this very special day.
+                </p>
+                <p class="tpl1_serif tpl2_dress_card_note">
+                    <i>Please avoid wearing white &mdash; it is reserved for the<br>bride.</i>
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+        <!-- ==================== SECTION 6: GIFTS ==================== -->
+        <section class="tpl2_gifts_section text-center">
+            <h2 class="tpl1_script tpl2_section_title" data-aos="fade-up" data-aos-duration="1000">Gifts</h2>
+            <p class="tpl1_serif tpl2_subtitle mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">A
+                THOUGHTFUL GESTURE</p>
 
-    <section class="container py-4 text-center" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">When & Where</h2>
-        <div class="row justify-content-center g-4">
-            <div class="col-md-5 col-lg-4">
-                <div class="card_elegant">
-                    <i class="bi bi-calendar3 fs-2 mb-3 d-block" style="color: var(--accent);"></i>
-                    <h3 class="serif mb-3" style="color: var(--accent); font-size: 1.5rem;">Date & Time</h3>
-                    <p class="mb-2" style="color: var(--text-muted); font-size: 0.9rem;">Friday, October 10, 2026</p>
-                    <p class="mb-0 fw-medium" style="color: var(--text-main);">6:00 PM</p>
+            <div class="tpl2_gifts_envelope mb-5" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="../assets/imgs/Embroidered.svg" alt="Embroidered Envelope"
+                    class="img-fluid tpl2_gifts_env_img">
+            </div>
+
+            <p class="tpl1_serif tpl2_gifts_text mb-5" data-aos="fade-up" data-aos-duration="1000">
+                YOUR PRESENCE IS THE GREATEST GIFT<br>
+                OF ALL. FOR THOSE WHO WISH TO GIVE A<br>
+                LITTLE SOMETHING, YOU CAN DO SO IN<br>
+                THE FOLLOWING WAYS:
+            </p>
+
+            <div class="tpl2_accordion_container mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Dropdown 1: Card -->
+                <button class="tpl2_accordion_btn tpl1_serif" id="tpl2_btn_card" type="button">
+                    <span>Card <span class="badge tpl2_badge_preferred">preferred</span></span>
+                    <i class="fas fa-chevron-down tpl2_accordion_icon"></i>
+                </button>
+                <div class="tpl2_accordion_content tpl1_serif" id="tpl2_content_card">
+                    <p class="mt-3 mb-0">A secure box will be available at the venue for any cards.</p>
+                </div>
+
+                <!-- Dropdown 2: Bank Transfer -->
+                <button class="tpl2_accordion_btn tpl1_serif mt-3" id="tpl2_btn_bank" type="button">
+                    <span>Bank Transfer</span>
+                    <i class="fas fa-chevron-down tpl2_accordion_icon"></i>
+                </button>
+                <div class="tpl2_accordion_content tpl1_serif" id="tpl2_content_bank">
+                    <p class="mt-3 mb-0">Bank Details:<br>Ahmed &amp; Alia<br>IBAN: XXXX XXXX XXXX XXXX</p>
                 </div>
             </div>
-            <div class="col-md-5 col-lg-4">
-                <div class="card_elegant">
-                    <i class="bi bi-geo-alt fs-2 mb-3 d-block" style="color: var(--accent);"></i>
-                    <h3 class="serif mb-3" style="color: var(--accent); font-size: 1.5rem;">Venue</h3>
-                    <p class="mb-2 fw-medium" style="color: var(--text-main);">Teatro della Rosa</p>
-                    <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">15 Via Roma, Florence, Italy</p>
-                </div>
+
+            <div class="tpl2_gifts_bouquet" data-aos="fade-up" data-aos-duration="1200">
+                <img src="../assets/imgs/Bouquet.svg" alt="Floral Bouquet" class="img-fluid tpl2_gifts_bouquet_img">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
+        <!-- ==================== SECTION 7: RSVP ==================== -->
+        <section class="tpl2_rsvp_section" id="rsvp_section">
+            <h2 class="tpl1_script tpl2_section_title text-center" data-aos="fade-up" data-aos-duration="1000">RSVP</h2>
+            <p class="tpl1_serif tpl2_subtitle text-center mb-5" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-delay="200">WE HOPE YOU CAN MAKE IT</p>
 
-    <section class="container py-4 text-center" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">Schedule of Events</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 d-flex flex-column gap-3">
-                
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-clock"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">Doors Open</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Prosecco welcome in the Theatre Lobby</p>
+            <form class="tpl2_rsvp_form text-start" data-aos="fade-up" data-aos-duration="1000">
+                <div class="mb-4">
+                    <label class="tpl1_serif tpl2_form_label">Will you attend? *</label>
+                    <div class="d-flex tpl2_radio_group mt-2">
+                        <label class="tpl2_radio_label tpl1_serif d-flex align-items-center">
+                            <input type="radio" name="attend" value="yes" checked>
+                            <span class="tpl2_radio_custom me-2"></span>
+                            Yes, I'll be there
+                        </label>
+                        <label class="tpl2_radio_label tpl1_serif d-flex align-items-center ms-4">
+                            <input type="radio" name="attend" value="no">
+                            <span class="tpl2_radio_custom me-2"></span>
+                            Sorry, I can't make it
+                        </label>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">5:30 PM</div>
                 </div>
 
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="200">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-suit-heart"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">The Ceremony</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Vows on the grand stage</p>
+                <div class="mb-4">
+                    <label class="tpl1_serif tpl2_form_label">Full Name*</label>
+                    <input type="text" class="form-control tpl2_form_input tpl1_serif" placeholder="Your Full Name">
+                </div>
+
+                <div class="mb-4">
+                    <label class="tpl1_serif tpl2_form_label">Allergies or dietary requirements</label>
+                    <input type="text" class="form-control tpl2_form_input tpl1_serif"
+                        placeholder="e.g. gluten free, lactose intolerant">
+                </div>
+
+                <div class="mb-4">
+                    <label class="tpl1_serif tpl2_form_label">Contact Phone *</label>
+                    <input type="tel" class="form-control tpl2_form_input tpl1_serif" placeholder="+44 0000 000000">
+                </div>
+
+                <div class="mb-4">
+                    <label class="tpl1_serif tpl2_form_label mb-1">Companions</label>
+                    <p class="tpl1_serif tpl2_form_hint">Add the people joining you and note any allergies they may
+                        have.</p>
+                    <div class="d-flex gap-3">
+                        <button type="button" class="btn tpl2_counter_btn tpl1_serif" id="tpl2_add_adult">+
+                            Adult</button>
+                        <button type="button" class="btn tpl2_counter_btn tpl1_serif" id="tpl2_add_child">+
+                            Child</button>
                     </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">6:00 PM</div>
+                    <!-- Containers for dynamically added companions -->
+                    <div id="tpl2_adults_list" class="mt-3"></div>
+                    <div id="tpl2_children_list" class="mt-2"></div>
                 </div>
 
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="300">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-stars"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">Aperitivo Hour</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Italian aperitifs & antipasti</p>
-                    </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">7:00 PM</div>
+                <div class="mb-4">
+                    <label class="tpl2_checkbox_label tpl1_serif d-flex align-items-center">
+                        <input type="checkbox">
+                        <span class="tpl2_checkbox_custom me-2"></span>
+                        I need transport to the venue
+                    </label>
                 </div>
 
-                <div class="schedule_item d-flex align-items-center gap-3 text-start" data-aos="fade-up" data-aos-delay="400">
-                    <div class="schedule_icon flex-shrink-0"><i class="bi bi-music-note-beamed"></i></div>
-                    <div class="flex-grow-1">
-                        <h4 class="serif mb-1" style="color: var(--accent); font-size: 1.2rem;">La Festa</h4>
-                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Dinner, toasts & live band</p>
-                    </div>
-                    <div style="color: var(--text-muted); font-size: 0.9rem;">8:00 PM</div>
+                <div class="mb-4">
+                    <label class="tpl1_serif tpl2_form_label">Hotel / Accommodation / Area</label>
+                    <input type="text" class="form-control tpl2_form_input tpl1_serif"
+                        placeholder="e.g. Hotel Borgo Antico">
                 </div>
 
+                <div class="mb-5">
+                    <label class="tpl1_serif tpl2_form_label">Message for the couple (optional)</label>
+                    <textarea class="form-control tpl2_form_input tpl1_serif" rows="4"
+                        placeholder="Write us a few words..."></textarea>
+                </div>
+
+                <button type="button" class="btn tpl2_submit_btn w-100 tpl1_serif">
+                    <i class="far fa-paper-plane me-2"></i> Send RSVP
+                </button>
+            </form>
+        </section>
+
+        <!-- ==================== SECTION 8: FOOTER ==================== -->
+        <section class="tpl2_footer_section text-center">
+            <h2 class="tpl1_script tpl2_footer_names" data-aos="fade-up" data-aos-duration="1000">Ahmed &amp; Alia</h2>
+            <p class="tpl1_serif tpl2_footer_date" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">12
+                SEPTEMBER 2026</p>
+
+            <div class="tpl2_footer_artwork mt-5" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="../assets/imgs/FloralTomb.svg" alt="Gazebo Artwork" class="img-fluid w-100">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container py-4 text-center" data-aos="fade-up">
-        <h2 class="section_title serif mb-4">Location</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card_elegant py-5">
-                    <i class="bi bi-geo-alt d-block mb-3" style="font-size: 2.5rem; color: var(--accent);"></i>
-                    <h3 class="serif mb-2" style="font-size: 1.8rem; color: var(--accent);">Teatro della Rosa</h3>
-                    <p class="mb-4" style="color: var(--text-muted);">15 Via Roma, Florence, Italy</p>
-                    <a href="#" class="btn_accent">Open in Google Maps</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container text-center py-4" data-aos="fade-up">
-        <i class="bi bi-gift fs-2 d-block mb-3" style="color: var(--accent);"></i>
-        <h2 class="section_title serif mb-3">Gift Registry</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <p style="color: var(--text-muted); margin-bottom: 30px;">
-                    Your presence completes our celebration. If you wish to bless us with a gift, please consider:
-                </p>
-                <div class="d-flex justify-content-center gap-3">
-                    <button class="btn_accent">Amazon Registry</button>
-                    <button class="btn_accent">Pottery Barn</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container text-center py-4" data-aos="fade-up">
-        <i class="bi bi-music-note-beamed fs-2 d-block mb-3" style="color: var(--accent);"></i>
-        <h2 class="section_title serif mb-2">Our Song</h2>
-        <p class="serif fst-italic mb-1" style="font-size: 1.4rem; color: var(--text-main);">Con Te Partirò</p>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">Andrea Bocelli</p>
-    </section>
-
-    <div class="divider"><i class="bi bi-suit-heart-fill"></i></div>
-
-    <section class="container py-5 text-center mb-5" data-aos="fade-up">
-        <h2 class="section_title serif mb-5">RSVP</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-5">
-                <div class="card_elegant text-start p-4 p-md-5">
-                    <div class="d-flex gap-3 mb-4">
-                        <button class="btn_accent flex-fill py-3">Joyfully Accept</button>
-                        <button class="btn_outline_accent flex-fill py-3">Regretfully Decline</button>
-                    </div>
-                    
-                    <form>
-                        <div class="mb-4">
-                            <label class="form-label">Number of guests attending</label>
-                            <input type="number" class="form-control" value="1" min="1" max="10">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="form-label">Message (optional)</label>
-                            <textarea class="form-control" rows="4" placeholder="Write a message to the couple..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn_accent w-100 py-3 mt-2">Submit RSVP</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-5 border-top" style="border-color: var(--border-color) !important;">
-        <h3 class="serif mb-2" style="color: var(--accent); font-size: 1.8rem;">Sam & Sofia</h3>
-        <p class="mb-0" style="color: var(--text-muted); font-size: 0.85rem;">Friday, October 10, 2026</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/assets/js/template2.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+        <!-- ==================== SCRIPTS ==================== -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../assets/js/templates.js"></script>
 </body>
+
 </html>

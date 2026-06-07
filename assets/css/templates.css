@@ -1,0 +1,1903 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
+/* ==================== VARIABLES & GLOBALS ==================== */
+:root {
+    --tpl1-bg-dark: #C5A56D;
+    /* Mocha */
+    --tpl1-bg-light: #F5F2EB;
+    /* Cream */
+    --tpl1-text-gold: #8C6E51;
+    --tpl1-text-light: #FFFFFF;
+
+    --tpl1-font-script: 'Luxurious Script', 'Edwardian Script ITC', cursive;
+    --tpl1-font-serif: 'Arek Armenian Variable TRIAL', 'TLArmenian', serif;
+}
+
+body.tpl1_body {
+    background-color: #e0d9d2;
+    /* Darker background outside mobile wrapper on desktop */
+    color: var(--tpl1-text-gold);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: var(--tpl1-font-serif);
+}
+
+.tpl1_script {
+    font-family: var(--tpl1-font-script);
+}
+
+.tpl1_serif {
+    font-family: var(--tpl1-font-serif);
+}
+
+/* ==================== MOBILE WRAPPER ==================== */
+.tpl1_mobile_wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: var(--tpl1-bg-light);
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.8;
+    }
+}
+
+.animate_fade_in_up {
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate_pulse_delay {
+    opacity: 0;
+    animation: fadeInUp 1s forwards, pulse 2s infinite 2.5s;
+}
+
+/* ==================== SECTION 1: HERO / INTRO ==================== */
+.tpl1_hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tpl1_hero_video_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+}
+
+.tpl1_chandelier_vid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.tpl1_video_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #87695400 0%, #876954 100%); */
+    background: linear-gradient(180deg, rgba(135, 105, 84, 0) 16.83%, #876954 94.23%);
+}
+
+.tpl1_hero_content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 374px;
+    height: auto;
+    min-height: calc(100vh - 400px);
+    background: linear-gradient(269.43deg, #876954 0.26%, #876954 50.05%, #876954 99.29%);
+}
+
+.tpl1_monogram {
+    font-family: var(--tpl1-font-script);
+    margin-bottom: 20px;
+    color: #F1DDB5;
+    font-size: 230px;
+    line-height: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.monogram_letter {
+    margin: 0 -15px;
+}
+
+.tpl1_rings_wrap {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.tpl1_rings_img {
+    width: 100%;
+    height: auto;
+}
+
+.tpl1_tap_reveal {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.tpl1_tap_btn {
+    color: var(--tpl1-text-light);
+    font-family: var(--tpl1-font-serif);
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+/* ==================== SECTION 2: COUNTDOWN ==================== */
+.tpl1_countdown_section {
+    padding: 60px 20px;
+    background-color: var(--tpl1-bg-light);
+    position: relative;
+    background-image: url(../../assets/imgs/cont_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.tpl1_title {
+    font-size: 50px;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 5px;
+}
+
+.tpl1_subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.tpl1_timer_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.tpl1_timer_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+}
+
+.tpl1_timer_num {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.tpl1_timer_label {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.tpl1_timer_divider {
+    width: 1px;
+    height: 30px;
+    background-color: var(--tpl1-text-gold);
+    opacity: 0.4;
+}
+
+/* ==================== SECTION 3: WELCOME ==================== */
+.tpl1_welcome_section {
+    padding: 40px 20px;
+    background-color: var(--tpl1-bg-light);
+}
+
+.tpl1_welcome_text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 auto 40px;
+    font-style: italic;
+    padding: 0 10px;
+}
+
+/* INTERACTIVE GALLERY */
+.tpl1_interactive_gallery {
+    display: flex;
+    gap: 15px;
+    height: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tpl1_gallery_item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tpl1_gallery_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.tpl1_gallery_item.expanded {
+    flex: 4;
+    /* Takes up majority of width */
+}
+
+.tpl1_gallery_item.collapsed {
+    flex: 1;
+    /* Thin strip */
+}
+
+.tpl1_gallery_item.collapsed img {
+    opacity: 0.8;
+}
+
+.tpl1_gallery_item.collapsed:hover img {
+    opacity: 1;
+}
+
+.tpl1_divider_gold {
+    width: 100%;
+    max-width: 160px;
+    height: 1px;
+    background-color: #C5A56D;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+/* ==================== SECTION 4: FLORAL DECOR ==================== */
+.tpl1_floral_section {
+    padding: 20px 20px 0;
+    background-color: var(--tpl1-bg-light);
+}
+
+.tpl1_floral_illustration {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.tpl1_divider_thick {
+    width: 100%;
+    height: 8px;
+    background-color: var(--tpl1-text-gold);
+}
+
+/* ==================== SECTION 5: THE VENUE ==================== */
+.tpl1_venue_section {
+    margin-top: 80px;
+    padding: 60px 20px;
+    background-color: var(--tpl1-bg-dark);
+}
+
+.tpl1_venue_card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 30px 15px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tpl1_venue_illustration {
+    max-width: 90%;
+    margin: 0 auto 20px;
+}
+
+.tpl1_venue_name {
+    font-size: 34px;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 15px;
+}
+
+.tpl1_venue_divider {
+    width: 80%;
+    height: 1px;
+    background-color: var(--tpl1-text-gold);
+    opacity: 0.2;
+    margin: 15px auto;
+}
+
+.tpl1_venue_datetime {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--tpl1-text-gold);
+}
+
+.tpl1_venue_address {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 25px;
+}
+
+.tpl1_venue_map {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.tpl1_map_img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+}
+
+.tpl1_map_btn_wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(245, 242, 235, 1) 0%, rgba(245, 242, 235, 0) 100%);
+    padding: 40px 0 15px;
+}
+
+.tpl1_map_btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--tpl1-text-gold);
+    font-family: var(--tpl1-font-serif);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--tpl1-text-gold);
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+}
+
+.tpl1_map_btn:hover {
+    opacity: 0.7;
+    color: var(--tpl1-text-gold);
+}
+
+/* ==================== SECTION 6: DAY PROGRAMME (TIMELINE) ==================== */
+.tpl1_programme_section {
+    padding: 60px 20px;
+    background-color: var(--tpl1-bg-light);
+    background-image: url(../../assets/imgs/program_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.tpl1_timeline_wrapper {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* The vertical drawing line */
+.tpl1_timeline_line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--tpl1-text-gold);
+    transform: translateX(-50%);
+    opacity: 0.4;
+    height: 0;
+    /* Starts at 0 for animation */
+    transition: height 3s ease-in-out;
+}
+
+.tpl1_timeline_wrapper.draw-line .tpl1_timeline_line {
+    height: 100%;
+}
+
+.tpl1_timeline_item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+    opacity: 0;
+    /* For fade in */
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.tpl1_timeline_item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tpl1_timeline_item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.tpl1_timeline_item.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* Horizontal connector line */
+.tpl1_timeline_item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    /* Align with time text */
+    width: 15px;
+    height: 1px;
+    background-color: var(--tpl1-text-gold);
+    opacity: 0.5;
+}
+
+.tpl1_timeline_item.left::before {
+    right: 0;
+}
+
+.tpl1_timeline_item.right::before {
+    left: 0;
+}
+
+.tpl1_timeline_content .tpl1_time {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 5px;
+}
+
+.tpl1_timeline_content .tpl1_desc {
+    font-size: 15px;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+}
+
+/* ==================== SECTION 7: DRESS CODE ==================== */
+.tpl1_dress_section {
+    background-color: var(--tpl1-bg-light);
+}
+
+.tpl1_dress_bg_wrap {
+    background: url(../../assets/imgs/dress_bg.jpg) center center / cover no-repeat;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.tpl1_dress_card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 50px 20px;
+    max-width: 320px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tpl1_dress_gender {
+    font-size: 32px;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 5px;
+}
+
+.tpl1_dress_desc {
+    font-size: 14px;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+}
+
+/* ==================== SECTION 8: PRE WEDDING EVENTS ==================== */
+.tpl1_prewedding_section {
+    background-color: #BCA371;
+    /* Metallic gold/mocha from screenshot */
+    padding: 60px 20px;
+}
+
+.tpl1_pre_title {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.tpl1_pre_desc {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tpl1_event_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tpl1_event_card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tpl1_event_icon {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.tpl1_event_name {
+    font-size: 32px;
+    color: var(--tpl1-text-gold);
+}
+
+.tpl1_event_details {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+}
+
+/* ==================== SECTION 9: LOCATION & TRANSPORT ==================== */
+.tpl1_location_section {
+    background-color: var(--tpl1-bg-light);
+    padding: 60px 20px 20px;
+}
+
+.tpl1_card_icon_lg {
+    font-size: 28px;
+    color: var(--tpl1-text-gold);
+}
+
+.tpl1_map_link {
+    font-family: var(--tpl1-font-serif);
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--tpl1-text-gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--tpl1-text-gold);
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+}
+
+.tpl1_map_link:hover {
+    opacity: 0.7;
+    color: var(--tpl1-text-gold);
+}
+
+/* ==================== SECTION 10: ACCOMMODATION ==================== */
+.tpl1_accommodation_section {
+    background-color: var(--tpl1-bg-light);
+    padding: 40px 20px 60px;
+    background: url(../../assets/imgs/program_bg.png) center center / cover no-repeat;
+}
+
+.tpl1_accom_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.tpl1_hotel_title {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 15px;
+}
+
+.tpl1_hotel_details {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+}
+
+.tpl1_hotel_link {
+    color: var(--tpl1-text-gold);
+    text-decoration: none;
+}
+
+.tpl1_hotel_link.underline {
+    border-bottom: 1px solid var(--tpl1-text-gold);
+    padding-bottom: 1px;
+}
+
+.tpl1_accom_footer_text {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--tpl1-text-gold);
+    line-height: 1.6;
+}
+
+/* ==================== SECTION 11: LOCKETS GALLERY ==================== */
+.tpl1_gallery_section {
+    background-color: var(--tpl1-bg-light);
+    padding: 60px 20px;
+}
+
+.tpl1_locket_icon img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Removed asymmetric grid classes to use interactive gallery classes */
+
+/* ==================== SECTION 12: GIFTS ==================== */
+.tpl1_gifts_section {
+    background-color: var(--tpl1-bg-light);
+}
+
+.tpl1_bank_card {
+    background-color: #F8F5EE;
+    /* Slightly darker cream inside the white card */
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: left;
+}
+
+.tpl1_bank_name {
+    font-size: 14px;
+    color: var(--tpl1-text-gold);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.tpl1_bank_details {
+    font-size: 12px;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ==================== SECTION 13: RSVP ==================== */
+.tpl1_rsvp_section {
+    background-color: #BCA371;
+    /* Mocha */
+    padding: 60px 20px;
+}
+
+.tpl1_rsvp_form {
+    text-align: left;
+}
+
+.tpl1_form_label {
+    display: block;
+    font-size: 16px;
+    color: var(--tpl1-text-gold);
+}
+
+/* Custom Radio Buttons */
+.tpl1_radio_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.tpl1_radio_wrap input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0 10px 0 0;
+    font-size: 1em;
+    color: var(--tpl1-text-gold);
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--tpl1-text-gold);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.tpl1_radio_wrap input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--tpl1-text-gold);
+}
+
+.tpl1_radio_wrap input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.tpl1_radio_wrap label {
+    font-size: 15px;
+    color: var(--tpl1-text-gold);
+    cursor: pointer;
+}
+
+/* Counter */
+.tpl1_counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tpl1_counter_btn {
+    background-color: transparent;
+    border: 1px solid #E5DFD3;
+    color: var(--tpl1-text-gold);
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tpl1_counter_val {
+    width: 32px;
+    height: 32px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    color: var(--tpl1-text-gold);
+    background: transparent;
+}
+
+.tpl1_counter_val:focus {
+    outline: none;
+}
+
+/* Text Inputs */
+.tpl1_guest_details_block {
+    background-color: #FDFBF7;
+    padding: 20px 15px;
+    border-radius: 8px;
+}
+
+.tpl1_form_input {
+    width: 100%;
+    border: 1px solid #E5DFD3;
+    background-color: #FDFBF7;
+    padding: 12px 15px;
+    border-radius: 6px;
+    color: var(--tpl1-text-gold);
+    font-size: 14px;
+}
+
+.tpl1_form_input:focus {
+    outline: none;
+    border-color: var(--tpl1-text-gold);
+}
+
+.tpl1_form_input::placeholder {
+    color: #D2C4B1;
+}
+
+/* Submit Button */
+.tpl1_submit_btn {
+    width: 100%;
+    background-color: #BCA371;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tpl1_submit_btn:hover {
+    background-color: #A38B5A;
+}
+
+/* ==================== SECTION 14: FOOTER ==================== */
+.tpl1_footer_section {
+    background-color: var(--tpl1-bg-light);
+    padding: 60px 20px 80px;
+    /* Floral background borders can be added via pseudo-elements */
+}
+
+.tpl1_footer_names_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.tpl1_footer_name {
+    font-size: 70px;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+    line-height: 1;
+}
+
+.tpl1_footer_amp {
+    font-size: 40px;
+    color: var(--tpl1-text-gold);
+    margin: 0;
+    line-height: 1;
+}
+
+.tpl1_footer_date {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--tpl1-text-gold);
+}
+
+/* ==========================================================================
+   TEMPLATE 2 SPECIFIC STYLES
+   ========================================================================== */
+
+/* --- ENVELOPE ANIMATION --- */
+.tpl2_envelope_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--tpl1-bg-light);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+.tpl2_envelope_overlay.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.tpl2_envelope_container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tpl2_envelope_container.slide-down {
+    transform: translateY(120vh);
+    /* Slide down off screen */
+}
+
+.tpl2_env_images_wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center the perfectly scaled envelope */
+}
+
+.tpl2_env_scaler {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.tpl2_env_lower {
+    min-width: 100%;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.tpl2_env_upper {
+    width: 100%;
+    /* Identical scaling factor as lower body */
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transform-origin: top;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+/* When opening, the flap rotates up */
+.tpl2_envelope_container.open .tpl2_env_upper {
+    transform: rotateX(180deg);
+}
+
+/* Back of the flap (optional realism) */
+.tpl2_env_upper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EFEBE1;
+    /* Inner envelope color */
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+}
+
+.tpl2_env_text {
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    text-align: center;
+    color: var(--tpl1-text-gold);
+    font-size: 18px;
+    letter-spacing: 2px;
+    animation: pulse 2s infinite;
+}
+
+/* --- TPL2 SHARED --- */
+.tpl2_section_title {
+    font-size: 55px;
+    color: #4A5D3E;
+    /* Olive green color from screenshot */
+    margin: 0;
+    line-height: 1.1;
+}
+
+.tpl2_subtitle {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #8C8271;
+    margin-top: 10px;
+}
+
+/* --- TPL2 COUNTDOWN --- */
+.tpl2_countdown_section {
+    background-color: var(--tpl1-bg-light);
+    padding: 60px 20px 40px;
+}
+
+.tpl2_timer_wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.tpl2_timer_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tpl2_timer_num {
+    font-size: 38px;
+    color: #4A5D3E;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.tpl2_timer_label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #8C8271;
+}
+
+/* --- TPL2 THE DETAILS --- */
+.tpl2_details_section {
+    background-color: var(--tpl1-bg-light);
+    padding: 40px 20px 60px;
+}
+
+.tpl2_location_cutout {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 500px;
+    margin: 0 auto;
+    /* Placeholder for the beautiful shape, simulating a soft cream inner glow */
+    background-image: url(../../assets/imgs/temp2_loc_bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tpl2_cutout_title {
+    font-size: 45px;
+    color: #4A5D3E;
+    margin-bottom: 10px;
+}
+
+.tpl2_cutout_venue {
+    font-size: 18px;
+    color: #4A5D3E;
+    letter-spacing: 1px;
+}
+
+.tpl2_cutout_time {
+    font-size: 14px;
+    color: #8C8271;
+}
+
+.tpl2_buttons_wrap {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.tpl2_btn {
+    display: inline-block;
+    background-color: #5D6C4A;
+    /* Olive green button */
+    color: #FFF;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.tpl2_btn:hover {
+    background-color: #4A5D3E;
+    color: #FFF;
+}
+
+/* --- TPL2 ORDER OF THE DAY --- */
+.tpl2_order_section {
+    background-color: #EFEBE1;
+    /* Slightly darker cream/grey from screenshot */
+    padding: 60px 20px;
+}
+
+.tpl2_vertical_timeline {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.tpl2_timeline_item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.tpl2_timeline_time {
+    display: block;
+    font-size: 15px;
+    color: #8C8271;
+    margin-bottom: 5px;
+}
+
+.tpl2_timeline_event {
+    font-size: 18px;
+    color: #4A5D3E;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.tpl2_timeline_desc {
+    font-size: 14px;
+    color: #8C8271;
+    margin-bottom: 25px;
+}
+
+.tpl2_timeline_line {
+    width: 1px;
+    height: 30px;
+    background-color: #C2BAA6;
+    margin: 0 auto;
+}
+
+/* --- TPL2 DRESS CODE --- */
+.tpl2_dress_section {
+    background-color: #F5F2EB;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.tpl2_dress_illustration {
+    margin-bottom: -30px;
+    /* Overlap with the card below */
+    position: relative;
+    z-index: 2;
+}
+
+.tpl2_dress_card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 50px 20px 40px;
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tpl2_dress_card_title {
+    font-size: 20px;
+    color: #4A5D3E;
+    letter-spacing: 2px;
+}
+
+.tpl2_dress_card_desc {
+    font-size: 15px;
+    color: #8C8271;
+    line-height: 1.6;
+}
+
+.tpl2_dress_card_note {
+    font-size: 14px;
+    color: #8C8271;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* --- TPL2 GIFTS SECTION --- */
+.tpl2_gifts_section {
+    background-color: #EFEBE1;
+    padding: 60px 20px;
+}
+
+.tpl2_gifts_envelope {
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+.tpl2_gifts_text {
+    font-size: 14px;
+    color: #8C8271;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.tpl2_accordion_container {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.tpl2_accordion_btn {
+    width: 100%;
+    background-color: #FAF8F2;
+    border: 1px solid #D1C7B3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #4A5D3E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tpl2_accordion_btn:focus {
+    outline: none;
+}
+
+.tpl2_badge_preferred {
+    background-color: #D1C7B3;
+    color: #4A5D3E;
+    font-size: 10px;
+    font-weight: normal;
+    border-radius: 12px;
+    padding: 4px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.tpl2_accordion_icon {
+    font-size: 14px;
+    color: #8C8271;
+    transition: transform 0.3s ease;
+}
+
+.tpl2_accordion_btn.active .tpl2_accordion_icon {
+    transform: rotate(180deg);
+}
+
+.tpl2_accordion_content {
+    background-color: #FAF8F2;
+    border: 1px solid #D1C7B3;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #8C8271;
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.tpl2_accordion_btn.active {
+    border-radius: 8px 8px 0 0;
+}
+
+.tpl2_gifts_bouquet {
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+/* --- TPL2 RSVP SECTION --- */
+.tpl2_rsvp_section {
+    background-color: #EFEBE1;
+    padding: 60px 20px;
+}
+
+.tpl2_rsvp_form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.tpl2_form_label {
+    font-size: 15px;
+    color: #4A5D3E;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tpl2_form_hint {
+    font-size: 13px;
+    color: #8C8271;
+    margin-bottom: 12px;
+}
+
+.tpl2_form_input {
+    background-color: #FAF8F2 !important;
+    border: 1px solid #D1C7B3 !important;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 15px;
+    color: #4A5D3E;
+    box-shadow: none !important;
+}
+
+.tpl2_form_input::placeholder {
+    color: #B5AD9C;
+}
+
+/* Custom Radio */
+.tpl2_radio_label {
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    color: #4A5D3E;
+}
+
+.tpl2_radio_label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tpl2_radio_custom {
+    height: 18px;
+    width: 18px;
+    background-color: #FAF8F2;
+    border: 1px solid #4A5D3E;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.tpl2_radio_label input:checked~.tpl2_radio_custom::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4A5D3E;
+}
+
+/* Custom Checkbox */
+.tpl2_checkbox_label {
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    color: #4A5D3E;
+}
+
+.tpl2_checkbox_label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tpl2_checkbox_custom {
+    height: 18px;
+    width: 18px;
+    background-color: #FAF8F2;
+    border: 1px solid #4A5D3E;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.tpl2_checkbox_label input:checked~.tpl2_checkbox_custom::after {
+    content: "\f00c";
+    /* FontAwesome check */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -1px;
+    left: 2px;
+    font-size: 12px;
+    color: #4A5D3E;
+}
+
+/* Counter Buttons */
+.tpl2_counter_btn {
+    background-color: #FAF8F2;
+    border: 1px solid #D1C7B3;
+    color: #4A5D3E;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 15px;
+}
+
+.tpl2_counter_btn:hover {
+    background-color: #EFEBE1;
+    border-color: #4A5D3E;
+}
+
+/* Submit Button */
+.tpl2_submit_btn {
+    background-color: #5D6C4A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.tpl2_submit_btn:hover {
+    background-color: #4A5D3E;
+    color: #FFFFFF;
+}
+
+/* --- TPL2 FOOTER SECTION --- */
+.tpl2_footer_section {
+    background-color: #F5F2EB;
+    padding: 60px 20px 0;
+    /* No bottom padding so artwork hits the bottom */
+}
+
+.tpl2_footer_names {
+    font-size: 50px;
+    color: #4A5D3E;
+}
+
+.tpl2_footer_date {
+    font-size: 18px;
+    color: #8C8271;
+    letter-spacing: 2px;
+}
+
+.tpl2_footer_artwork {
+    margin: 0 auto;
+    max-width: 450px;
+    /* Fill the wrapper */
+}
+
+/* ==================== TEMPLATE 3 STYLES ==================== */
+.tpl3_theme {
+    background-color: #F2EFE9 !important;
+}
+
+.tpl3_theme .tpl1_mobile_wrapper {
+    background-color: #F2EFE9;
+}
+
+.tpl3_title {
+    color: #4F6A7A;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.tpl3_subtitle {
+    color: #8C9CAB;
+    /* Lighter shade of slate blue or a grey */
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* SECTION 0: ENVELOPE */
+.tpl3_envelope_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #F2EFE9;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.tpl3_envelope_overlay.slide-down {
+    transform: translateY(100vh);
+}
+
+.tpl3_envelope_overlay.hide {
+    opacity: 0;
+}
+
+.tpl3_env_scaler {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tpl3_env_lower {
+    min-width: 100%;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: 2;
+}
+
+.tpl3_env_flap {
+    min-width: 100%;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    transform-origin: top center;
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.tpl3_envelope_overlay.open .tpl3_env_flap {
+    transform: rotateX(180deg);
+}
+
+.tpl3_env_tap_text {
+    position: absolute;
+    z-index: 4;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #4F6A7A;
+    font-size: 18px;
+    letter-spacing: 2px;
+    pointer-events: none;
+    animation: pulse 2s infinite;
+}
+
+.tpl3_envelope_overlay.open .tpl3_env_tap_text {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* SECTION 1: HERO / COUNTDOWN */
+.tpl3_hero_section {
+    padding: 40px 20px;
+    position: relative;
+}
+
+.tpl3_countdown_grid {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.tpl3_countdown_box {
+    border: 1px solid #4F6A7A;
+    border-radius: 8px;
+    padding: 15px 5px;
+    background-color: transparent;
+}
+
+.tpl3_countdown_val {
+    color: #4F6A7A;
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.tpl3_countdown_label {
+    color: #8C9CAB;
+    font-size: 12px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* SECTION 2: DAY DETAILS */
+.tpl3_day_details_section {
+    padding: 40px 20px;
+}
+
+.tpl3_location_icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #E2DBD0;
+    color: #4F6A7A;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.tpl3_location_title {
+    color: #4F6A7A;
+    font-size: 18px;
+}
+
+.tpl3_location_text {
+    color: #4F6A7A;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.tpl3_location_time {
+    color: #8C9CAB;
+    font-size: 14px;
+}
+
+.tpl3_rounded_img {
+    border-radius: 12px;
+    border: 1px solid #4F6A7A;
+}
+
+.tpl3_outline_btn {
+    border: 1px solid #4F6A7A;
+    color: #4F6A7A;
+    background: transparent;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.tpl3_outline_btn:hover {
+    background-color: #4F6A7A;
+    color: #FFF;
+}
+
+/* SECTION 3: PROGRAM DETAILS */
+.tpl3_program_section {
+    padding: 40px 20px;
+}
+
+.tpl3_timeline {
+    position: relative;
+    max-width: 350px;
+    margin: 0 auto;
+    padding-left: 30px;
+}
+
+.tpl3_timeline_line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #4F6A7A;
+    z-index: 1;
+}
+
+.tpl3_timeline_item {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+.tpl3_timeline_item:last-child {
+    margin-bottom: 0;
+}
+
+.tpl3_timeline_icon {
+    position: absolute;
+    left: -30px;
+    /* Offset to center on line */
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #F2EFE9;
+    border: 1px solid #4F6A7A;
+    color: #4F6A7A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    z-index: 3;
+}
+
+.tpl3_timeline_content {
+    padding-left: 30px;
+}
+
+.tpl3_time_badge {
+    background-color: #4F6A7A;
+    color: #FFF;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.tpl3_timeline_title {
+    color: #4F6A7A;
+    font-size: 18px;
+}
+
+.tpl3_timeline_desc {
+    color: #8C9CAB;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+/* SECTION 4: GIFTS */
+.tpl3_gifts_section {
+    padding: 40px 20px 80px;
+}
+
+.tpl3_gifts_desc {
+    color: #8C9CAB;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.tpl3_accordion_container {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.tpl3_accordion_btn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #4F6A7A;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #4F6A7A;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tpl3_accordion_icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.tpl3_accordion_btn.active .tpl3_accordion_icon {
+    transform: rotate(180deg);
+}
+
+.tpl3_accordion_content {
+    background-color: transparent;
+    border: 1px solid #4F6A7A;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #4F6A7A;
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.tpl3_accordion_btn.active {
+    border-radius: 8px 8px 0 0;
+}
+
+/* SECTION 5: RSVP */
+.tpl3_rsvp_section {
+    padding: 20px 20px 60px;
+}
+
+.tpl3_rsvp_desc {
+    color: #8C9CAB;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.tpl3_rsvp_form_wrapper {
+    background-color: transparent;
+    border: 1px solid #4F6A7A;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.tpl3_form_label {
+    color: #4F6A7A;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.tpl3_form_input {
+    background-color: transparent !important;
+    border: 1px solid #4F6A7A;
+    color: #4F6A7A;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.tpl3_form_input::placeholder {
+    color: #8C9CAB;
+    opacity: 0.7;
+}
+
+.tpl3_form_input:focus {
+    box-shadow: none;
+    border-color: #4F6A7A;
+    outline: none;
+}
+
+.tpl3_guest_input {
+    width: 80px;
+}
+
+.tpl3_form_radio {
+    accent-color: #4F6A7A;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    border: 1px solid #4F6A7A;
+}
+
+.tpl3_radio_label {
+    color: #4F6A7A;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.tpl3_allergies_section {
+    margin-top: 30px;
+}
+
+.tpl3_warning_icon {
+    font-size: 18px;
+    color: #f1c40f; /* Yellowish warning */
+}
+
+.tpl3_allergies_desc {
+    color: #4F6A7A;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.tpl3_form_checkbox {
+    accent-color: #4F6A7A;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #4F6A7A;
+}
+
+.tpl3_check_label {
+    color: #4F6A7A;
+    font-size: 13px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.tpl3_textarea {
+    resize: vertical;
+}
+
+.tpl3_submit_btn {
+    background-color: #4F6A7A;
+    color: #FFF;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tpl3_submit_btn:hover {
+    background-color: #3b505c;
+    color: #FFF;
+}
+
+/* SECTION 6: FOOTER */
+.tpl3_footer {
+    background-color: #4F6A7A;
+    padding: 60px 20px;
+    color: #F2EFE9;
+}
+
+.tpl3_footer_icon {
+    font-size: 24px;
+    color: #F2EFE9;
+}
+
+.tpl3_footer_names {
+    color: #F2EFE9;
+    font-size: 40px;
+}
+
+.tpl3_footer_date {
+    color: #F2EFE9;
+    font-size: 16px;
+    letter-spacing: 1px;
+}

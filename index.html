@@ -16,228 +16,114 @@
 
 <body>
 
-    <canvas id="animation_canvas"></canvas>
-
-
     <!-- ==================== HEADER ==================== -->
-    <header class="header_section">
+    <div class="navbar_wrapper" data-aos="fade-down">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <span class="brand_logo"><i class="bi bi-heart-fill brand_heart"></i> Eternally</span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent">
+            <nav class="navbar navbar-expand-lg navbar_custom">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand" href="#">LOGO</a>
+
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="nav_right_group ms-auto d-flex align-items-center gap-3">
-                            <!-- Language Switcher -->
-                            <div class="lang_switcher" id="lang_switcher">
-                                <button class="lang_btn" id="lang_toggle_btn">
-                                    <i class="bi bi-globe2"></i>
-                                    <span>EN</span>
-                                    <i class="bi bi-chevron-down lang_arrow"></i>
-                                </button>
-                                <div class="lang_dropdown" id="lang_dropdown">
-                                    <a href="#" class="lang_option active" data-lang="EN">
-                                        <span class="lang_flag">🇬🇧</span> <span data-i18n="lang_name_en">English</span>
-                                    </a>
-                                    <a href="#" class="lang_option" data-lang="FR">
-                                        <span class="lang_flag">🇫🇷</span> <span data-i18n="lang_name_fr">Français</span>
-                                    </a>
-                                    <a href="#" class="lang_option" data-lang="DE">
-                                        <span class="lang_flag">🇩🇪</span> <span data-i18n="lang_name_de">Deutsch</span>
-                                    </a>
-                                    <a href="#" class="lang_option" data-lang="ES">
-                                        <span class="lang_flag">🇪🇸</span> <span data-i18n="lang_name_es">Español</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Auth Buttons -->
-                            <a href="accounts/signin.html" class="nav_signin_btn" data-i18n="nav_sign_in">Sign In</a>
-                            <a href="accounts/signup.html" class="nav_getstarted_btn" data-i18n="nav_get_started">Get Started</a>
+
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#">How It Works</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Our Story</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Get In Touch</a></li>
+                        </ul>
+
+                        <div class="d-flex align-items-center gap-2 nav_right_actions ms-auto mt-3 mt-lg-0">
+                            <button class="nav_pill border-0">EUR <i class="bi bi-chevron-down ms-1"></i></button>
+                            <button class="nav_pill border-0"><i class="bi bi-globe2 me-1"></i> EN <i
+                                    class="bi bi-chevron-down ms-1"></i></button>
+                            <a href="#" class="nav_btn text-decoration-none">PRICING</a>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-    </header>
+    </div>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero_section" id="hero_section">
-        <div class="hero_bg_overlay"></div>
-        <div class="hero_sparkles">
-            <span class="sparkle s1">✦</span>
-            <span class="sparkle s2">✦</span>
-            <span class="sparkle s3">✦</span>
-            <span class="sparkle s4">✦</span>
+    <section class="hero_section">
+        <canvas id="hero_canvas"></canvas>
+        <div class="container" data-aos="fade-up">
+            <h1 class="hero_title">
+                Digital Wedding Invitations<br>
+                <span class="hero_italic">& Save The Date</span>
+            </h1>
         </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
-                    <div class="hero_content" data-aos="fade-right">
-                        <div class="hero_dash_line">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <h1 class="hero_heading" data-i18n-html="hero_heading">
-                            Digital Wedding
-                            <em>Invitations &amp; Save the<br>Dates You'll Remember</em>
-                        </h1>
-                        <p class="hero_desc" data-i18n="hero_desc">
-                            Create stunning, personalized digital wedding invitations with effortless RSVP management.
-                            Share your love story with elegance and sophistication.
-                        </p>
-                        <div class="hero_btns">
-                            <a href="#" class="hero_btn_primary">
-                                <span data-i18n="hero_btn_primary">Create Your Invitation</span> <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <a href="#" class="hero_btn_secondary" data-i18n="hero_btn_secondary">View Demo</a>
-                        </div>
-                        <div class="hero_badges">
-                            <span><i class="bi bi-check-circle"></i> <span data-i18n="hero_badge_1">Free to Start</span></span>
-                            <span><i class="bi bi-check-circle"></i> <span data-i18n="hero_badge_2">No Credit Card Required</span></span>
-                            <span><i class="bi bi-check-circle"></i> <span data-i18n="hero_badge_3">Unlimited Guests</span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="hero_phone_wrap" data-aos="fade-left">
-                        <img src="assets/imgs/hero_mobile.svg" alt="" data-i18n-alt="img_hero_phone">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="my-content">
-
-    <!-- ==================== FEATURES SECTION ==================== -->
-    <section class="features_section" id="features_section">
-        <div class="container">
-            <div class="section_badge" data-aos="fade-up">
-                <i class="bi bi-heart-fill"></i> <span data-i18n="features_badge">Features</span>
-            </div>
-            <h2 class="section_heading" data-aos="fade-up" data-aos-delay="100" data-i18n-html="features_heading">
-                Everything You Need for Your<br>
-                <em>Special Day</em>
-            </h2>
-            <p class="section_subtext" data-aos="fade-up" data-aos-delay="200" data-i18n="features_subtext">
-                Create beautiful invitations with all the features you need to make your wedding day unforgettable
-            </p>
-
-            <!-- Top Row - Large Cards -->
-            <div class="row mt-2">
-                <div class="col-lg-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature_card_large">
-                        <div class="feature_card_img">
-                            <img src="assets/imgs/f1.jpg" alt="Countdown Timer" data-i18n-alt="img_feat_1">
-                            <div class="feature_card_icon"><i class="bi bi-calendar3"></i></div>
-                        </div>
-                        <div class="feature_card_body">
-                            <h4 data-i18n="feat_countdown_title">Countdown Timer</h4>
-                            <p data-i18n="feat_countdown_desc">Build excitement with a live countdown to your wedding day</p>
+        <div class="hero_slider_wrap" data-aos="fade-up" data-aos-delay="100">
+            <!-- Swiper -->
+            <div class="swiper hero_swiper">
+                <div class="swiper-wrapper">
+                    <!-- Placeholder slides from Unsplash for wedding themes -->
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider1.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature_card_large">
-                        <div class="feature_card_img">
-                            <img src="assets/imgs/f2.jpg" alt="Guest Management" data-i18n-alt="img_feat_2">
-                            <div class="feature_card_icon"><i class="bi bi-people"></i></div>
-                        </div>
-                        <div class="feature_card_body">
-                            <h4 data-i18n="feat_guest_title">Guest Management</h4>
-                            <p data-i18n="feat_guest_desc">Track RSVPs and manage your guest list effortlessly</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider2.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature_card_large">
-                        <div class="feature_card_img">
-                            <img src="assets/imgs/f3.jpg" alt="Luxury Themes" data-i18n-alt="img_feat_3">
-                            <div class="feature_card_icon"><i class="bi bi-stars"></i></div>
-                        </div>
-                        <div class="feature_card_body">
-                            <h4 data-i18n="feat_luxury_title">Luxury Themes</h4>
-                            <p data-i18n="feat_luxury_desc">Stunning color themes — Ivory, Burgundy, Sage &amp; more</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider3.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Bottom Rows - Small Cards -->
-            <div class="row mt-1">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature_card_small">
-                        <div class="feature_small_img">
-                            <img src="assets/imgs/f4.jpg" alt="Interactive Maps" data-i18n-alt="img_feat_4">
-                            <div class="feature_card_icon_sm"><i class="bi bi-geo-alt"></i></div>
-                        </div>
-                        <div class="feature_small_body">
-                            <h5 data-i18n="feat_maps_title">Interactive Maps</h5>
-                            <p data-i18n="feat_maps_desc">Venue maps & directions</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider4.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature_card_small">
-                        <div class="feature_small_img">
-                            <img src="assets/imgs/f5.jpg" alt="Private Links" data-i18n-alt="img_feat_5">
-                            <div class="feature_card_icon_sm"><i class="bi bi-share"></i></div>
-                        </div>
-                        <div class="feature_small_body">
-                            <h5 data-i18n="feat_links_title">Private Links</h5>
-                            <p data-i18n="feat_links_desc">Unique link per guest</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider5.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature_card_small">
-                        <div class="feature_small_img">
-                            <img src="assets/imgs/f6.jpg" alt="Event Schedule" data-i18n-alt="img_feat_6">
-                            <div class="feature_card_icon_sm"><i class="bi bi-clock"></i></div>
-                        </div>
-                        <div class="feature_small_body">
-                            <h5 data-i18n="feat_schedule_title">Event Schedule</h5>
-                            <p data-i18n="feat_schedule_desc">Full wedding timeline</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider6.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature_card_small">
-                        <div class="feature_small_img">
-                            <img src="assets/imgs/f7.jpg" alt="Your Special Song" data-i18n-alt="img_feat_7">
-                            <div class="feature_card_icon_sm"><i class="bi bi-music-note-beamed"></i></div>
-                        </div>
-                        <div class="feature_small_body">
-                            <h5 data-i18n="feat_song_title">Your Special Song</h5>
-                            <p data-i18n="feat_song_desc">Feature your song</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider1.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature_card_small">
-                        <div class="feature_small_img">
-                            <img src="assets/imgs/f8.jpg" alt="Gift Registry" data-i18n-alt="img_feat_8">
-                            <div class="feature_card_icon_sm"><i class="bi bi-gift"></i></div>
-                        </div>
-                        <div class="feature_small_body">
-                            <h5 data-i18n="feat_gift_title">Gift Registry</h5>
-                            <p data-i18n="feat_gift_desc">Elegant integration</p>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider2.jpg" alt="Wedding Invite">
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature_card_small">
-                        <div class="feature_small_img">
-                            <img src="assets/imgs/f9.jpg" alt="Mobile Optimized" data-i18n-alt="img_feat_9">
-                            <div class="feature_card_icon_sm"><i class="bi bi-phone"></i></div>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider3.jpg" alt="Wedding Invite">
                         </div>
-                        <div class="feature_small_body">
-                            <h5 data-i18n="feat_mobile_title">Mobile Optimized</h5>
-                            <p data-i18n="feat_mobile_desc">Perfect on every device</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider4.jpg" alt="Wedding Invite">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider5.jpg" alt="Wedding Invite">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero_card">
+                            <img src="assets/imgs/slider6.jpg" alt="Wedding Invite">
                         </div>
                     </div>
                 </div>
@@ -245,785 +131,915 @@
         </div>
     </section>
 
-    <!-- ==================== HOW IT WORKS SECTION ==================== -->
-    <section class="how_works_section" id="how_works_section">
-        <div class="container">
-            <div class="how_works_header" data-aos="fade-up">
-                <h2 class="how_works_heading" data-i18n-html="how_heading">
-                    Simple. Elegant.<br>
-                    <em>Effortless</em>
-                </h2>
-                <p class="how_works_subtext" data-i18n="how_subtext">Create your perfect wedding invitation in just three steps</p>
+    <!-- ==================== DEMO SECTION ==================== -->
+    <section class="demo_section section_padding">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--gold)"></i> 100K+ Community On Instagram
+            </div>
+            <h2 class="section_title">Designed To Be Remembered.</h2>
+            <p class="section_subtitle mb-4">A Premium Wedding Website With Interactive Opening, RSVP And A Private
+                Admin Panel. Created By Our Team And Ready To Share By WhatsApp.</p>
+
+            <a href="#" class="btn_primary mb-3">START YOUR INVITATION &rarr;</a>
+
+            <div class="demo_meta">
+                From 175€ <i class="bi bi-circle-fill dot"></i> One-Time Payment <i class="bi bi-circle-fill dot"></i>
+                Portal Access After Purchase
             </div>
 
-            <div class="how_works_steps_row">
-                <!-- Step 1 -->
-                <div class="how_works_step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step_number_circle">
-                        <span>01</span>
-                    </div>
-                    <div class="step_connector"></div>
-                    <div class="step_content">
-                        <h4 data-i18n="how_step1_title">Create Your Invitation</h4>
-                        <p data-i18n="how_step1_desc">Choose your theme, add your names, date, venue, and personalize every detail with our
-                            intuitive editor</p>
-                    </div>
-                </div>
+            <div class="demo_rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="rating_text">4.9 +1000 Weddings</span>
+            </div>
 
-                <!-- Step 2 -->
-                <div class="how_works_step" data-aos="fade-up" data-aos-delay="250">
-                    <div class="step_number_circle">
-                        <span>02</span>
-                    </div>
-                    <div class="step_connector"></div>
-                    <div class="step_content">
-                        <h4 data-i18n="how_step2_title">Invite Your Guests</h4>
-                        <p data-i18n="how_step2_desc">Add guests to your list and share unique private links via email, WhatsApp, or any messaging
-                            app</p>
-                    </div>
-                </div>
+            <div class="demo_divider">
+                <span class="demo_divider_text">TRY INTERACTIVE DEMO</span>
+            </div>
 
-                <!-- Step 3 -->
-                <div class="how_works_step" data-aos="fade-up" data-aos-delay="400">
-                    <div class="step_number_circle">
-                        <span>03</span>
+            <div class="phone_mockup_container" data-aos="fade-up" data-aos-delay="100">
+                <div class="phone_screen">
+                    <div class="phone_notch"></div>
+                    <div class="phone_top_bar">
+                        <span>EN</span>
+                        <span>ES</span>
                     </div>
-                    <div class="step_content">
-                        <h4 data-i18n="how_step3_title">Track RSVPs</h4>
-                        <p data-i18n="how_step3_desc">Watch responses come in real-time and manage your guest list effortlessly from your dashboard
-                        </p>
+                    <!-- Placeholder dummy image for interactive demo -->
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=400&h=800"
+                        alt="Interactive Demo">
+
+                    <div class="phone_buttons">
+                        <a href="#" class="phone_btn_solid"><i class="bi bi-play-fill"></i> Load Interactive Demo</a>
+                        <a href="#" class="phone_btn_light">Load Full Demo <i
+                                class="bi bi-box-arrow-up-right ms-1"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== TEMPLATES SECTION ==================== -->
-    <section class="templates_section" id="templates_section">
+    <!-- ==================== CATALOGUE SECTION ==================== -->
+    <section class="catalogue_section section_padding">
         <div class="container">
-            <div class="section_badge light_badge" data-aos="fade-up">
-                <img src="assets/imgs/Crown.svg" alt=""> <span data-i18n="templates_badge">Premium Collection</span>
-            </div>
-            <h2 class="section_heading light_heading" data-aos="fade-up" data-aos-delay="100" data-i18n-html="templates_heading">
-                Stunning Pre-Designed<br>
-                <em>Invitation Templates</em>
-            </h2>
-            <p class="section_subtext light_subtext" data-aos="fade-up" data-aos-delay="200" data-i18n-html="templates_subtext">
-                Choose from our exclusive collection of professionally designed templates.<br>
-                Each template is a complete, dynamic invitation experience your guests will love.
-            </p>
-
-            <div class="row mt-3">
-                <!-- Template 1 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="template_card">
-                        <div class="template_card_img_wrap">
-                            <span class="template_popular_badge"><i class="bi bi-star-fill"></i> <span data-i18n="common_popular">Popular</span></span>
-                            <img src="assets/imgs/pc1.jpg" alt="Royal Gold" data-i18n-alt="img_tmpl_royal">
-                            <div class="template_overlay">
-                                <button class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                            </div>
-                        </div>
-                        <div class="template_card_body">
-                            <h5 data-i18n="tmpl_royal_gold_name">Royal Gold</h5>
-                            <p data-i18n="tmpl_royal_gold_style">Classic Luxury</p>
-                            <div class="template_colors">
-                                <span style="background:#C9A84C;"></span>
-                                <span style="background:#F5F0E8;"></span>
-                                <span style="background:#2D4A2D;"></span>
-                                <span style="background:#8B7355;"></span>
-                            </div>
-                            <button type="button" class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                        </div>
-                    </div>
+            <div data-aos="fade-up">
+                <div class="badge_pill">
+                    <i class="bi bi-stars" style="color:var(--gold)"></i> CATALOGUE
                 </div>
-                <!-- Template 2 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="template_card">
-                        <div class="template_card_img_wrap">
-                            <img src="assets/imgs/pc2.jpg" alt="Red Curtain" data-i18n-alt="img_tmpl_red">
-                            <div class="template_overlay">
-                                <button class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                            </div>
-                        </div>
-                        <div class="template_card_body">
-                            <h5 data-i18n="tmpl_red_curtain_name">Red Curtain</h5>
-                            <p data-i18n="tmpl_red_curtain_style">Dramatic Romance</p>
-                            <div class="template_colors">
-                                <span style="background:#8B0000;"></span>
-                                <span style="background:#F5F0E8;"></span>
-                                <span style="background:#1A1A1A;"></span>
-                                <span style="background:#6B4E4E;"></span>
-                            </div>
-                            <button type="button" class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Template 3 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="template_card">
-                        <div class="template_card_img_wrap">
-                            <span class="template_popular_badge"><i class="bi bi-star-fill"></i> <span data-i18n="common_popular">Popular</span></span>
-                            <img src="assets/imgs/pc3.jpg" alt="Floral Romance" data-i18n-alt="img_tmpl_floral">
-                            <div class="template_overlay">
-                                <button class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                            </div>
-                        </div>
-                        <div class="template_card_body">
-                            <h5 data-i18n="tmpl_floral_name">Floral Romance</h5>
-                            <p data-i18n="tmpl_floral_style">Romantic Garden</p>
-                            <div class="template_colors">
-                                <span style="background:#D4A5B5;"></span>
-                                <span style="background:#8BA8C8;"></span>
-                                <span style="background:#1A1A1A;"></span>
-                                <span style="background:#C4A0B5;"></span>
-                            </div>
-                            <button type="button" class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Template 4 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="400">
-                    <div class="template_card">
-                        <div class="template_card_img_wrap">
-                            <img src="assets/imgs/pc4.jpg" alt="Modern Minimal" data-i18n-alt="img_tmpl_modern">
-                            <div class="template_overlay">
-                                <button class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                            </div>
-                        </div>
-                        <div class="template_card_body">
-                            <h5 data-i18n="tmpl_modern_name">Modern Minimal</h5>
-                            <p data-i18n="tmpl_modern_style">Contemporary</p>
-                            <div class="template_colors">
-                                <span style="background:#1A1A1A;"></span>
-                                <span style="background:#3D3D3D;"></span>
-                                <span style="background:#8B8B8B;"></span>
-                                <span style="background:#F0EDEA;"></span>
-                            </div>
-                            <button type="button" class="template_demo_btn" data-i18n="common_view_demo">View Demo</button>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="section_title">Explore Our Exclusive Designs</h2>
+                <p class="section_subtitle">Each Theme Is A Unique Piece Designed To Move People. Discover The One That
+                    Best Tells Your Story.</p>
             </div>
 
-            <div class="templates_cta_wrap" data-aos="fade-up" data-aos-delay="200">
-                <a href="#" class="templates_cta_btn">
-                    <span data-i18n="templates_cta">Get Started with Premium</span> <img src="assets/imgs/Crown2.svg" alt="">
-                </a>
-                <p class="templates_note" data-i18n="templates_note">All templates include full customization • Dynamic animations • RSVP
-                    management</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== WHY DIGITAL SECTION ==================== -->
-    <section class="why_digital_section" id="why_digital_section">
-        <div class="container">
-            <!-- Badge + Heading -->
-            <div class="text-center" data-aos="fade-up">
-                <div class="section_badge">
-                    <i class="bi bi-lightning-charge-fill"></i> <span data-i18n="why_badge">Why Go Digital?</span>
-                </div>
-            </div>
-            <h2 class="section_heading text-center" data-aos="fade-up" data-aos-delay="100" data-i18n-html="why_heading">
-                Paper Invitations vs<br>
-                <em>Digital Invitations</em>
-            </h2>
-            <p class="section_subtext text-center" data-aos="fade-up" data-aos-delay="150" data-i18n="why_subtext">
-                Discover why thousands of modern couples are choosing digital invitations for their special day
-            </p>
-
-            <!-- Comparison Cards -->
-            <div class="row justify-content-center mt-2 mb-5">
-                <div class="col-lg-5 col-md-6 col-sm-12" data-aos="fade-right" data-aos-delay="100">
-                    <div class="compare_card compare_paper">
-                        <h3 class="compare_title" data-i18n="compare_paper_title">Paper</h3>
-                        <div class="compare_row">
-                            <span class="compare_label" data-i18n="compare_cost">Cost</span>
-                            <span class="compare_val paper_val" data-i18n="paper_cost_val">€200–€500+</span>
-                        </div>
-                        <div class="compare_row">
-                            <span class="compare_label" data-i18n="compare_delivery">Delivery</span>
-                            <span class="compare_val paper_val" data-i18n="paper_delivery_val">2–4 weeks</span>
-                        </div>
-                        <div class="compare_row">
-                            <span class="compare_label" data-i18n="compare_updates">Updates</span>
-                            <span class="compare_val paper_val" data-i18n="paper_updates_val">Impossible</span>
-                        </div>
-                        <div class="compare_row">
-                            <span class="compare_label" data-i18n="compare_rsvp">RSVP Tracking</span>
-                            <span class="compare_val paper_val" data-i18n="paper_rsvp_val">Manual</span>
-                        </div>
-                        <div class="compare_row no_border">
-                            <span class="compare_label" data-i18n="compare_eco">Eco Impact</span>
-                            <span class="compare_val paper_val" data-i18n="paper_eco_val">High waste</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 col-sm-12" data-aos="fade-left" data-aos-delay="200">
-                    <div class="compare_card compare_digital">
-                        <h3 class="compare_title" data-i18n="compare_digital_title">Digital ✨</h3>
-                        <div class="compare_row">
-                            <span class="compare_label light_label" data-i18n="compare_cost">Cost</span>
-                            <span class="compare_val digital_val" data-i18n="digital_cost_val">Free – €29</span>
-                        </div>
-                        <div class="compare_row">
-                            <span class="compare_label light_label" data-i18n="compare_delivery">Delivery</span>
-                            <span class="compare_val digital_val" data-i18n="digital_delivery_val">Instant</span>
-                        </div>
-                        <div class="compare_row">
-                            <span class="compare_label light_label" data-i18n="compare_updates">Updates</span>
-                            <span class="compare_val digital_val" data-i18n="digital_updates_val">Real-time</span>
-                        </div>
-                        <div class="compare_row">
-                            <span class="compare_label light_label" data-i18n="compare_rsvp">RSVP Tracking</span>
-                            <span class="compare_val digital_val" data-i18n="digital_rsvp_val">Automatic</span>
-                        </div>
-                        <div class="compare_row no_border">
-                            <span class="compare_label light_label" data-i18n="compare_eco">Eco Impact</span>
-                            <span class="compare_val digital_val" data-i18n="digital_eco_val">Zero waste</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="filter_wrapper" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter_btn active">La Maison Dorée</button>
+                <button class="filter_btn">Royal</button>
+                <button class="filter_btn">La Finca</button>
+                <button class="filter_btn">Majestic</button>
+                <button class="filter_btn">Teatro</button>
+                <button class="filter_btn">Excellence</button>
+                <button class="filter_btn">Day & Night</button>
+                <button class="filter_btn">Nautical Edition</button>
+                <button class="filter_btn">Mediterranean</button>
+                <button class="filter_btn">Rosas</button>
+                <button class="filter_btn">Editorial</button>
+                <button class="filter_btn">Floral</button>
+                <button class="filter_btn">Dulce Amor</button>
+                <button class="filter_btn">Minimalista</button>
+                <button class="filter_btn">Aventureros</button>
             </div>
 
-            <!-- Benefit Cards Row 1 -->
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-tree"></i>
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="catalogue_card">
+                        <div class="catalogue_img_wrap">
+                            <span class="catalogue_badge">New . Exclusive</span>
+                            <span class="catalogue_eye"><i class="bi bi-eye-fill"></i></span>
+                            <div class="catalogue_mockup">
+                                <img src="assets/imgs/ED1.jpg" alt="Theme">
+                            </div>
                         </div>
-                        <span class="benefit_tag" data-i18n="benefit_eco_tag">0 trees cut</span>
-                        <h4 data-i18n="benefit_eco_title">Eco-Friendly</h4>
-                        <p data-i18n="benefit_eco_desc">Zero paper waste. Choose a sustainable option for your wedding without compromising on
-                            elegance.</p>
+                        <div class="catalogue_body">
+                            <h3 class="catalogue_title">La Maison Dorée</h3>
+                            <p class="catalogue_desc">An invitation inspired by a dreamlike floral mansion: white roses,
+                                classical architecture and elegance.</p>
+                            <a href="#" class="catalogue_link">View Theme <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-lightning-charge"></i>
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="catalogue_card">
+                        <div class="catalogue_img_wrap">
+                            <span class="catalogue_badge">New . Exclusive</span>
+                            <span class="catalogue_eye"><i class="bi bi-eye-fill"></i></span>
+                            <div class="catalogue_mockup">
+                                <img src="assets/imgs/ED2.jpg" alt="Theme">
+                            </div>
                         </div>
-                        <span class="benefit_tag" data-i18n="benefit_instant_tag">Delivered in seconds</span>
-                        <h4 data-i18n="benefit_instant_title">Instant Delivery</h4>
-                        <p data-i18n="benefit_instant_desc">Share your invitation in seconds via WhatsApp, email, or any messaging app. No postal delays.
-                        </p>
+                        <div class="catalogue_body">
+                            <h3 class="catalogue_title">Royal</h3>
+                            <p class="catalogue_desc">Timeless elegance for an unforgettable wedding. Classic typography
+                                and gold details.</p>
+                            <a href="#" class="catalogue_link">View Theme <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-currency-dollar"></i>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="catalogue_card">
+                        <div class="catalogue_img_wrap">
+                            <span class="catalogue_badge">New . Exclusive</span>
+                            <span class="catalogue_eye"><i class="bi bi-eye-fill"></i></span>
+                            <div class="catalogue_mockup">
+                                <img src="assets/imgs/ED3.jpg" alt="Theme">
+                            </div>
                         </div>
-                        <span class="benefit_tag" data-i18n="benefit_cost_tag">Save up to 80%</span>
-                        <h4 data-i18n="benefit_cost_title">Cost-Effective</h4>
-                        <p data-i18n="benefit_cost_desc">Save hundreds on printing, postage, and design fees. Invest in what truly matters for your
-                            day.</p>
+                        <div class="catalogue_body">
+                            <h3 class="catalogue_title">La Finca</h3>
+                            <p class="catalogue_desc">Your venue, hacienda or special place hand-illustrated and
+                                animated. A personalized touch.</p>
+                            <a href="#" class="catalogue_link">View Theme <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-graph-up-arrow"></i>
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="catalogue_card">
+                        <div class="catalogue_img_wrap">
+                            <span class="catalogue_badge">New . Exclusive</span>
+                            <span class="catalogue_eye"><i class="bi bi-eye-fill"></i></span>
+                            <div class="catalogue_mockup">
+                                <img src="assets/imgs/ED4.jpg" alt="Theme">
+                            </div>
                         </div>
-                        <span class="benefit_tag" data-i18n="benefit_rsvp_tag">Live updates</span>
-                        <h4 data-i18n="benefit_rsvp_title">Real-Time RSVP Tracking</h4>
-                        <p data-i18n="benefit_rsvp_desc">Know instantly who's coming. Track responses in real-time without calling or texting each
-                            guest.</p>
+                        <div class="catalogue_body">
+                            <h3 class="catalogue_title">Majestic</h3>
+                            <p class="catalogue_desc">A majestic design crafted for couples who want to make an
+                                impression from the first moment.</p>
+                            <a href="#" class="catalogue_link">View Theme <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="catalogue_card">
+                        <div class="catalogue_img_wrap">
+                            <span class="catalogue_badge">New . Exclusive</span>
+                            <span class="catalogue_eye"><i class="bi bi-eye-fill"></i></span>
+                            <div class="catalogue_mockup">
+                                <img src="assets/imgs/ED5.jpg" alt="Theme">
+                            </div>
+                        </div>
+                        <div class="catalogue_body">
+                            <h3 class="catalogue_title">Teatro</h3>
+                            <p class="catalogue_desc">A theatrical design with red velvet curtains. Dramatic, elegant
+                                and absolutely unique.</p>
+                            <a href="#" class="catalogue_link">View Theme <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="catalogue_card">
+                        <div class="catalogue_img_wrap">
+                            <span class="catalogue_badge">New . Exclusive</span>
+                            <span class="catalogue_eye"><i class="bi bi-eye-fill"></i></span>
+                            <div class="catalogue_mockup">
+                                <img src="assets/imgs/ED6.jpg" alt="Theme">
+                            </div>
+                        </div>
+                        <div class="catalogue_body">
+                            <h3 class="catalogue_title">Excellence</h3>
+                            <p class="catalogue_desc">Fully bespoke design with unique illustrations. The most exclusive
+                                experience.</p>
+                            <a href="#" class="catalogue_link">View Theme <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Benefit Cards Row 2 -->
-            <div class="row mt-1">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-globe2"></i>
-                        </div>
-                        <span class="benefit_tag" data-i18n="benefit_reach_tag">No borders</span>
-                        <h4 data-i18n="benefit_reach_title">Reach Everyone</h4>
-                        <p data-i18n="benefit_reach_desc">Invite guests worldwide with no geographic limits. Perfect for international couples and
-                            destination weddings.</p>
+            <div class="mt-5" data-aos="fade-up">
+                <button class="btn_primary">LOAD MORE +</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS SECTION ==================== -->
+    <section class="process_section section_padding">
+        <div class="container">
+            <div data-aos="fade-up">
+                <div class="badge_pill">
+                    <i class="bi bi-stars" style="color:var(--gold)"></i> PROCESS
+                </div>
+                <h2 class="section_title">How It Works</h2>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process_card">
+                        <span class="process_number">01</span>
+                        <div class="process_icon solid"><i class="bi bi-stars"></i></div>
+                        <h4 class="process_title">Choose Your Theme</h4>
+                        <p class="process_desc">Browse our collection and find the perfect design for your wedding.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-phone"></i>
-                        </div>
-                        <span class="benefit_tag" data-i18n="benefit_access_tag">24/7 access</span>
-                        <h4 data-i18n="benefit_access_title">Always Accessible</h4>
-                        <p data-i18n="benefit_access_desc">Your guests can access the invitation anytime, anywhere from their phone. No lost cards or
-                            forgotten dates.</p>
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process_card">
+                        <span class="process_number">02</span>
+                        <div class="process_icon"><i class="bi bi-credit-card"></i></div>
+                        <h4 class="process_title">Complete Payment</h4>
+                        <p class="process_desc">You'll get access to your private portal to send us all the details.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-arrow-clockwise"></i>
-                        </div>
-                        <span class="benefit_tag" data-i18n="benefit_update_tag">Update anytime</span>
-                        <h4 data-i18n="benefit_update_title">Easy Updates</h4>
-                        <p data-i18n="benefit_update_desc">Changed the venue or time? Update your invitation instantly. All guests see the latest
-                            version automatically.</p>
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process_card">
+                        <span class="process_number">03</span>
+                        <div class="process_icon"><i class="bi bi-pen"></i></div>
+                        <h4 class="process_title">We Design It For You</h4>
+                        <p class="process_desc">Our team personalizes your invitation with your details, colors and
+                            style.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benefit_card">
-                        <div class="benefit_icon_wrap">
-                            <i class="bi bi-shield-lock"></i>
-                        </div>
-                        <span class="benefit_tag" data-i18n="benefit_secure_tag">Unique links</span>
-                        <h4 data-i18n="benefit_secure_title">Private &amp; Secure</h4>
-                        <p data-i18n="benefit_secure_desc">Each guest gets a unique private link. Your invitation is only visible to the people you
-                            choose to share it with.</p>
+                <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process_card">
+                        <span class="process_number">04</span>
+                        <div class="process_icon"><i class="bi bi-send"></i></div>
+                        <h4 class="process_title">Share It In A Tap</h4>
+                        <p class="process_desc">Send it via WhatsApp, SMS or any app. No paper, no waiting.</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="whatsapp_mockup_wrap" data-aos="fade-up" data-aos-delay="200">
+                <div class="whatsapp_mockup2">
+                    <img src="assets/imgs/mob_wats.svg" alt="WhatsApp Mockup">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== PRICING SECTION ==================== -->
-    <section class="pricing_section" id="pricing_section">
+    <section class="pricing_section section_padding">
         <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <div class="section_badge">
-                    <i class="bi bi-gem"></i> <span data-i18n="pricing_badge">Choose Your Plan</span>
+            <div data-aos="fade-up">
+                <div class="badge_pill">
+                    <i class="bi bi-stars" style="color:var(--gold)"></i> CHOOSE YOUR PLAN
+                </div>
+                <h2 class="section_title">Choose What Suits You.</h2>
+                <p class="section_subtitle"
+                    style="font-family: var(--font_serif); font-size: 24px; font-style: italic;">The Choice Is Yours</p>
+
+                <div class="pricing_features_header">
+                    All Include Envelope Animation With Initials
+                    <br><br>
+                    Secure Payment With Stripe <i class="bi bi-circle-fill dot"></i> Support &lt;24h <i
+                        class="bi bi-circle-fill dot"></i> Guided Process After Purchase
+                </div>
+
+                <div class="express_badge">
+                    <i class="bi bi-stopwatch"></i> Need It Sooner? Express Delivery Available &rarr;
                 </div>
             </div>
-            <h2 class="section_heading text-center" data-aos="fade-up" data-aos-delay="100" data-i18n-html="pricing_heading">
-                Standard or Premium<br>
-                <em>The Choice is Yours</em>
-            </h2>
-            <p class="section_subtext text-center" data-aos="fade-up" data-aos-delay="150" data-i18n-html="pricing_subtext">
-                Whether you want to create your own design or use our premium templates,<br>
-                we have the perfect option for your special day.
+
+            <div class="row">
+                <!-- Save The Date -->
+                <div class="col-12" data-aos="fade-up">
+                    <div class="pricing_card">
+                        <div class="pricing_card_wide">
+                            <div class="pricing_info d-flex align-items-center gap-3">
+                                <div class="pricing_icon"><i class="bi bi-calendar-check"></i></div>
+                                <div>
+                                    <h3 class="pricing_name d-inline-block me-3">Save The Date</h3>
+                                    <span class="pricing_price">&euro; 75</span>
+                                </div>
+                            </div>
+                            <p class="pricing_desc m-0 me-auto">Let your guests know while you prepare your invitation.
+                            </p>
+                            <a href="#" class="btn_outline">Choose Plan &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="col-lg-6 col-md-6 col-12 mt-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing_card pricing_card_tinted">
+                        <div class="pricing_top">
+                            <div class="pricing_title_wrap">
+                                <div class="pricing_icon"><i class="bi bi-stars"></i></div>
+                                <h3 class="pricing_name">Experience</h3>
+                            </div>
+                            <div class="pricing_price"><strike>&euro; 325</strike> &euro; 175</div>
+                        </div>
+                        <div class="pricing_offer"><i class="bi bi-clock me-1"></i> Offer Valid Till May 30</div>
+                        <p class="pricing_desc">Pick a design as a starting point and our team personalizes it with your
+                            details, colors and content.</p>
+
+                        <ul class="pricing_list">
+                            <li><i class="bi bi-check-circle-fill"></i> Personalized by our design team</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Interactive envelope with your initials included
+                            </li>
+                            <li><i class="bi bi-check-circle-fill"></i> RSVP + private admin panel included</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 4 information blocks included</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Multiple languages available</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Add extras to make it even more special</li>
+
+                            <li class="special"><i class="bi bi-stars"></i> Perfect for adding illustration, video,
+                                music or a custom domain.</li>
+                        </ul>
+
+                        <a href="#" class="btn_primary w-100">Choose Plan &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Premium -->
+                <div class="col-lg-6 col-md-6 col-12 mt-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing_card">
+                        <div class="pricing_top">
+                            <div class="pricing_title_wrap">
+                                <div class="pricing_icon"><i class="bi bi-gem"></i></div>
+                                <h3 class="pricing_name">Premium</h3>
+                            </div>
+                            <div class="pricing_price">575</div>
+                        </div>
+                        <div class="pricing_offer"><i class="bi bi-clock me-1"></i> Get A Save The Date Completely Free.
+                            Choose It By Email After Purchase.</div>
+                        <p class="pricing_desc">For couples who want a more advanced personalization without going fully
+                            bespoke.</p>
+
+                        <ul class="pricing_list">
+                            <li><i class="bi bi-check-circle-fill"></i> Design adapted to your style</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Custom icons, fonts and details</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Unlimited blocks</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 3 rounds of design adjustments</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Extras included</li>
+                        </ul>
+
+                        <a href="#" class="btn_outline w-100">Choose Plan &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Excellence -->
+                <div class="col-12 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing_card">
+                        <div class="pricing_card_wide">
+                            <div class="pricing_info d-flex align-items-center gap-3">
+                                <div class="pricing_icon"><i class="bi bi-award"></i></div>
+                                <div>
+                                    <h3 class="pricing_name d-inline-block me-3">Excellence</h3>
+                                    <span class="pricing_price">&euro; 975</span>
+                                </div>
+                            </div>
+                            <p class="pricing_desc m-0 me-auto">100% bespoke. We design an invitation from scratch or
+                                replicate your physical invitation in digital format.</p>
+                            <a href="#" class="btn_outline">Choose Plan &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info block -->
+                <div class="col-12 mt-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pricing_info_block">
+                        <div class="pricing_info_header">
+                            <div class="icon"><i class="bi bi-shield-check"></i></div>
+                            <h4>What Happens After Payment?</h4>
+                        </div>
+                        <p>You'll receive instant access to your private portal. There, you'll submit your wedding
+                            details, language preferences, RSVP questions, colours and design notes. Our team will then
+                            create your invitation and send you your ready-to-share link.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== REVIEWS SECTION ==================== -->
+    <section class="reviews_section">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--gold)"></i> TESTIMONIALS
+            </div>
+            <h2 class="section_title">Customer Reviews</h2>
+            <p class="section_subtitle mb-4">Join Thousands Of Happy Couples Who Chose Eternally For Their Special Day
             </p>
 
-            <div class="row align-items-stretch mt-3 justify-content-center">
-                <!-- Standard -->
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pricing_card">
-                        <div class="pricing_card_top">
-                            <div class="pricing_icon_wrap">
-                                <img src="assets/imgs/planicon1.svg" alt="">
-                            </div>
-                            <div>
-                                <h4 class="pricing_plan_name" data-i18n="plan_standard_name">Standard</h4>
-                                <p class="pricing_plan_sub" data-i18n="plan_standard_sub">Create Your Own</p>
-                            </div>
-                        </div>
-                        <div class="pricing_price">
-                            <span class="price_amount" data-i18n="price_free">Free</span>
-                            <span class="price_note" data-i18n="price_free_note">Forever free</span>
-                        </div>
-                        <p class="pricing_desc" data-i18n="plan_standard_desc">Import your own photos and customize your invitation with our
-                            easy-to-use editor. Perfect for couples who want full creative control.</p>
-                        <a href="#" class="pricing_btn pricing_btn_outline"><span data-i18n="pricing_btn_free">Get Started Free</span> <i
-                                class="bi bi-arrow-right"></i></a>
-                        <ul class="pricing_features">
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_1">Upload your own photos from gallery</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_2">Customize colors, fonts &amp; layout</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_3">Countdown timer &amp; event details</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_4">RSVP management &amp; guest tracking</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_5">Private shareable links</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_6">Interactive map integration</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_7">Mobile-optimized design</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="std_feat_8">Unlimited guests</span></li>
-                        </ul>
-                    </div>
+            <div class="rating_summary">
+                <div class="stars">
+                    <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                        class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+                    <span class="rating_text ms-2">4.9/5</span>
                 </div>
+                <div class="rating_subtext">Based On 172 Reviews</div>
+            </div>
 
-                <!-- Premium (Featured) -->
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pricing_card pricing_card_featured">
-                        <div class="pricing_card_top">
-                            <div class="pricing_icon_wrap featured_icon">
-                                <img src="assets/imgs/planicon2.svg" alt="">
-                            </div>
-                            <div>
-                                <h4 class="pricing_plan_name" data-i18n="plan_premium_name">Premium</h4>
-                                <p class="pricing_plan_sub" data-i18n="plan_premium_sub">Pre-Designed Templates</p>
-                            </div>
-                        </div>
-                        <div class="pricing_price">
-                            <span class="price_amount" data-i18n="price_premium">€29</span>
-                            <span class="price_note" data-i18n="price_premium_note">One-time payment</span>
-                        </div>
-                        <p class="pricing_desc" data-i18n="plan_premium_desc">Choose from our exclusive collection of professionally designed dynamic
-                            invitation templates. Simply customize the details and share.</p>
-                        <a href="#" class="pricing_btn pricing_btn_solid"><span data-i18n="pricing_btn_premium">Choose Premium</span> <i
-                                class="bi bi-arrow-right"></i></a>
-                        <ul class="pricing_features featured_features">
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_1">All Standard features included</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_2">Access to premium template collection</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_3">Dynamic animated invitations</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_4">Professional designer-crafted layouts</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_5">Exclusive luxury themes &amp; effects</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_6">Custom dress code section</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_7">Gift registry integration</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_8">Transport &amp; accommodation details</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_9">Priority support</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="prem_feat_10">Multi-language support (EN/FR/DE/ES)</span></li>
-                        </ul>
+            <div class="rating_breakdown">
+                <div class="rating_row">
+                    <div class="rating_stars"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                            class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
                     </div>
+                    <div class="progress_bg">
+                        <div class="progress_fill" style="width: 95%"></div>
+                    </div>
+                    <div class="rating_count">163</div>
                 </div>
+                <div class="rating_row">
+                    <div class="rating_stars"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                            class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i>
+                    </div>
+                    <div class="progress_bg">
+                        <div class="progress_fill light" style="width: 5%"></div>
+                    </div>
+                    <div class="rating_count">9</div>
+                </div>
+                <div class="rating_row">
+                    <div class="rating_stars"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                            class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></div>
+                    <div class="progress_bg">
+                        <div class="progress_fill" style="width: 0%"></div>
+                    </div>
+                    <div class="rating_count">0</div>
+                </div>
+                <div class="rating_row">
+                    <div class="rating_stars"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                            class="bi bi-star"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></div>
+                    <div class="progress_bg">
+                        <div class="progress_fill" style="width: 0%"></div>
+                    </div>
+                    <div class="rating_count">0</div>
+                </div>
+                <div class="rating_row">
+                    <div class="rating_stars"><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                            class="bi bi-star"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></div>
+                    <div class="progress_bg">
+                        <div class="progress_fill" style="width: 0%"></div>
+                    </div>
+                    <div class="rating_count">0</div>
+                </div>
+                <div class="mt-4">
+                    <button class="btn_dark">Write A Review</button>
+                </div>
+            </div>
 
-                <!-- Bespoke -->
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pricing_card">
-                        <div class="pricing_card_top">
-                            <div class="pricing_icon_wrap">
-                                <img src="assets/imgs/planicon3.svg" alt="">
-                            </div>
+            <div class="review_list">
+                <!-- Review 1 -->
+                <div class="review_card" data-aos="fade-up">
+                    <div class="review_header">
+                        <div class="review_user">
+                            <div class="review_avatar">AH</div>
                             <div>
-                                <h4 class="pricing_plan_name" data-i18n="plan_bespoke_name">Bespoke</h4>
-                                <p class="pricing_plan_sub" data-i18n="plan_bespoke_sub">Custom Design</p>
+                                <h4 class="review_name">Andrew Holland</h4>
+                                <div class="stars" style="font-size:14px; margin:0;"><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                             </div>
                         </div>
-                        <div class="pricing_price">
-                            <span class="price_amount" data-i18n="price_bespoke">€99</span>
-                            <span class="price_note" data-i18n="price_bespoke_note">Custom designed for you</span>
-                        </div>
-                        <p class="pricing_desc" data-i18n="plan_bespoke_desc">Work with our design team to create a completely unique, one-of-a-kind
-                            invitation that perfectly reflects your love story.</p>
-                        <a href="#" class="pricing_btn pricing_btn_outline"><span data-i18n="pricing_btn_contact">Contact Us</span> <i
-                                class="bi bi-arrow-right"></i></a>
-                        <ul class="pricing_features">
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_1">All Premium features included</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_2">Dedicated designer consultation</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_3">Fully custom design from scratch</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_4">Unlimited design revisions</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_5">Bespoke animations &amp; effects</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_6">Custom illustrations on request</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_7">VIP support &amp; onboarding</span></li>
-                            <li><i class="bi bi-check-circle-fill"></i> <span data-i18n="bes_feat_8">Brand-matched wedding suite</span></li>
-                        </ul>
+                        <div class="review_date">04/02/2026</div>
                     </div>
+                    <div class="review_title">Loved It!</div>
+                    <p class="review_text">Eternally transformed our wedding experience. The digital invitation was so
+                        elegant that our guests couldn't stop complimenting it. The RSVP tracking saved us countless
+                        hours!</p>
                 </div>
+                <!-- Review 2 -->
+                <div class="review_card" data-aos="fade-up">
+                    <div class="review_header">
+                        <div class="review_user">
+                            <div class="review_avatar" style="background:#e3d9d3;">AR</div>
+                            <div>
+                                <h4 class="review_name">Alisha Roger</h4>
+                                <div class="stars" style="font-size:14px; margin:0;"><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            </div>
+                        </div>
+                        <div class="review_date">04/02/2026</div>
+                    </div>
+                    <div class="review_title">Fabulous Invites!</div>
+                    <p class="review_text">I had a great experience with The Digital Yes company, our invites were
+                        fabulous! We had one design change that was completed super quickly, we decided we wanted a
+                        personalised photo backround. 10/10 service and product, we are very happy and 100% recommend.
+                    </p>
+                </div>
+                <!-- Review 3 -->
+                <div class="review_card" data-aos="fade-up">
+                    <div class="review_header">
+                        <div class="review_user">
+                            <div class="review_avatar" style="background:#c9b6ad;">MB</div>
+                            <div>
+                                <h4 class="review_name">Michael Bates</h4>
+                                <div class="stars" style="font-size:14px; margin:0;"><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            </div>
+                        </div>
+                        <div class="review_date">04/02/2026</div>
+                    </div>
+                    <div class="review_title">Highly Recommend!</div>
+                    <p class="review_text">I was looking for a unique digital wedding invitation, and digital yes was
+                        def it! I was blown away when I saw my invitation for the first time. The designer was very
+                        patient with me and was willing to meet all my wishes! I can't stop looking at my invitation!
+                        Thank you for making this experience so amazing!</p>
+                </div>
+            </div>
+
+            <div class="mt-5" data-aos="fade-up">
+                <button class="btn_dark" style="background:#54282c;">SHOW MORE REVIEWS <i
+                        class="bi bi-chevron-down ms-1"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- ==================== TESTIMONIALS SECTION ==================== -->
-    <section class="testimonials_section" id="testimonials_section">
-        <div class="container">
-            <!-- Heading -->
-            <div class="testimonials_header text-center" data-aos="fade-up">
-                <div class="testimonials_quote_icon">"</div>
-                <h2 class="section_heading" data-i18n-html="testimonials_heading">
-                    Loved by Couples<br>
-                    <em>Around the World</em>
-                </h2>
-                <p class="section_subtext" data-i18n="testimonials_subtext">Join thousands of happy couples who chose Eternally for their special day</p>
+    <!-- ==================== OUR STORY ==================== -->
+    <section class="story_section">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--gold)"></i> OUR STORY
             </div>
+            <div class="story_content mt-4">
+                <h2 class="story_title">Do You Know Our Story?</h2>
+                <p class="story_text">The Digital Yes Was Born From A "Yes, I Do". We Are A Couple Who, After Getting
+                    Engaged, Couldn't Find A Digital Invitation We Truly Loved. They All Looked The Same, None Of Them
+                    Reflected Our Story Or The Wedding We Had Been Dreaming Of.</p>
+                <p class="story_text">So He Decided To Create His Own. He Designed An Invitation Thinking Of Her, Of
+                    Their Story, Of Their Day. When He Showed It To Her, It Was The Perfect Invitation. And We Knew We
+                    Had To Offer The Same To Other Couples. The Rest Is The Digital Yes.</p>
+                <p class="story_text">Our Mission Is To Translate Every Love Story Into A Unique Invitation, So That
+                    Every Wedding Begins With An Unforgettable Experience.</p>
 
-            <!-- Row 1 -->
-            <div class="row mt-2">
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial_card">
-                        <div class="testi_top">
-                            <div class="testi_stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <span class="testi_big_quote">"</span>
-                        </div>
-                        <p class="testi_text" data-i18n="testi_1_quote">"Eternally transformed our wedding experience. The digital invitation was
-                            so elegant that our guests couldn't stop complimenting it. The RSVP tracking saved us
-                            countless hours!"</p>
-                        <span class="testi_plan_badge premium_badge" data-i18n="testi_1_badge">Premium – Royal Gold</span>
-                        <div class="testi_author">
-                            <img src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?w=80&q=80"
-                                alt="Sophie & Laurent">
-                            <div>
-                                <h6>Sophie &amp; Laurent</h6>
-                                <p data-i18n="testi_1_loc">Paris, France</p>
-                            </div>
-                        </div>
+                <div class="story_divider">
+                    <i class="bi bi-suit-heart"></i>
+                </div>
+
+                <div class="story_signature_title">Thank You For Trusting Us.</div>
+                <div class="story_signature_sub">With All Our Love, The Team At The Digital Yes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== THE DIFFERENCE ==================== -->
+    <section class="difference_section">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--gold)"></i> THE DIFFERENCE
+            </div>
+            <h2 class="section_title">Your Wedding Deserves<br>Something Extraordinary.</h2>
+            <p class="section_subtitle mt-3">Imagine Your Guests' Faces When They Receive Something They've Never Seen.
+                Not Just Another Invitation, But The First Magical Moment Of Your Wedding.</p>
+
+            <div class="row difference_grid">
+                <div class="col-md-6 pe-md-4">
+                    <h4 class="difference_col_title">Traditional Invitations</h4>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="diff_icon_cross"><i class="bi bi-x"></i></div>
+                        <div class="diff_text">Forgotten In A Drawer</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="diff_icon_cross"><i class="bi bi-x"></i></div>
+                        <div class="diff_text">All The Same, No Personality</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="diff_icon_cross"><i class="bi bi-x"></i></div>
+                        <div class="diff_text">Just Paper, No Emotion</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="diff_icon_cross"><i class="bi bi-x"></i></div>
+                        <div class="diff_text">No Idea Who's Confirmed</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="diff_icon_cross"><i class="bi bi-x"></i></div>
+                        <div class="diff_text">Printing And Shipping Costs</div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial_card">
-                        <div class="testi_top">
-                            <div class="testi_stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <span class="testi_big_quote">"</span>
-                        </div>
-                        <p class="testi_text" data-i18n="testi_2_quote">"We chose the Premium template and it was absolutely stunning. Our guests
-                            felt like they received a luxury experience. The countdown timer built so much excitement!"
+                <div class="col-md-6 ps-md-4 mt-5 mt-md-0">
+                    <h4 class="difference_col_title">Your Invitation With Us</h4>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="diff_icon_check"><i class="bi bi-check2"></i></div>
+                        <div class="diff_text">An Experience Your Guests Will Always Remember</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="diff_icon_check"><i class="bi bi-check2"></i></div>
+                        <div class="diff_text">Unique Illustrations Of Your Story And Venue</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="diff_icon_check"><i class="bi bi-check2"></i></div>
+                        <div class="diff_text">Music, Animations And Moments That Move</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="diff_icon_check"><i class="bi bi-check2"></i></div>
+                        <div class="diff_text">Dashboard To Manage All RSVPs</div>
+                    </div>
+                    <div class="diff_item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="diff_icon_check"><i class="bi bi-check2"></i></div>
+                        <div class="diff_text">Instant Delivery To Everyone, No Hidden Costs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diff_quote" data-aos="fade-up" data-aos-delay="600">
+                "The First Impression Of Your Wedding Starts With The Invitation. Make It Unforgettable."
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROFESSIONALS ==================== -->
+    <section class="professionals_section">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--white)"></i> FOR PROFESSIONALS
+            </div>
+            <h2 class="section_title">Are You A<br>Wedding Planner?</h2>
+            <p class="section_subtitle mt-3">Stand Out From Your Competition By Offering Premium Digital
+                Invitations.<br>Work With Us And Surprise Your Couples With Something They've Never Seen.</p>
+
+            <div class="row pro_grid">
+                <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pro_card">
+                        <div class="pro_number">01</div>
+                        <div class="pro_icon"><i class="bi bi-bookmark-star"></i></div>
+                        <h4 class="pro_title">White-Label Or Co-Branding</h4>
+                        <p class="pro_desc">Your brand on every invitation. Offer it as an exclusive premium service or
+                            in collaboration with us.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pro_card">
+                        <div class="pro_number">02</div>
+                        <div class="pro_icon"><i class="bi bi-tags"></i></div>
+                        <h4 class="pro_title">Fixed Price Per Wedding</h4>
+                        <p class="pro_desc">No surprises. Special rates for professionals that let you include it in
+                            your budget with guaranteed margin.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pro_card">
+                        <div class="pro_number">03</div>
+                        <div class="pro_icon"><i class="bi bi-headset"></i></div>
+                        <h4 class="pro_title">Direct & Priority Support</h4>
+                        <p class="pro_desc">Direct communication with our team. Quick responses so you never keep your
+                            couples waiting.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pro_card">
+                        <div class="pro_number">04</div>
+                        <div class="pro_icon"><i class="bi bi-heart"></i></div>
+                        <h4 class="pro_title">Surprise Your Couples</h4>
+                        <p class="pro_desc">Stand out from the competition by offering something unique. Your couples
+                            will remember it forever.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="pro_card">
+                        <div class="pro_number">05</div>
+                        <div class="pro_icon"><i class="bi bi-person-hearts"></i></div>
+                        <h4 class="pro_title">Build Client Loyalty</h4>
+                        <p class="pro_desc">A premium touch that will make them recommend you. First impressions matter.
                         </p>
-                        <span class="testi_plan_badge premium_badge" data-i18n="testi_2_badge">Premium – Floral Romance</span>
-                        <div class="testi_author">
-                            <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=80&q=80"
-                                alt="Elena & David">
-                            <div>
-                                <h6>Elena &amp; David</h6>
-                                <p data-i18n="testi_2_loc">Barcelona, Spain</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial_card">
-                        <div class="testi_top">
-                            <div class="testi_stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <span class="testi_big_quote">"</span>
-                        </div>
-                        <p class="testi_text" data-i18n="testi_3_quote">"The standard option was perfect for us. We uploaded our own photos and
-                            the result was breathtaking. So much better than paper invitations!"</p>
-                        <span class="testi_plan_badge standard_badge" data-i18n="testi_3_badge">Standard</span>
-                        <div class="testi_author">
-                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=80&q=80"
-                                alt="Amara & James">
-                            <div>
-                                <h6>Amara &amp; James</h6>
-                                <p data-i18n="testi_3_loc">London, UK</p>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="pro_card">
+                        <div class="pro_number">06</div>
+                        <div class="pro_icon"><i class="bi bi-code-slash"></i></div>
+                        <h4 class="pro_title">Expand Your Services</h4>
+                        <p class="pro_desc">Offer an additional service with no extra effort. We handle everything, you
+                            take the credit.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2 -->
-            <div class="row mt-1">
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial_card">
-                        <div class="testi_top">
-                            <div class="testi_stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <span class="testi_big_quote">"</span>
-                        </div>
-                        <p class="testi_text" data-i18n="testi_4_quote">"Multilingual support was a game-changer for our international wedding.
-                            Guests from 4 countries could all read the invitation in their language!"</p>
-                        <span class="testi_plan_badge premium_badge" data-i18n="testi_4_badge">Premium – Burgundy Velvet</span>
-                        <div class="testi_author">
-                            <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=80&q=80"
-                                alt="Clara & Thomas">
-                            <div>
-                                <h6>Clara &amp; Thomas</h6>
-                                <p data-i18n="testi_4_loc">Munich, Germany</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial_card">
-                        <div class="testi_top">
-                            <div class="testi_stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <span class="testi_big_quote">"</span>
-                        </div>
-                        <p class="testi_text" data-i18n="testi_5_quote">"We were hesitant about digital invitations, but Eternally changed our
-                            minds. The premium Red Curtain template was theatrical and unforgettable!"</p>
-                        <span class="testi_plan_badge premium_badge" data-i18n="testi_5_badge">Premium – Red Curtain</span>
-                        <div class="testi_author">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80"
-                                alt="Isabella & Marco">
-                            <div>
-                                <h6>Isabella &amp; Marco</h6>
-                                <p data-i18n="testi_5_loc">Rome, Italy</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial_card">
-                        <div class="testi_top">
-                            <div class="testi_stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <span class="testi_big_quote">"</span>
-                        </div>
-                        <p class="testi_text" data-i18n="testi_6_quote">"The eco-friendly aspect sealed the deal for us. Zero paper waste,
-                            beautiful design, and our guests loved how easy it was to RSVP with one click."</p>
-                        <span class="testi_plan_badge standard_badge" data-i18n="testi_6_badge">Standard</span>
-                        <div class="testi_author">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
-                                alt="Nina & Alexander">
-                            <div>
-                                <h6>Nina &amp; Alexander</h6>
-                                <p data-i18n="testi_6_loc">Zurich, Switzerland</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats Row -->
-            <div class="testi_stats_row" data-aos="fade-up" data-aos-delay="100">
-                <div class="testi_stat">
-                    <span class="stat_num">10,000+</span>
-                    <span class="stat_label" data-i18n="stat_couples">Happy Couples</span>
-                </div>
-                <div class="testi_stat_divider"></div>
-                <div class="testi_stat">
-                    <span class="stat_num">50,000+</span>
-                    <span class="stat_label" data-i18n="stat_invites">Invitations Sent</span>
-                </div>
-                <div class="testi_stat_divider"></div>
-                <div class="testi_stat">
-                    <span class="stat_num">4.9/5</span>
-                    <span class="stat_label" data-i18n="stat_rating">Average Rating</span>
-                </div>
-                <div class="testi_stat_divider"></div>
-                <div class="testi_stat">
-                    <span class="stat_num">12+</span>
-                    <span class="stat_label" data-i18n="stat_countries">Countries</span>
-                </div>
-            </div>
+            <div class="pro_footer_title">Let's Collaborate Together</div>
+            <div class="pro_footer_text">Write To Us And We'll Tell You How We Can Work Together. No Commitment.</div>
+            <a href="#" class="btn_white">CONTACT US</a>
         </div>
     </section>
 
-    <!-- ==================== PREVIEW SECTION ==================== -->
-    <section class="preview_section" id="preview_section">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Left Content -->
-                <div class="col-lg-6 col-md-12" data-aos="fade-right">
-                    <div class="preview_content">
-                        <div class="preview_label">
-                            <span></span> <span data-i18n="preview_label">PREVIEW</span>
-                        </div>
-                        <h2 class="preview_heading" data-i18n-html="preview_heading">
-                            See What Your Guests<br>
-                            <em>Will Experience</em>
+    <!-- ==================== FAQS ==================== -->
+    <section class="faq_section">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--gold)"></i> FAQS
+            </div>
+            <h2 class="section_title">Frequently Asked Questions</h2>
+
+            <div class="faq_wrapper">
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What Happens After Payment?
+                            </button>
                         </h2>
-                        <p class="preview_desc" data-i18n="preview_desc">
-                            Every invitation is crafted with attention to detail — from the elegant typography to the
-                            seamless RSVP experience. Your guests will love the beautiful design and easy-to-use
-                            interface.
-                        </p>
-                        <ul class="preview_features">
-                            <li><i class="bi bi-check-circle"></i> <span data-i18n="preview_li_1">Countdown timer building anticipation</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span data-i18n="preview_li_2">Beautiful hero image and couple names</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span data-i18n="preview_li_3">Event details with date, time, and location</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span data-i18n="preview_li_4">Interactive map integration</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span data-i18n="preview_li_5">Simple one-click RSVP process</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span data-i18n="preview_li_6">Personalized greeting for each guest</span></li>
-                        </ul>
-                        <a href="#" class="preview_demo_btn"><span data-i18n="preview_demo_btn">View Live Demo</span> <i class="bi bi-arrow-right"></i></a>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You'll receive instant access to your private portal. There, you'll submit your wedding
+                                details, language preferences, RSVP questions, colours and design notes. Our team will
+                                then create your invitation and send you your ready-to-share link.
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Right Phone Preview -->
-                <div class="col-lg-6 col-md-12" data-aos="fade-left">
-                    <div class="preview_phone_wrap">
-                        <!-- Envelope decoration -->
-                        <div class="preview_envelope">
-                            <img src="assets/imgs/mail.svg" alt="">
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Can I Customize The Design With My Own Photo?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, you can upload your own photos in the portal and our team will integrate them
+                                seamlessly into the design of your chosen theme.
+                            </div>
                         </div>
-                        <!-- Paper plane decoration -->
-                        <div class="preview_plane">
-                            <img src="assets/imgs/send.svg" alt="">
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Do I Need All The Info Upfront? Can I Make Changes Later?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You don't need everything immediately. You can make updates to details like times,
+                                locations, and FAQs even after your invitation is live.
+                            </div>
                         </div>
-                        <div class="preview_phone_frame">
-                            <img src="assets/imgs/Mobile.svg" alt="">
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How Long Until I Receive My Invitation?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Once you submit your details through the portal, our team usually has your first draft
+                                ready within 3-5 business days.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Is There Room For Feedback?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely. Depending on your package, you have between 1 to 3 rounds of revisions to
+                                ensure everything is perfect before you send it out.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 6 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="350">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Where Do RSVPs Go?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                All RSVPs are collected automatically in your private dashboard. You can view, manage,
+                                and export your guest list at any time.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 7 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                How Long Does The Invitation Stay Online?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Your digital invitation stays online for up to 12 months after your wedding date.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 8 -->
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="450">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Can I Change The Music?
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, you can choose from our curated list of background music or provide a custom track
+                                for us to integrate.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- ==================== CTA SECTION ==================== -->
-    <section class="cta_section" id="cta_section">
-        <div class="cta_bg_overlay"></div>
-        <div class="container">
-            <div class="cta_inner text-center" data-aos="fade-up">
-                <div class="cta_heart_icon">
-                    <i class="bi bi-heart-fill"></i>
-                </div>
-                <h2 class="cta_heading" data-i18n-html="cta_heading">
-                    Start Creating Your<br>
-                    <em>Dream Invitation Today</em>
-                </h2>
-                <p class="cta_subtext" data-i18n-html="cta_subtext">
-                    Join thousands of couples who have shared their special day with<br>
-                    Eternally. No credit card required to get started.
-                </p>
-                <div class="cta_btns">
-                    <a href="#" class="cta_btn_primary"><span data-i18n="cta_btn_primary">Create Free Invitation</span> <i class="bi bi-arrow-right"></i></a>
-                    <a href="#" class="cta_btn_secondary" data-i18n="cta_btn_secondary">View Demo</a>
-                </div>
-                <p class="cta_note" data-i18n="cta_note">Free forever • Unlimited invitations • Premium features included</p>
+    <section class="cta_section">
+        <div class="container" data-aos="fade-up">
+            <div class="badge_pill">
+                <i class="bi bi-stars" style="color:var(--gold)"></i> BEGIN YOUR STORY
+            </div>
+            <h2 class="section_title" style="font-size: 42px; line-height:1.3;">Ready To Create
+                Something<br>Unforgettable?</h2>
+            <p class="section_subtitle mt-3">Write To Us And Discover How We Can Make Your Perfect Invitation A Reality.
+            </p>
+
+            <div class="cta_buttons">
+                <a href="#" class="btn_dark">I WANT AN INVITATION LIKE THIS</a>
+                <a href="#" class="btn_outline_dark">VIEW SAMPLE INVITATION <i class="bi bi-arrow-right ms-2"></i></a>
             </div>
         </div>
     </section>
 
-    </div>
-
     <!-- ==================== FOOTER ==================== -->
-    <footer class="footer_section">
+    <footer class="footer_main">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="footer_brand_col">
-                        <span class="footer_brand_logo">
-                            <i class="bi bi-heart-fill"></i> Eternally
-                        </span>
-                        <p data-i18n="footer_tagline">Create beautiful digital wedding invitations that your guests will cherish. Elegant,
-                            effortless, and unforgettable.</p>
-                        <div class="footer_social_logos">
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-pinterest"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                        </div>
+            <div class="row">
+                <!-- Brand Col -->
+                <div class="col-lg-4 col-md-12 mb-5 mb-lg-0">
+                    <div class="footer_logo">LOGO</div>
+                    <div class="footer_subtitle">Premium Digital Wedding Invitations</div>
+                    <div style="font-size:14px; margin-bottom:8px; color: rgba(255,255,255,0.8);">Follow us at</div>
+                    <div class="footer_socials">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="footer_links_div">
-                        <h5 data-i18n="footer_product">Product</h5>
-                        <a href="#features_section" data-i18n="footer_link_create">Create Invitation</a>
-                        <a href="#features_section" data-i18n="footer_link_demo">View Demo</a>
-                        <a href="#features_section" data-i18n="footer_link_premium">Premium Templates</a>
-                        <a href="#features_section" data-i18n="footer_link_pricing">Pricing</a>
-                        <a href="#features_section" data-i18n="footer_link_signin">Sign In</a>
-                    </div>
+
+                <!-- Links Col 1 -->
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
+                    <h5 class="footer_heading">Quick Links</h5>
+                    <ul class="footer_links">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Our Story</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="footer_links_div">
-                        <h5 data-i18n="footer_company">Company</h5>
-                        <a href="#" data-i18n="footer_about">About Us</a>
-                        <a href="#" data-i18n="footer_contact">Contact</a>
-                        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
-                        <a href="#" data-i18n="footer_terms">Terms of Service</a>
-                    </div>
+
+                <!-- Links Col 2 -->
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
+                    <h5 class="footer_heading">Policies</h5>
+                    <ul class="footer_links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Our Story</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Col -->
+                <div class="col-lg-4 col-md-4 col-12">
+                    <h5 class="footer_heading"
+                        style="text-transform: uppercase; font-family:var(--font_serif); letter-spacing:1px; font-size:14px;">
+                        Have A Question?</h5>
+                    <div style="font-size:14px; color: rgba(255,255,255,0.8);">Write to us at:</div>
+                    <a href="mailto:info@thedigitalyes.com" class="footer_email_btn">
+                        <i class="bi bi-envelope"></i> info@thedigitalyes.com
+                    </a>
                 </div>
             </div>
-            <div class="footer_last_txt">
-                <p data-i18n="footer_copyright">© 2026 Eternally. All rights reserved.</p>
-                <p><i class="bi bi-heart-fill"></i> <span data-i18n="footer_love">Made with love for couples everywhere</span></p>
+
+            <div class="footer_divider"></div>
+
+            <div class="footer_bottom">
+                <i class="bi bi-suit-heart-fill" style="color:var(--white); margin-right:4px;"></i> &copy; 2026 The
+                Digital Yes. All rights reserved.
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top -->
-    <button id="backToTop" aria-label="Back to top" data-i18n-aria-label="aria_back_to_top"><i class="bi bi-arrow-up"></i></button>
-
-    <!-- Toast -->
-    <div class="toast_box" id="toast_box">
-        <i class="bi bi-check-circle-fill"></i>
-        <span id="toast_msg" data-i18n="toast_done">Done!</span>
-    </div>
 
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -1031,8 +1047,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/languages.js"></script>
+    <script src="assets/js/script2.js"></script>
     <script>
         const isMobile = window.innerWidth < 768;
 
@@ -1046,6 +1061,67 @@
                 .forEach(el => {
                     el.setAttribute('data-aos', 'fade-up');
                 });
+        }
+
+        // Initialize Swiper for Hero Section
+        const swiper = new Swiper('.hero_swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 60,
+            loop: true,
+            speed: 5000,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Hero Canvas Particle Animation
+        const canvas = document.getElementById('hero_canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+
+            function initCanvas() {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+                particles = [];
+                for (let i = 0; i < 50; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        radius: Math.random() * 2 + 1,
+                        vx: Math.random() * 0.5 - 0.25,
+                        vy: Math.random() * -1 - 0.5,
+                        alpha: Math.random() * 0.5 + 0.1
+                    });
+                }
+            }
+
+            function drawCanvas() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(223, 168, 61, ${p.alpha})`; // gold color
+                    ctx.fill();
+
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.y < 0) {
+                        p.y = height;
+                        p.x = Math.random() * width;
+                    }
+                });
+                requestAnimationFrame(drawCanvas);
+            }
+
+            initCanvas();
+            drawCanvas();
+            window.addEventListener('resize', initCanvas);
         }
     </script>
 </body>
