@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Imperial+Script&family=Great+Vibes&display=swap');
 
 /* ==================== VARIABLES & GLOBALS ==================== */
 :root {
@@ -9,7 +9,7 @@
     --tpl1-text-gold: #8C6E51;
     --tpl1-text-light: #FFFFFF;
 
-    --tpl1-font-script: 'Luxurious Script', 'Edwardian Script ITC', cursive;
+    --tpl1-font-script: 'Edwardian Script ITC', 'Imperial Script', 'Great Vibes', 'Luxurious Script', cursive;
     --tpl1-font-serif: 'Arek Armenian Variable TRIAL', 'TLArmenian', serif;
 }
 
@@ -1504,19 +1504,20 @@ body.tpl1_body {
 }
 
 .tpl3_env_lower {
-    min-width: 100%;
-    min-height: 100vh;
+    width: 100%;
+    min-height: auto;
     width: auto;
     height: auto;
     object-fit: cover;
     object-position: center;
     position: absolute;
     z-index: 2;
+    bottom: 0;
 }
 
 .tpl3_env_flap {
-    min-width: 100%;
-    min-height: 100vh;
+    width: 100%;
+    min-height: auto;
     width: auto;
     height: auto;
     object-fit: cover;
@@ -1837,7 +1838,8 @@ body.tpl1_body {
 
 .tpl3_warning_icon {
     font-size: 18px;
-    color: #f1c40f; /* Yellowish warning */
+    color: #f1c40f;
+    /* Yellowish warning */
 }
 
 .tpl3_allergies_desc {
@@ -1900,4 +1902,969 @@ body.tpl1_body {
     color: #F2EFE9;
     font-size: 16px;
     letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   TEMPLATE 1: SMOOTH HERO REVEAL TRANSITIONS & STATE 2
+   ========================================================================== */
+
+.tpl1_hero_state {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.2s;
+}
+
+#tpl1_hero_state1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Clickable whole section */
+}
+
+#tpl1_hero_state2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Active class triggers smooth slide/fade between states */
+.tpl1_hero.tpl1_revealed #tpl1_hero_state1 {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.tpl1_hero.tpl1_revealed #tpl1_hero_state2 {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* State 2 (Couple video & typography) */
+.tpl1_couple_video_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    z-index: 1;
+}
+
+.tpl1_couple_overlay {
+    background: linear-gradient(180deg, rgba(135, 105, 84, 0.45) 0%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.75) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.tpl1_couple_content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 80px 20px 100px;
+    box-sizing: border-box;
+}
+
+.tpl1_couple_header {
+    font-family: var(--tpl1-font-serif);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl1_couple_center_group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.tpl1_couple_names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+    width: 100%;
+    gap: 70px;
+}
+
+.tpl1_couple_firstname,
+.tpl1_couple_lastname {
+    font-family: var(--tpl1-font-script);
+    font-size: 110px;
+    color: #FFFFFF;
+    line-height: 0.75;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.tpl1_couple_firstname {
+    margin-bottom: -15px;
+}
+
+.tpl1_couple_lastname {
+    margin-top: -15px;
+}
+
+.tpl1_couple_amp {
+    font-family: var(--tpl1-font-script);
+    font-size: 65px;
+    color: #F1DDB5;
+    line-height: 0.8;
+    margin: 5px 0;
+    opacity: 0;
+    transform: scale(0.7);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.tpl1_couple_divider_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 0;
+    gap: 15px;
+    opacity: 0;
+    transform: scaleX(0.4);
+}
+
+.tpl1_couple_line {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(241, 221, 181, 0.45);
+}
+
+.tpl1_couple_ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tpl1_couple_ornament svg {
+    width: 20px;
+    height: 20px;
+    fill: #F1DDB5;
+}
+
+.tpl1_couple_date {
+    font-family: var(--tpl1-font-serif);
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #F1DDB5;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl1_scroll_indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.tpl1_scroll_btn {
+    color: #FFFFFF;
+    font-size: 26px;
+    text-decoration: none;
+    display: block;
+    animation: bounceIndicator 2s infinite;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.tpl1_scroll_btn:hover {
+    opacity: 1;
+    color: #F1DDB5;
+}
+
+/* Staggered transition animations */
+.tpl1_hero.tpl1_revealed .tpl1_couple_header {
+    animation: fadeInUpCouple 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.6s forwards;
+}
+
+.tpl1_hero.tpl1_revealed .tpl1_couple_firstname {
+    animation: fadeInUpCouple 1.4s cubic-bezier(0.25, 1, 0.5, 1) 0.8s forwards;
+}
+
+.tpl1_hero.tpl1_revealed .tpl1_couple_amp {
+    animation: fadeInScaleCouple 1.4s cubic-bezier(0.25, 1, 0.5, 1) 1.2s forwards;
+}
+
+.tpl1_hero.tpl1_revealed .tpl1_couple_lastname {
+    animation: fadeInUpCouple 1.4s cubic-bezier(0.25, 1, 0.5, 1) 1.5s forwards;
+}
+
+.tpl1_hero.tpl1_revealed .tpl1_couple_divider_wrap {
+    animation: scaleLineCouple 1.4s cubic-bezier(0.25, 1, 0.5, 1) 1.8s forwards;
+}
+
+.tpl1_hero.tpl1_revealed .tpl1_couple_date {
+    animation: fadeInUpCouple 1.4s cubic-bezier(0.25, 1, 0.5, 1) 2.1s forwards;
+}
+
+.tpl1_hero.tpl1_revealed .tpl1_scroll_indicator {
+    animation: fadeInCouple 1.2s ease-out 2.5s forwards;
+}
+
+@keyframes fadeInUpCouple {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScaleCouple {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleLineCouple {
+    from {
+        opacity: 0;
+        transform: scaleX(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInCouple {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIndicator {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/* ==========================================================================
+   TEMPLATE 1: RESPONSIVE & FULLWIDTH PAGE OVERRIDES
+   ========================================================================== */
+
+.tpl1_fullwidth_page .tpl1_mobile_wrapper {
+    max-width: 100% !important;
+    box-shadow: none !important;
+}
+
+/* Full screen hero for State 1 and State 2 on large layouts */
+.tpl1_fullwidth_page .tpl1_hero_state {
+    height: 100vh;
+}
+
+.tpl1_fullwidth_page #tpl1_hero_state1 .tpl1_hero_video_wrap {
+    height: 100vh !important;
+    width: 100%;
+}
+
+.tpl1_fullwidth_page #tpl1_hero_state1 .tpl1_video_overlay {
+    background: linear-gradient(180deg, rgba(135, 105, 84, 0.3) 0%, rgba(135, 105, 84, 0.7) 100%);
+    height: 100vh !important;
+}
+
+.tpl1_fullwidth_page #tpl1_hero_state1 .tpl1_hero_content {
+    margin-top: 0 !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    justify-content: center;
+    background: transparent !important;
+}
+
+/* Limit max width of text blocks and centered containers on desktop for readability */
+.tpl1_fullwidth_page .tpl1_welcome_text {
+    max-width: 650px;
+}
+
+.tpl1_fullwidth_page .tpl1_interactive_gallery {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tpl1_fullwidth_page .tpl1_venue_card {
+    max-width: 768px;
+}
+
+.tpl1_fullwidth_page .tpl1_timeline_wrapper {
+    max-width: 500px;
+}
+
+/* Desktop layout for Timeline item spacing if wider */
+@media (min-width: 768px) {
+    .tpl1_fullwidth_page .tpl1_timeline_item.left {
+        padding-right: 45px;
+    }
+
+    .tpl1_fullwidth_page .tpl1_timeline_item.right {
+        padding-left: 45px;
+    }
+}
+
+.tpl1_fullwidth_page .tpl1_dress_card {
+    max-width: 450px;
+}
+
+/* Pre-wedding events side-by-side on desktop */
+@media (min-width: 768px) {
+    .tpl1_fullwidth_page .tpl1_event_cards {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        max-width: 800px;
+        margin: 40px auto 0;
+    }
+
+    .tpl1_fullwidth_page .tpl1_event_card {
+        margin: 0;
+        flex: 1;
+    }
+}
+
+.tpl1_fullwidth_page .tpl1_location_section .tpl1_event_card {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Accommodation hotel cards layout on desktop */
+@media (min-width: 768px) {
+    .tpl1_fullwidth_page .tpl1_accommodation_section .tpl1_event_card {
+        max-width: 900px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+        gap: 20px;
+        padding: 40px 30px;
+        margin: auto;
+    }
+
+    .tpl1_fullwidth_page .tpl1_hotel_block {
+        flex: 1;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Hide vertical line dividers on desktop since they sit side-by-side */
+    .tpl1_fullwidth_page .tpl1_accommodation_section .tpl1_venue_divider {
+        display: none;
+    }
+}
+
+.tpl1_fullwidth_page .tpl1_gifts_section .tpl1_dress_card {
+    max-width: 450px;
+}
+
+.tpl1_fullwidth_page .tpl1_rsvp_section .tpl1_venue_card {
+    max-width: 500px;
+}
+
+/* ==================== TEMPLATE 1: SWIPER GALLERIES ==================== */
+.tpl1_gallery_swiper {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.tpl1_fullwidth_page .tpl1_gallery_swiper {
+    max-width: 900px !important;
+    /* Wider on desktop to show 2.5 slides beautifully */
+}
+
+.tpl1_gallery_swiper .swiper-slide {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    /* Individual slide rounding */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tpl1_gallery_swiper .tpl1_swiper_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Custom Swiper Pagination Bullets (Gold Theme) */
+.tpl1_gallery_swiper .swiper-pagination {
+    bottom: 20px !important;
+}
+
+.tpl1_gallery_swiper .swiper-pagination-bullet {
+    background: #C5A56D !important;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.tpl1_gallery_swiper .swiper-pagination-bullet-active {
+    background: #C5A56D !important;
+    opacity: 1;
+    width: 20px !important;
+    border-radius: 6px !important;
+}
+
+/* Scroll lock to prevent skipping reveal transition */
+html.tpl1_scroll_locked,
+body.tpl1_scroll_locked {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: relative;
+}
+
+/* ==========================================================================
+   TEMPLATE 2: HERO SECTION & ANIMATIONS
+   ========================================================================== */
+
+.tpl2_hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tpl1-bg-light);
+}
+
+/* Gazebo Background */
+.tpl2_hero_bg_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.2s;
+    /* Delayed to start as envelope slides down */
+}
+
+.tpl2_hero_bg_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tpl2_hero_bg_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 242, 235, 0.1);
+    /* Soft warm tint overlay */
+}
+
+/* Floral Decor Overlay */
+.tpl2_hero_flowers_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    transform: scale(1.15);
+    /* More dramatic start scale for smooth zoom-in */
+    transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1) 1.2s, transform 1.8s cubic-bezier(0.25, 1, 0.5, 1) 1.2s;
+    /* Delayed until background has faded in */
+}
+
+.tpl2_hero_flowers_img {
+    width: 100%;
+    height: 105%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Content Container */
+.tpl2_hero_content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: -40px;
+    /* Shift content slightly up to center in the gazebo frame */
+}
+
+.tpl2_hero_tagline {
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: #4A5D3E;
+    /* Green Theme Color */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl2_hero_names {
+    font-family: var(--tpl1-font-script);
+    font-size: 90px;
+    color: #4A5D3E;
+    margin-bottom: 25px;
+    line-height: 0.95;
+    opacity: 0;
+    transform: translateY(25px);
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+}
+
+.tpl2_hero_date {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #4A5D3E;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Bouncing Scroll Indicator */
+.tpl2_scroll_indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    opacity: 0;
+}
+
+.tpl2_scroll_btn {
+    color: #4A5D3E;
+    font-size: 28px;
+    text-decoration: none;
+    display: block;
+    animation: bounceIndicator 2s infinite;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.tpl2_scroll_btn:hover {
+    opacity: 1;
+}
+
+/* Animation States */
+.tpl2_hero_animate .tpl2_hero_bg_wrap {
+    opacity: 1;
+}
+
+.tpl2_hero_animate .tpl2_hero_flowers_wrap {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.tpl2_hero_animate .tpl2_hero_tagline {
+    animation: fadeInUpTpl2 1.2s cubic-bezier(0.25, 1, 0.5, 1) 2.2s forwards;
+    /* Delayed until flowers are partially in place */
+}
+
+.tpl2_hero_animate .tpl2_hero_names {
+    animation: fadeInUpTpl2 1.4s cubic-bezier(0.25, 1, 0.5, 1) 2.6s forwards;
+}
+
+.tpl2_hero_animate .tpl2_hero_date {
+    animation: fadeInUpTpl2 1.2s cubic-bezier(0.25, 1, 0.5, 1) 3.0s forwards;
+}
+
+.tpl2_hero_animate .tpl2_scroll_indicator {
+    animation: fadeInTpl2 1.2s ease-out 3.5s forwards;
+}
+
+.tpl2_lights_decor {
+    text-align: center;
+}
+
+/* Keyframes */
+@keyframes fadeInUpTpl2 {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTpl2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scroll Lock for Template 2 */
+html.tpl2_scroll_locked,
+body.tpl2_scroll_locked {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: relative;
+}
+
+/* ==========================================================================
+   TEMPLATE 2: RESPONSIVE & FULLWIDTH PAGE OVERRIDES
+   ========================================================================== */
+
+.tpl2_fullwidth_page .tpl1_mobile_wrapper {
+    max-width: 100% !important;
+    box-shadow: none !important;
+}
+
+/* Limit timer spacing on wide layouts */
+.tpl2_fullwidth_page .tpl2_timer_wrap {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Keep timeline, forms, and cards elegant on wide desktop screens */
+@media (min-width: 768px) {
+    .tpl2_fullwidth_page .tpl2_location_cutout {
+        max-width: 500px;
+    }
+
+    .tpl2_fullwidth_page .tpl2_vertical_timeline {
+        max-width: 400px;
+    }
+
+    .tpl2_fullwidth_page .tpl2_dress_card {
+        max-width: 450px;
+    }
+
+    .tpl2_fullwidth_page .tpl2_accordion_container {
+        max-width: 450px;
+    }
+
+    .tpl2_fullwidth_page .tpl2_rsvp_form {
+        max-width: 500px;
+        background-color: #FAF8F2;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        border: 1px solid #D1C7B3;
+    }
+
+    .tpl2_fullwidth_page .tpl2_footer_artwork {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tpl2_hero_flowers_img {
+        width: 100%;
+        height: 105%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* ==========================================================================
+   TEMPLATE 3: HERO SECTION & SCROLL LOCK
+   ========================================================================== */
+html.tpl3_scroll_locked,
+body.tpl3_scroll_locked {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: relative;
+}
+
+.tpl3_hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2EFE9;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.tpl3_hero_content {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tpl3_hero_subtitle {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #4F6A7A;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl3_hero_names {
+    font-family: var(--tpl1-font-script);
+    font-size: 55px;
+    color: #4F6A7A;
+    margin-bottom: 35px;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl3_hero_desc_wrap {
+    width: 100%;
+    margin-bottom: 35px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl3_hero_desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4F6A7A;
+    font-weight: 400;
+    margin: 0;
+}
+
+.tpl3_hero_date {
+    font-family: var(--tpl1-font-script);
+    font-size: 32px;
+    color: #4F6A7A;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl3_hero_rings {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl3_rings_svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.tpl3_hero_divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tpl3_divider_line {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(79, 106, 122, 0.3);
+}
+
+.tpl3_divider_heart {
+    font-size: 16px;
+    color: #4F6A7A;
+}
+
+/* Template 3 Hero Animation States */
+.tpl3_hero_animate .tpl3_hero_subtitle {
+    animation: fadeInUpTpl3 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+}
+
+.tpl3_hero_animate .tpl3_hero_names {
+    animation: fadeInUpTpl3 1.4s cubic-bezier(0.25, 1, 0.5, 1) 0.8s forwards;
+}
+
+.tpl3_hero_animate .tpl3_hero_desc_wrap {
+    animation: fadeInUpTpl3 1.4s cubic-bezier(0.25, 1, 0.5, 1) 1.3s forwards;
+}
+
+.tpl3_hero_animate .tpl3_hero_date {
+    animation: fadeInUpTpl3 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1.8s forwards;
+}
+
+.tpl3_hero_animate .tpl3_hero_rings {
+    animation: fadeInUpTpl3 1.2s cubic-bezier(0.25, 1, 0.5, 1) 2.3s forwards;
+}
+
+.tpl3_hero_animate .tpl3_hero_divider {
+    animation: fadeInUpTpl3 1.2s cubic-bezier(0.25, 1, 0.5, 1) 2.8s forwards;
+}
+
+@keyframes fadeInUpTpl3 {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   TEMPLATE 3: RESPONSIVE & FULLWIDTH PAGE OVERRIDES
+   ========================================================================== */
+.tpl3_fullwidth_page .tpl1_mobile_wrapper {
+    max-width: 100% !important;
+    box-shadow: none !important;
+}
+
+/* Limit layout width on desktop for visual elegance */
+@media (min-width: 768px) {
+    .tpl3_fullwidth_page .tpl3_hero_content {
+        max-width: 550px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_hero_names {
+        font-size: 75px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_hero_desc {
+        font-size: 16px;
+        line-height: 2.0;
+    }
+
+    .tpl3_fullwidth_page .tpl3_hero_date {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_hero_img_container img {
+        max-width: 450px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_countdown_grid {
+        max-width: 650px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_cake_container img {
+        max-width: 250px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_images_row {
+        max-width: 850px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .tpl3_fullwidth_page .tpl3_outline_btn {
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .tpl3_fullwidth_page .tpl3_timeline {
+        max-width: 500px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_accordion_container {
+        max-width: 500px;
+    }
+
+    .tpl3_fullwidth_page .tpl3_rsvp_form_wrapper {
+        max-width: 700px;
+        padding: 40px;
+        box-shadow: 0 4px 25px rgba(79, 106, 122, 0.08);
+    }
+
+    .tpl1_event_card {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tpl1_monogram {
+        font-size: 170px;
+        position: relative;
+        right: 10%;
+    }
+
 }

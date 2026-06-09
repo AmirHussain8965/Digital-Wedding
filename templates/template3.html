@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="tpl3_scroll_locked">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../assets/css/templates.css">
 </head>
 
-<body class="tpl1_body tpl3_theme">
+<body class="tpl1_body tpl3_theme tpl3_scroll_locked tpl3_fullwidth_page">
 
     <div class="tpl1_mobile_wrapper">
 
@@ -30,26 +30,43 @@
         </div>
 
         <!-- ==================== SECTION 1: HERO / INTRO ==================== -->
-        <section class="tpl1_hero" id="hero_section">
-            <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
-                <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
-                    <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
-                </video>
-                <div class="tpl1_video_overlay"></div>
-            </div>
+        <section class="tpl3_hero text-center d-flex flex-column align-items-center justify-content-center"
+            id="hero_section">
+            <div class="tpl3_hero_content d-flex flex-column align-items-center justify-content-center">
+                <p class="tpl1_serif tpl3_hero_subtitle">We're Getting Married</p>
+                <h1 class="tpl1_script tpl3_hero_names">Andrew &amp; Amilio</h1>
 
-            <div class="tpl1_hero_content">
-                <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
-                    <span class="tpl1_script monogram_letter">A</span>
-                    <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
+                <div class="tpl3_hero_desc_wrap">
+                    <p class="tpl1_serif tpl3_hero_desc">
+                        We Are So Excited To Be Able To Share This<br>
+                        Special Day With You. After Years Of<br>
+                        Laughter, Adventures, And Unforgettable<br>
+                        Moments, We Are Ready To Take The Next<br>
+                        Step On Our Journey Together — And We<br>
+                        Cannot Imagine It Without The People We<br>
+                        Love Most By Our Side.
+                    </p>
                 </div>
 
-                <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
-                    <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
+                <p class="tpl1_script tpl3_hero_date">September 12, 2026</p>
+
+                <div class="tpl3_hero_rings">
+                    <svg viewBox="0 0 120 80" width="100" height="66" fill="none" stroke="#4F6A7A" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round" class="tpl3_rings_svg">
+                        <circle cx="45" cy="48" r="22" />
+                        <circle cx="75" cy="48" r="22" />
+                        <polygon points="67,16 71,12 79,12 83,16 75,26" fill="#F2EFE9" stroke="#4F6A7A"
+                            stroke-width="2.5" />
+                        <line x1="71" y1="12" x2="75" y2="26" stroke="#4F6A7A" stroke-width="2" />
+                        <line x1="79" y1="12" x2="75" y2="26" stroke="#4F6A7A" stroke-width="2" />
+                        <line x1="67" y1="16" x2="83" y2="16" stroke="#4F6A7A" stroke-width="2" />
+                    </svg>
                 </div>
 
-                <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
-                    <a href="#countdown_section" class="tpl1_tap_btn">TAP TO REVEAL</a>
+                <div class="tpl3_hero_divider">
+                    <div class="tpl3_divider_line"></div>
+                    <i class="bi bi-heart tpl3_divider_heart"></i>
+                    <div class="tpl3_divider_line"></div>
                 </div>
             </div>
         </section>
@@ -57,16 +74,20 @@
         <!-- ==================== SECTION 2: COUNTDOWN ==================== -->
         <section class="tpl3_hero_section text-center" id="countdown_section">
             <div class="tpl3_hero_img_container" data-aos="fade-up" data-aos-duration="1000">
-                <img src="https://placehold.co/400x250/F2EFE9/4F6A7A?text=Table+Illustration" alt="Table Illustration" class="img-fluid">
+                <img src="../assets/imgs/Table_Illustration.png" alt="Table Illustration" class="img-fluid">
             </div>
 
             <!-- Attendance Dropdown -->
             <div class="tpl3_hero_dropdown mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <button class="tpl3_accordion_btn tpl1_serif text-center d-inline-block border-0 bg-transparent" id="tpl3_btn_attendance" type="button" style="width:auto; padding:0;">
-                    <span style="color:#4F6A7A; font-size:15px;">Confirm your attendance <i class="fas fa-chevron-down ms-2"></i></span>
+                <button class="tpl3_accordion_btn tpl1_serif text-center d-inline-block border-0 bg-transparent"
+                    id="tpl3_btn_attendance" type="button" style="width:auto; padding:0;">
+                    <span style="color:#4F6A7A; font-size:15px;">Confirm your attendance <i
+                            class="fas fa-chevron-down ms-2"></i></span>
                 </button>
-                <div class="tpl3_accordion_content tpl1_serif" id="tpl3_content_attendance" style="background:transparent; border:none;">
-                    <p class="mt-3 mb-0" style="color:#4F6A7A; font-size:14px;">Please kindly confirm your attendance by September 1st, 2026.</p>
+                <div class="tpl3_accordion_content tpl1_serif" id="tpl3_content_attendance"
+                    style="background:transparent; border:none;">
+                    <p class="mt-3 mb-0" style="color:#4F6A7A; font-size:14px;">Please kindly confirm your attendance by
+                        September 1st, 2026.</p>
                 </div>
             </div>
 
@@ -76,25 +97,25 @@
                 <p class="tpl1_serif tpl3_subtitle">For the most special day of our lives</p>
 
                 <div class="row g-3 mt-4 tpl3_countdown_grid justify-content-center">
-                    <div class="col-5">
+                    <div class="col-5 col-sm-3">
                         <div class="tpl3_countdown_box">
                             <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_days">000</h3>
                             <p class="tpl1_serif tpl3_countdown_label">Days</p>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-5 col-sm-3">
                         <div class="tpl3_countdown_box">
                             <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_hours">00</h3>
                             <p class="tpl1_serif tpl3_countdown_label">Hours</p>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-5 col-sm-3">
                         <div class="tpl3_countdown_box">
                             <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_mins">00</h3>
                             <p class="tpl1_serif tpl3_countdown_label">Minutes</p>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-5 col-sm-3">
                         <div class="tpl3_countdown_box">
                             <h3 class="tpl1_script tpl3_countdown_val" id="tpl3_timer_secs">00</h3>
                             <p class="tpl1_serif tpl3_countdown_label">Seconds</p>
@@ -106,29 +127,50 @@
             <!-- Cake Illustration -->
             <div class="tpl3_cake_container mt-5" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="tpl1_script tpl3_title" style="line-height:1.2;">Come for our love<br>stay for the cake!</h2>
-                <img src="https://placehold.co/200x200/F2EFE9/4F6A7A?text=Cake+Illustration" alt="Cake Illustration" class="img-fluid mt-3">
+                <img src="../assets/imgs/Cake_Illustration.png" alt="Cake Illustration" class="img-fluid mt-3">
             </div>
         </section>
 
         <!-- ==================== SECTION 2: DAY DETAILS ==================== -->
         <section class="tpl3_day_details_section text-center">
             <h2 class="tpl1_script tpl3_title" data-aos="fade-up" data-aos-duration="1000">Day Details</h2>
-            <p class="tpl1_serif tpl3_subtitle mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">All the information you need</p>
+            <p class="tpl1_serif tpl3_subtitle mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                All the information you need</p>
 
             <div class="tpl3_location_icon" data-aos="zoom-in" data-aos-duration="1000">
                 <i class="fas fa-map-marker-alt"></i>
             </div>
-            
+
             <h3 class="tpl1_serif tpl3_location_title mt-3" data-aos="fade-up" data-aos-duration="1000">Location</h3>
             <p class="tpl1_serif tpl3_location_text" data-aos="fade-up" data-aos-duration="1000">Finca González</p>
-            <p class="tpl1_serif tpl3_location_time" data-aos="fade-up" data-aos-duration="1000"><i class="far fa-clock me-1"></i> From 5:00 PM to 1:00 AM</p>
+            <p class="tpl1_serif tpl3_location_time" data-aos="fade-up" data-aos-duration="1000"><i
+                    class="far fa-clock me-1"></i> From 5:00 PM to 1:00 AM</p>
 
             <div class="tpl3_images_container mt-4" data-aos="fade-up" data-aos-duration="1000">
-                <img src="https://placehold.co/400x250/F2EFE9/4F6A7A?text=Venue+Illustration" alt="Venue Illustration" class="img-fluid tpl3_rounded_img mb-3">
-                <img src="https://placehold.co/400x250/F2EFE9/4F6A7A?text=Map+Snippet" alt="Map Location" class="img-fluid tpl3_rounded_img mb-4">
+                <div class="row g-4 justify-content-center tpl3_images_row">
+                    <div class="col-md-6 col-lg-5">
+                        <img src="../assets/imgs/temp3_vanue1.png" alt="Venue Illustration"
+                            class="img-fluid tpl3_rounded_img w-100 mb-3">
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+
+                        <div class="tpl1_venue_map mt-0">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25577.978350071935!2d-5.1581592!3d36.74063485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0d3143e258a279%3A0x94358021349a5ba2!2s29400%20Ronda%2C%20M%C3%A1laga%2C%20Spain!5e0!3m2!1sen!2s!4v1780917588540!5m2!1sen!2s"
+                                width="100%" height="230px" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div class="tpl1_map_btn_wrap">
+                                <a href="#" class="tpl1_map_btn">
+                                    <i class="bi bi-geo-alt"></i> OPEN IN MAPS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <button type="button" class="btn tpl3_outline_btn tpl1_serif w-100" data-aos="fade-up" data-aos-duration="1000">
+            <button type="button" class="btn tpl3_outline_btn tpl1_serif w-100" data-aos="fade-up"
+                data-aos-duration="1000">
                 <i class="far fa-calendar me-2"></i> Add to Calendar
             </button>
         </section>
@@ -136,11 +178,12 @@
         <!-- ==================== SECTION 3: PROGRAM DETAILS ==================== -->
         <section class="tpl3_program_section text-center">
             <h2 class="tpl1_script tpl3_title" data-aos="fade-up" data-aos-duration="1000">Program Details</h2>
-            <p class="tpl1_serif tpl3_subtitle mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">What we have prepared for you</p>
+            <p class="tpl1_serif tpl3_subtitle mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                What we have prepared for you</p>
 
             <div class="tpl3_timeline text-start">
                 <div class="tpl3_timeline_line"></div>
-                
+
                 <!-- Timeline Item 1 -->
                 <div class="tpl3_timeline_item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="tpl3_timeline_icon">
@@ -244,17 +287,20 @@
         <!-- ==================== SECTION 4: GIFTS ==================== -->
         <section class="tpl3_gifts_section text-center">
             <div class="tpl3_band_illustration mb-4" data-aos="zoom-in" data-aos-duration="1200">
-                <img src="https://placehold.co/400x150/F2EFE9/4F6A7A?text=Band+Illustration" alt="Band Illustration" class="img-fluid">
+                <img src="../assets/imgs/temp3_gift.png" alt="">
             </div>
 
             <h2 class="tpl1_script tpl3_title mb-3" data-aos="fade-up" data-aos-duration="1000">Gifts</h2>
             <p class="tpl1_serif tpl3_gifts_desc mb-4" data-aos="fade-up" data-aos-duration="1000">
-                Your presence is the most important thing to us. If you wish to give us a gift, you can do so in whatever way is most convenient for you.
+                Your presence is the most important thing to us. If you wish to give us a gift, you can do so in
+                whatever way is most convenient for you.
             </p>
 
             <div class="tpl3_accordion_container" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Dropdown: Contribution -->
-                <button class="tpl3_accordion_btn tpl1_serif text-start d-flex justify-content-between align-items-center" id="tpl3_btn_contribution" type="button">
+                <button
+                    class="tpl3_accordion_btn tpl1_serif text-start d-flex justify-content-between align-items-center"
+                    id="tpl3_btn_contribution" type="button">
                     <span>Contribution</span>
                     <i class="fas fa-chevron-down tpl3_accordion_icon"></i>
                 </button>
@@ -265,38 +311,48 @@
         </section>
         <!-- ==================== SECTION 5: RSVP ==================== -->
         <section class="tpl3_rsvp_section text-center" id="rsvp_section">
-            <h2 class="tpl1_script tpl3_title mb-3" data-aos="fade-up" data-aos-duration="1000">Confirm Your Presence</h2>
+            <h2 class="tpl1_script tpl3_title mb-3" data-aos="fade-up" data-aos-duration="1000">Confirm Your Presence
+            </h2>
             <p class="tpl1_serif tpl3_rsvp_desc mb-4" data-aos="fade-up" data-aos-duration="1000">
-                Your presence is the most important thing to us. If you wish to give us a gift, you can do so in whatever way is most convenient for you.
+                Your presence is the most important thing to us. If you wish to give us a gift, you can do so in
+                whatever way is most convenient for you.
             </p>
 
             <div class="tpl3_rsvp_form_wrapper text-start tpl1_serif" data-aos="fade-up" data-aos-duration="1000">
                 <form id="tpl3_rsvp_form">
-                    <div class="mb-3">
-                        <label class="form-label tpl3_form_label">Full Name*</label>
-                        <input type="text" class="form-control tpl3_form_input" placeholder="Your Full Name" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label tpl3_form_label">Email (optional)</label>
-                        <input type="email" class="form-control tpl3_form_input" placeholder="you@email.com">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label tpl3_form_label d-block">Will you attend? *</label>
-                        <div class="form-check form-check-inline mt-1">
-                            <input class="form-check-input tpl3_form_radio" type="radio" name="tpl3_attendance" id="tpl3_attend_yes" value="yes" checked>
-                            <label class="form-check-label tpl3_radio_label" for="tpl3_attend_yes">Yes, I'll be there</label>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label tpl3_form_label">Full Name*</label>
+                            <input type="text" class="form-control tpl3_form_input" placeholder="Your Full Name"
+                                required>
                         </div>
-                        <div class="form-check form-check-inline mt-1">
-                            <input class="form-check-input tpl3_form_radio" type="radio" name="tpl3_attendance" id="tpl3_attend_no" value="no">
-                            <label class="form-check-label tpl3_radio_label" for="tpl3_attend_no">I won't be able to attend</label>
+                        <div class="col-md-6">
+                            <label class="form-label tpl3_form_label">Email (optional)</label>
+                            <input type="email" class="form-control tpl3_form_input" placeholder="you@email.com">
                         </div>
                     </div>
 
-                    <div class="mb-4">
-                        <label class="form-label tpl3_form_label">Number of guests (including yourself)</label>
-                        <input type="number" class="form-control tpl3_form_input tpl3_guest_input" value="3" min="1" max="10">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label tpl3_form_label d-block">Will you attend? *</label>
+                            <div class="form-check form-check-inline mt-1">
+                                <input class="form-check-input tpl3_form_radio" type="radio" name="tpl3_attendance"
+                                    id="tpl3_attend_yes" value="yes" checked>
+                                <label class="form-check-label tpl3_radio_label" for="tpl3_attend_yes">Yes, I'll be
+                                    there</label>
+                            </div>
+                            <div class="form-check form-check-inline mt-1">
+                                <input class="form-check-input tpl3_form_radio" type="radio" name="tpl3_attendance"
+                                    id="tpl3_attend_no" value="no">
+                                <label class="form-check-label tpl3_radio_label" for="tpl3_attend_no">I won't be able to
+                                    attend</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label tpl3_form_label">Number of guests (including yourself)</label>
+                            <input type="number" class="form-control tpl3_form_input tpl3_guest_input w-100" value="3"
+                                min="1" max="10">
+                        </div>
                     </div>
 
                     <div class="tpl3_allergies_section mb-4">
@@ -304,54 +360,68 @@
                             <span class="tpl3_warning_icon me-2">⚠️</span>
                             <label class="form-label tpl3_form_label mb-0">Food allergies and intolerances</label>
                         </div>
-                        <p class="tpl3_allergies_desc mb-3">It is very important for us to know about any dietary restrictions. Select all that apply:</p>
-                        
+                        <p class="tpl3_allergies_desc mb-3">It is very important for us to know about any dietary
+                            restrictions. Select all that apply:</p>
+
                         <div class="row g-2 mb-3">
                             <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_gluten">
-                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_gluten">Gluten-free / Celiac</label>
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox"
+                                        id="tpl3_alg_gluten">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_gluten">Gluten-free /
+                                        Celiac</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_lactose">
-                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_lactose">Lactose-free</label>
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox"
+                                        id="tpl3_alg_lactose">
+                                    <label class="form-check-label tpl3_check_label"
+                                        for="tpl3_alg_lactose">Lactose-free</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_veg">
-                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_veg">Vegetarian</label>
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox"
+                                        id="tpl3_alg_veg">
+                                    <label class="form-check-label tpl3_check_label"
+                                        for="tpl3_alg_veg">Vegetarian</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_vegan">
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox"
+                                        id="tpl3_alg_vegan">
                                     <label class="form-check-label tpl3_check_label" for="tpl3_alg_vegan">Vegan</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_nut">
-                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_nut">Nut allergy</label>
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox"
+                                        id="tpl3_alg_nut">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_nut">Nut
+                                        allergy</label>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox" id="tpl3_alg_shellfish">
-                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_shellfish">Shellfish allergy</label>
+                                    <input class="form-check-input tpl3_form_checkbox" type="checkbox"
+                                        id="tpl3_alg_shellfish">
+                                    <label class="form-check-label tpl3_check_label" for="tpl3_alg_shellfish">Shellfish
+                                        allergy</label>
                                 </div>
                             </div>
                         </div>
 
                         <label class="form-label tpl3_form_label">Other allergies or restrictions:</label>
-                        <input type="text" class="form-control tpl3_form_input" placeholder="e.g: egg allergy, fructose intolerance">
+                        <input type="text" class="form-control tpl3_form_input"
+                            placeholder="e.g: egg allergy, fructose intolerance">
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label tpl3_form_label">Message for the couple (optional)</label>
-                        <textarea class="form-control tpl3_form_input tpl3_textarea" rows="3" placeholder="Write us a few words..."></textarea>
+                        <textarea class="form-control tpl3_form_input tpl3_textarea" rows="3"
+                            placeholder="Write us a few words..."></textarea>
                     </div>
 
                     <button type="submit" class="btn tpl3_submit_btn w-100">
@@ -364,8 +434,9 @@
         <!-- ==================== SECTION 6: FOOTER ==================== -->
         <footer class="tpl3_footer text-center">
             <i class="far fa-heart tpl3_footer_icon mb-3" data-aos="zoom-in" data-aos-duration="1000"></i>
-            <h2 class="tpl1_script tpl3_footer_names mb-2" data-aos="fade-up" data-aos-duration="1000">Andrew &amp; Amilio</h2>
-            <p class="tpl1_serif tpl3_footer_date mb-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">September 12, 2026</p>
+            <h2 class="tpl1_script tpl3_footer_names mb-2" data-aos="fade-up" data-aos-duration="1000">Andrew &amp;
+                Amilio</h2>
+            <p class="tpl1_serif tpl3_footer_date mb-0">September 12, 2026</p>
         </footer>
 
     </div>

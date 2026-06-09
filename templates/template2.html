@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="tpl2_scroll_locked">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../assets/css/templates.css">
 </head>
 
-<body class="tpl1_body">
+<body class="tpl1_body tpl2_scroll_locked tpl2_fullwidth_page">
 
     <!-- Mobile-First Container -->
     <div class="tpl1_mobile_wrapper">
@@ -34,27 +34,30 @@
         </div>
 
         <!-- ==================== SECTION 1: HERO / INTRO ==================== -->
-        <section class="tpl1_hero" id="hero_section">
-            <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
-                <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
-                    <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
-                </video>
-                <div class="tpl1_video_overlay"></div>
+        <section class="tpl2_hero" id="hero_section">
+            <!-- Background Image -->
+            <div class="tpl2_hero_bg_wrap">
+                <img src="../assets/imgs/tem2_sec1_bg.png" class="tpl2_hero_bg_img" alt="Background Gazebo">
+                <div class="tpl2_hero_bg_overlay"></div>
             </div>
 
-            <div class="tpl1_hero_content">
-                <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
-                    <span class="tpl1_script monogram_letter">A</span>
-                    <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
-                </div>
+            <!-- Floral Decor Overlay -->
+            <div class="tpl2_hero_flowers_wrap">
+                <img src="../assets/imgs/temp2_sec1_flowers.png" class="tpl2_hero_flowers_img" alt="Floral Overlay">
+            </div>
 
-                <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
-                    <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
-                </div>
+            <!-- Hero Content / Typography -->
+            <div class="tpl2_hero_content">
+                <h3 class="tpl1_serif tpl2_hero_tagline">NIKAH CEREMONY</h3>
+                <h1 class="tpl1_script tpl2_hero_names">Ahmed &amp; Alia</h1>
+                <p class="tpl1_serif tpl2_hero_date">12 SEPTEMBER 2026</p>
+            </div>
 
-                <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
-                    <a href="#countdown_section" class="tpl1_tap_btn">TAP TO REVEAL</a>
-                </div>
+            <!-- Scroll Indicator Chevron -->
+            <div class="tpl2_scroll_indicator">
+                <a href="#countdown_section" class="tpl2_scroll_btn">
+                    <i class="bi bi-chevron-down"></i>
+                </a>
             </div>
         </section>
 

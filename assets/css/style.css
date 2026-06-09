@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --bg_color: #f6f1ec;
@@ -25,7 +26,7 @@
 body {
     background-color: var(--bg_color);
     color: var(--text_secondary);
-    font-family: var(--font_sans);
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -126,6 +127,12 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
+    background: #f6f1ec;
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .navbar_custom {
@@ -135,12 +142,20 @@ a {
     padding: 8px 24px;
 }
 
-.navbar_custom .navbar-brand {
+.nav_right_actions {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar_wrapper .navbar-brand {
     font-family: var(--font_sans);
     font-weight: 700;
     font-size: 20px;
     color: var(--text_primary);
     letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .navbar_custom .nav-link {
@@ -149,6 +164,7 @@ a {
     font-weight: 500;
     transition: color 0.2s;
     padding: 8px 16px !important;
+    font-family: "Poppins", sans-serif;
 }
 
 .navbar_custom .nav-link:hover {
@@ -503,12 +519,13 @@ a {
     height: 330px;
     border-radius: 12px;
     overflow: hidden;
+    text-align: center;
 }
 
 .catalogue_mockup img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .catalogue_mockup:nth-child(2) {

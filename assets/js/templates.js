@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Scroll to top on refresh/load to ensure user starts at the locked hero section
+    window.scrollTo(0, 0);
+
     // Initialize AOS Animation library
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -9,14 +12,52 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Smooth scroll for "Tap to Reveal" button
-    const tapBtn = document.querySelector('.tpl1_tap_btn');
-    if (tapBtn) {
-        tapBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+    // Smooth scroll / Reveal transition for clicking anywhere on the intro section
+    const state1 = document.getElementById('tpl1_hero_state1');
+    const heroSection = document.getElementById('hero_section');
+    const state2 = document.getElementById('tpl1_hero_state2');
+    const coupleVideo = document.getElementById('tpl1_couple_video');
 
+    if (state1 && heroSection) {
+        state1.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            // 1. Make state 2 container display flex so it can transition in
+            if (state2) {
+                state2.style.display = 'flex';
+            }
+            
+            // 2. Play the background couple video
+            if (coupleVideo) {
+                coupleVideo.play().catch(err => {
+                    console.log("Video auto play prevented, playing on tap:", err);
+                });
+            }
+            
+            // 3. Add revealed class to start CSS transitions
+            setTimeout(() => {
+                heroSection.classList.add('tpl1_revealed');
+            }, 50);
+            
+            // 4. Hide state 1 after transition finishes to optimize performance
+            setTimeout(() => {
+                state1.style.display = 'none';
+            }, 1300);
+
+            // 5. Remove scroll-lock classes once typography animations complete (2.5 seconds)
+            setTimeout(() => {
+                document.body.classList.remove('tpl1_scroll_locked');
+                document.documentElement.classList.remove('tpl1_scroll_locked');
+            }, 2500);
+        });
+    }
+
+    // Scroll down for State 2 indicator button
+    const scrollBtn = document.querySelector('.tpl1_scroll_btn');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetElement = document.querySelector('#countdown_section');
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop,
@@ -26,25 +67,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Interactive Image Gallery Logic
-    const galleryItems = document.querySelectorAll('.tpl1_gallery_item');
-    if (galleryItems.length > 0) {
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function () {
-                // If it's already expanded, do nothing
-                if (this.classList.contains('expanded')) return;
-
-                // Find currently expanded item within the SAME gallery and collapse it
-                const parentGallery = this.closest('.tpl1_interactive_gallery');
-                const currentlyExpanded = parentGallery.querySelector('.tpl1_gallery_item.expanded');
-                if (currentlyExpanded) {
-                    currentlyExpanded.classList.remove('expanded');
-                    currentlyExpanded.classList.add('collapsed');
-                }
-
-                // Expand the clicked item
-                this.classList.remove('collapsed');
-                this.classList.add('expanded');
+    // Initialize Template 1 Swiper Galleries (Welcome & Lockets)
+    const gallerySwipers = document.querySelectorAll('.tpl1_gallery_swiper');
+    if (gallerySwipers.length > 0) {
+        gallerySwipers.forEach(swiperEl => {
+            new Swiper(swiperEl, {
+                loop: true,
+                speed: 800, // Speed of sliding transition
+                autoplay: {
+                    delay: 3000, // Slide changes every 3 seconds
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 1.5, // Show 1.5 slides on mobile (cut off second slide on the right)
+                spaceBetween: 15, // Margin between slides on mobile
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2.5, // Show 2.5 slides on desktop (cut off third slide on the right)
+                        spaceBetween: 25, // Margin between slides on desktop
+                    }
+                },
+                pagination: {
+                    el: swiperEl.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
             });
         });
     }
@@ -154,6 +199,12 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 this.classList.add('slide-down');
 
+                // Trigger hero section animations as the envelope starts sliding down
+                const tpl2HeroSection = document.getElementById('hero_section');
+                if (tpl2HeroSection) {
+                    tpl2HeroSection.classList.add('tpl2_hero_animate');
+                }
+
                 // 3. Hide the whole overlay after slide down animation completes (1.2s CSS transition)
                 setTimeout(() => {
                     envelopeOverlay.classList.add('hide');
@@ -164,6 +215,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     }, 1000);
                 }, 1300);
             }, 1300);
+
+            // 5. Remove scroll-lock classes once typography animations complete (4.8 seconds)
+            setTimeout(() => {
+                document.body.classList.remove('tpl2_scroll_locked');
+                document.documentElement.classList.remove('tpl2_scroll_locked');
+            }, 4800);
+        });
+    }
+
+    // Scroll down for Template 2 indicator button
+    const tpl2ScrollBtn = document.querySelector('.tpl2_scroll_btn');
+    if (tpl2ScrollBtn) {
+        tpl2ScrollBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetElement = document.querySelector('#countdown_section');
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     }
 
@@ -285,6 +357,12 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 this.classList.add('slide-down');
                 
+                // Trigger hero section animations as the envelope starts sliding down
+                const tpl3HeroSection = document.getElementById('hero_section');
+                if (tpl3HeroSection) {
+                    tpl3HeroSection.classList.add('tpl3_hero_animate');
+                }
+                
                 // 3. Hide the whole overlay after slide down animation completes (1.2s CSS transition)
                 setTimeout(() => {
                     tpl3EnvelopeOverlay.classList.add('hide');
@@ -295,6 +373,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     }, 300);
                 }, 1200);
             }, 1300);
+
+            // 5. Remove scroll-lock classes once typography animations complete (4.0 seconds)
+            setTimeout(() => {
+                document.body.classList.remove('tpl3_scroll_locked');
+                document.documentElement.classList.remove('tpl3_scroll_locked');
+            }, 4000);
         });
     }
 

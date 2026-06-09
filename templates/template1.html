@@ -14,33 +14,81 @@
     <link rel="stylesheet" href="../assets/css/templates.css">
 </head>
 
-<body class="tpl1_body">
+<body class="tpl1_body tpl1_fullwidth_page tpl1_scroll_locked">
 
     <!-- Mobile-First Container -->
     <div class="tpl1_mobile_wrapper">
 
         <!-- ==================== SECTION 1: HERO / INTRO ==================== -->
         <section class="tpl1_hero" id="hero_section">
-            <!-- Dummy video for chandelier -->
-            <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
-                <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
-                    <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
-                </video>
-                <div class="tpl1_video_overlay"></div>
+            <!-- ==================== HERO STATE 1: INTRO (CHANDELIER) ==================== -->
+            <div class="tpl1_hero_state tpl1_hero_state_active" id="tpl1_hero_state1">
+                <div class="tpl1_hero_video_wrap animate_fade_in_up" style="animation-delay: 0.2s;">
+                    <video autoplay loop muted playsinline class="tpl1_chandelier_vid">
+                        <source src="../assets/imgs/tem1_video.mp4" type="video/mp4">
+                    </video>
+                    <div class="tpl1_video_overlay"></div>
+                </div>
+
+                <div class="tpl1_hero_content">
+                    <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
+                        <span class="tpl1_script monogram_letter">A</span>
+                        <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
+                    </div>
+
+                    <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
+                        <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
+                    </div>
+
+                    <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
+                        <button type="button" class="tpl1_tap_btn border-0 bg-transparent" id="tpl1_tap_reveal_btn">TAP
+                            TO REVEAL</button>
+                    </div>
+                </div>
             </div>
-            .tpl1_hero
-            <div class="tpl1_hero_content">
-                <div class="tpl1_monogram animate_fade_in_up" style="animation-delay: 0.6s;">
-                    <span class="tpl1_script monogram_letter">A</span>
-                    <span class="tpl1_script monogram_letter" style="position: relative; top: 80px;">P</span>
+
+            <!-- ==================== HERO STATE 2: THE COUPLE ==================== -->
+            <div class="tpl1_hero_state" id="tpl1_hero_state2" style="display: none;">
+                <div class="tpl1_hero_video_wrap tpl1_couple_video_wrap">
+                    <video loop muted playsinline class="tpl1_chandelier_vid" id="tpl1_couple_video">
+                        <source src="../assets/videos/temp1_couple.mp4" type="video/mp4">
+                    </video>
+                    <div class="tpl1_video_overlay tpl1_couple_overlay"></div>
                 </div>
 
-                <div class="tpl1_rings_wrap animate_fade_in_up" style="animation-delay: 1.0s;">
-                    <img src="../assets/imgs/temp1_ring.svg" alt="Wedding Rings" class="tpl1_rings_img">
-                </div>
+                <div class="tpl1_couple_content">
+                    <div class="tpl1_couple_header">WE ARE GETTING MARRIED</div>
 
-                <div class="tpl1_tap_reveal animate_pulse_delay" style="animation-delay: 1.5s;">
-                    <a href="#countdown_section" class="tpl1_tap_btn">TAP TO REVEAL</a>
+                    <div class="tpl1_couple_center_group">
+                        <div class="tpl1_couple_names">
+                            <span class="tpl1_script tpl1_couple_firstname">Andrea</span>
+                            <span class="tpl1_script tpl1_couple_amp">&amp;</span>
+                            <span class="tpl1_script tpl1_couple_lastname">Pedro</span>
+                        </div>
+
+                        <div class="tpl1_couple_divider_wrap">
+                            <div class="tpl1_couple_line"></div>
+                            <div class="tpl1_couple_ornament">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 3C12 7.97 7.97 12 3 12C7.97 12 12 16.03 12 21C12 16.03 16.03 12 21 12C16.03 12 12 7.97 12 3Z"
+                                        fill="#F1DDB5" />
+                                    <circle cx="12" cy="12" r="3.5" fill="#876954" stroke="#F1DDB5"
+                                        stroke-width="1.5" />
+                                </svg>
+                            </div>
+                            <div class="tpl1_couple_line"></div>
+                        </div>
+                    </div>
+
+                    <div class="tpl1_couple_date">12 SEPTEMBER 2026</div>
+
+                    <div class="tpl1_scroll_indicator">
+                        <a href="#countdown_section" class="tpl1_scroll_btn">
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -82,13 +130,25 @@
                     special people.
                 </p>
 
-                <div class="tpl1_interactive_gallery">
-                    <div class="tpl1_gallery_item expanded">
-                        <img src="../assets/imgs/welcome1.jpg" alt="Couple" class="img-fluid">
+                <div class="swiper tpl1_gallery_swiper" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../assets/imgs/welcome1.jpg" alt="Beach" class="tpl1_swiper_img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/imgs/welcome2.jpg" alt="Beach" class="tpl1_swiper_img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/imgs/welcome1.jpg" alt="Beach" class="tpl1_swiper_img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/imgs/welcome2.jpg" alt="Beach" class="tpl1_swiper_img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/imgs/welcome1.jpg" alt="Beach" class="tpl1_swiper_img">
+                        </div>
                     </div>
-                    <div class="tpl1_gallery_item collapsed">
-                        <img src="../assets/imgs/welcome2.jpg" alt="Beach" class="img-fluid">
-                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
 
                 <div class="tpl1_divider_gold mt-5"></div>
@@ -132,7 +192,10 @@
                     </div>
 
                     <div class="tpl1_venue_map">
-                        <img src="../assets/imgs/map_google.jpg" alt="Map Location" class="img-fluid tpl1_map_img">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25577.978350071935!2d-5.1581592!3d36.74063485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0d3143e258a279%3A0x94358021349a5ba2!2s29400%20Ronda%2C%20M%C3%A1laga%2C%20Spain!5e0!3m2!1sen!2s!4v1780917588540!5m2!1sen!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <div class="tpl1_map_btn_wrap">
                             <a href="#" class="tpl1_map_btn">
                                 <i class="bi bi-geo-alt"></i> OPEN IN MAPS
@@ -240,7 +303,7 @@
 
             <div class="tpl1_event_cards mt-5" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Event 1 -->
-                <div class="tpl1_event_card mb-4">
+                <div class="tpl1_event_card">
                     <img src="../assets/imgs/platefood.svg" alt="Welcome Drinks" class="tpl1_event_icon">
                     <h3 class="tpl1_script tpl1_event_name mt-3">Welcome Drinks</h3>
                     <div class="tpl1_venue_divider my-3" style="width: 50%;"></div>
@@ -333,13 +396,22 @@
                 <img src="../assets/imgs/locket.svg" alt="Lockets" class="img-fluid">
             </div>
 
-            <div class="tpl1_interactive_gallery" data-aos="fade-up" data-aos-duration="1000">
-                <div class="tpl1_gallery_item expanded">
-                    <img src="../assets/imgs/locket_bot1.jpg" alt="Wedding Rings" class="img-fluid">
+            <div class="swiper tpl1_gallery_swiper" data-aos="fade-up" data-aos-duration="1000">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../assets/imgs/locket_bot1.jpg" alt="Wedding Rings" class="tpl1_swiper_img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../assets/imgs/locket_bot2.jpg" alt="Landscape" class="tpl1_swiper_img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../assets/imgs/locket_bot1.jpg" alt="Wedding Rings" class="tpl1_swiper_img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../assets/imgs/locket_bot2.jpg" alt="Landscape" class="tpl1_swiper_img">
+                    </div>
                 </div>
-                <div class="tpl1_gallery_item collapsed">
-                    <img src="../assets/imgs/locket_bot2.jpg" alt="Landscape" class="img-fluid">
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
